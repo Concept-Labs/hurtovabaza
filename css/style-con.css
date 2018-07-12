@@ -1,0 +1,78 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	font: normal 100% 'century gothic', arial;
+	display: block;
+}
+a{
+	height: 50px;
+	font: normal 100% 'century gothic', arial;
+	text-decoration: none;
+		color: #C4C4C4;
+}
+.head{
+	position: fixed;	
+	height: 60.5px;
+	border-bottom: 1px solid rgba(201, 201, 201, 0.29);
+}
+.head{
+	width: 100%;
+	background-color:  #e5e5e5;
+}
+.content{
+	margin: 70px 0 0 250px;
+	position: absolute;
+	height: auto;
+	width: 80%;
+	float: right;
+}
+.dostavka{
+	cursor: pointer;
+		border-left: 1px solid rgba(201, 201, 201, 0.29);
+	padding-right: 40px;
+	height: 100%;
+	width: 70px;
+	float: right;
+}
+.dostavka:hover{
+	background: #cdcccc;
+}
+.dostavka a{
+	height: 50px;
+	width: 70px;
+	padding-left: 20px;
+	line-height: 55px;
+	color: #515151;
+}
+.width-name{
+	text-align: center;
+	width: 120px;
+}
+table{
+	float: left;
+
+	background-color: #fcfcfc;
+	 border-collapse: collapse;
+	border: 1px solid rgba(201, 201, 201, 0.29);
+	text-align: center;
+	    font-family: sans-serif;
+}
+td{
+
+	border-right: 1px solid rgba(201, 201, 201, 0.29);
+	border-bottom: 1px solid rgba(201, 201, 201, 0.29);
+	padding: 5px 10px
+}
+tr:hover, .table-top:not(:hover){
+	background-color: #f4f3f3;
+}
+
+.date{
+	float: left;
+	margin-top: 40px;
+	font: normal 150% 'century gothic', arial;
+}
+

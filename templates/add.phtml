@@ -1,0 +1,34 @@
+<div>
+	<form action="/add" method="post">
+		<table>
+			<tr class="table-top">
+				<td>Код</td>
+				<td class="width-name">Назва</td>
+				<td>Бочка</td>
+				<td>Рибний турмінал</td>
+				<td>Гуртовня</td>
+				<td>Центр</td>
+				<td>Бочка</td>
+				<td>Рибний термінал</td>
+				<td>Гуртовня</td>
+				<td>Центр</td>
+			</tr>
+			<tr>
+				<td> <input type="number" name="kod" value="<?php echo @$data['kod']; ?>"> </td>
+				<td> <input type="text" name="name" value="<?php echo @$data['name']; ?>"> </td>
+				<td> <input type="number" name="bochka" value="<?php echo @$data['bochka']; ?>"> </td>
+				<td> <input type="number" name="fish" value="<?php echo @$data['fish']; ?>"> </td>
+				<td> <input type="number" name="gyrtovna" value="<?php echo @$data['gyrtovna']; ?>"> </td>
+				<td> <input type="number" name="centr" value="<?php echo @$data['centr']; ?>"> </td>
+				<td> <input type="number" name="bochka2" value="<?php echo @$data['bochka2']; ?>"> </td>
+				<td> <input type="number" name="fish2" value="<?php echo @$data['fish2']; ?>"> </td>
+				<td> <input type="number" name="gyrtovna2" value="<?php echo @$data['gyrtovna2']; ?>"> </td>
+				<td> <input type="number" name="centr2" value="<?php echo @$data['centr2']; ?>"> </td>
+				
+			</tr>
+			
+		</table>
+		<input type="hidden" name="date" value="<?php echo date('Y-m-d') ?>" />
+		<input type="submit" name="add" value="Додати">
+	</form>
+	</div>

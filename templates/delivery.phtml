@@ -3,7 +3,7 @@
 		<h2>Фрукти</h2>
 		<ul>
 			<li><input type="checkbox" class="checkbox" id="banan" />
-<label for="banan">Банани</label><input type="text" placeholder=" Кількість"></li>
+<label for="banan">Банани</label><input type="text" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" placeholder=" Кількість"></li>
 			<li>	<input type="checkbox" class="checkbox" id="apelsin" />
 <label for="apelsin">Апeльсини</label><input type="text" placeholder=" Кількість"></li>
 			<li>	<input type="checkbox" class="checkbox" id="limon" />

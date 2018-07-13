@@ -20,6 +20,7 @@ Abstract Class Controller_Base
     protected function _initTemplate($title)
     {
 		$this->_baseTemplate->addCss('styles/menu.css');
+        $this->_baseTemplate->addCss('styles/dostavka.css');
         $this->_baseTemplate->addCss('styles/style-con.css');
 		$this->_baseTemplate->addCss('styles/style.css');
 		

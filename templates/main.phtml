@@ -15,6 +15,7 @@ $query2 = $this->get('query2');
 	<div>
 		<table>
 			<tr class="table-top">
+<<<<<<< HEAD
 				<td><?php echo $row['kod']; ?></td>
 				<td class="width-name"><?php echo $row['name']; ?></td>
 				<td><?php echo $row['bochka']; ?></td>
@@ -27,10 +28,25 @@ $query2 = $this->get('query2');
 				<td><?php echo $row['center2']; ?></td>
 				<td><?php echo $row['dostavka']; ?></td>
 				<td><?php echo $row['dia']; ?></td>
+=======
+				<td>№</td>
+				<td class="width-name">Назва</td>
+				<td>Бочка</td>
+				<td>Рибний термінал</td>
+				<td>Гуртовня</td>
+				<td class="border2">Центр</td>
+				<td>Бочка</td>
+				<td>Рибний термінал</td>
+				<td>Гуртовня</td>
+				<td>Центр</td>
+				<td>Доставка</td>
+				<td>Дія</td>
+>>>>>>> be0fc82366d185f39643c2e855af409ba0013d3b
 			</tr>
 			<?php if ($num2) {
                 while ($row = mysqli_fetch_array($query2)) { ?>
 			<tr>
+<<<<<<< HEAD
 				<td><?php echo $row['kod_tovar']; ?></td>
 				<td class="width-name"><?php echo $row['name_tovar']; ?></td>
 				<td><?php echo $row['bochka_tovar']; ?></td>

@@ -33,7 +33,11 @@ padding: 5px;
 }
 
 a.add-td input{
-	display: none;
+	border: 0px;
+	background-color: #1e91cf;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
 }
 
 .plus-table{

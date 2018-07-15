@@ -1,6 +1,6 @@
 <div>
 	<form action="/add" method="post">
-		<table>
+		<table class="add-table">
 			<tr class="table-top">
 				<td>Код</td>
 				<td class="width-name">Назва</td>
@@ -15,7 +15,7 @@
 			</tr>
 			<tr>
 				<td> <input type="number" name="kod" value="<?php echo @$data['kod']; ?>"> </td>
-				<td> <input type="text" name="name" value="<?php echo @$data['name']; ?>"> </td>
+				<td class="add-name"> <input type="text" name="name" value="<?php echo @$data['name']; ?>"> </td>
 				<td> <input type="number" name="bochka" value="<?php echo @$data['bochka']; ?>"> </td>
 				<td> <input type="number" name="fish" value="<?php echo @$data['fish']; ?>"> </td>
 				<td> <input type="number" name="gyrtovna" value="<?php echo @$data['gyrtovna']; ?>"> </td>
@@ -26,9 +26,11 @@
 				<td> <input type="number" name="centr2" value="<?php echo @$data['centr2']; ?>"> </td>
 				
 			</tr>
-			
+				<a id="add-tr" name="add" href="#" class="add-td"><i class="far fa-save" title="Зберегти"></i><input for="add-tr" type="submit" name="add" value="Додати"></a>
 		</table>
 		<input type="hidden" name="date" value="<?php echo date('Y-m-d') ?>" />
-		<input type="submit" name="add" value="Додати">
+		<br/><br/><br/><br/><br/>
+		
+	
 	</form>
-	</div>
+</div>

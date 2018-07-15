@@ -1,5 +1,9 @@
 i{
+	font-size: 14px;
 	color: #fff;
+}
+td.add-name{
+	width: 20%;
 }
 td a{
 	width: auto;
@@ -28,6 +32,10 @@ td i{
 padding: 5px;
 }
 
+a.add-td input{
+	display: none;
+}
+
 .plus-table{
 	margin-top: 40px;
 	text-align: center;
@@ -37,15 +45,18 @@ padding: 5px;
 	float: right;
 }
 .plus{
-	margin-top: 40px;
-
-	padding: 5px 8px;
-	color: #fff;
+	    float: right;
+    padding: 5px 8px;
+    font-size: 14px;
     background-color: #1e91cf;
     border-color: #1978ab;
-    border-radius: 5px;
-    transition: .3s all;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
+    border-radius: 3px;
+    max-height: 18px;
+    margin: 15px 0 15px 0;
+    -webkit-transition: .3s all;
+	-moz-transition: .3s all;
+	-o-transition: .3s all;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
 }
 .plus:hover{
 	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);

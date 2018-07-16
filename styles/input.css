@@ -36,6 +36,7 @@ table.add-table input:focus{
 }
 
 a.add-td{
+	display: block;
 	float: right;
 	padding: 5px 8px;
 	font-size: 14px;

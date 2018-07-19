@@ -214,12 +214,28 @@ Class Template
                         <td><?php echo $row['gyrtovna2_tovar']; ?></td>
                         <td><?php echo $row['centr2_tovar']; ?></td>
                         <td><?php echo $row['dostavka_tovar']; ?></td>
-                        <td> <a href="<?php echo base_url .$table .'?edit&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .$table .'?delete&id='.$row['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+                        <td> <a href="<?php echo base_url .$table .'?edit&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="#win1" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                     <?php } } ?>
                 </table>
                 <a href="<?php echo "/add?" .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
                 </div>
+                 <a href="#x" class="overlay" id="win1"></a>
+                   <div class="popup">
+                       <?php if (!isset($delete)) {?>
+                        <div>
+                        <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
+                                Ви дійсно хочете <span style="color: red;">видалити</span>  товар!!!<br/><br/>
+
+                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
+                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
+                            </form>
+                        </div>
+                        <?php  } else {
+                            echo "<div style='color: green;'>Товар успішно видалено!</div>";
+                        }?>
+                    <a class="close"title="Закрыть" href="#close"></a>
+                    </div>
 
                 <?php
             } else { 
@@ -252,7 +268,7 @@ Class Template
                                     <td> <input type="number" name="gyrtovna2_tovar" value="<?php echo $roww['gyrtovna2_tovar']; ?>"> </td>
                                     <td> <input type="number" name="centr2_tovar" value="<?php echo $roww['centr2_tovar']; ?>"> </td>             
                                 </tr>
-                                <input type="submit" name="save" value=" Зберегти">
+                                <input class="sub-save" type="submit" name="save" value=" Зберегти">
                             </table>
                             <br/><br/><br/><br/><br/>
 
@@ -263,17 +279,7 @@ Class Template
                     if (isset($_GET['delete'])) {
 
 
-                        if (!isset($delete)) {?>
-                        <div>
-                            <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
-                                Ви точно хочете видалити товар!!!<br/>
-                                <button type="submit" name="delete_tovar" value="1">Так</button>
-                                <button type="submit" name="delete_tovar" value="0">Ні</button>
-                            </form>
-                        </div>
-                        <?php  } else {
-                            echo "<div style='color: green;'>Товар успішно видалено!</div>";
-                        }
+                        
                     }
 
                 }

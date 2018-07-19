@@ -61,11 +61,12 @@ Class Controller_Add Extends Controller_Base
 
         if (empty($errore)) {
             mysqli_query($db, "INSERT INTO `$table`(`id`, `kod_tovar`, `name_tovar`, `bochka_tovar`, `fish_tovar`, `gyrtovna_tovar`, `centr_tovar`, `bochka2_tovar`, `fish2_tovar`, `gyrtovna2_tovar`, `centr2_tovar`, `dostavka_tovar`, `date`) VALUES (null, '$kod', '$name', '$bochka', '$fish', '$gyrtovna', '$centr', '$bochka2', '$fish2', '$gyrtovna2', '$centr2', '$dovtavutu', '$date')");
-            
+           
+            header("Location: /".$table);
+            exit();
         }
         
-        header("Location: /".$table);
-            exit();
+       
     }
     $template->set('errore', $errore);
     mysqli_close($db);

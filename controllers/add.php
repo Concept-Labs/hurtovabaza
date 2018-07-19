@@ -66,7 +66,6 @@ Class Controller_Add Extends Controller_Base
             exit();
         }
         
-        
     }
     $template->set('errore', $errore);
     mysqli_close($db);

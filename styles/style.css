@@ -39,6 +39,9 @@ a.add-td input{
 	cursor: pointer;
 	display: inline-block;
 }
+.dostavka ul{
+	margin-bottom: 40px;
+}
 
 .plus-table{
 	margin-top: 40px;

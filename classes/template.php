@@ -120,9 +120,16 @@ Class Template
         $num = mysqli_num_rows($query);
         $row = mysqli_fetch_array($query);
 
-        $query2= mysqli_query($db, "SELECT * FROM $table");
-        $num2 = mysqli_num_rows($query);
-        $row2 = mysqli_fetch_array($query);
+        $date_today = date('Y-m-d');
+        $date_page = $_POST['date_page'];
+        if (!empty($date_page)) {
+            $query2= mysqli_query($db, "SELECT * FROM $table WHERE date='$date_page'");
+        } 
+        else {
+            $query2= mysqli_query($db, "SELECT * FROM $table WHERE date='$date_today'");
+        }
+        $num2 = mysqli_num_rows($query2);
+        $row2 = mysqli_fetch_array($query2);
 
         //код для редагування статті
         $id = isset($_GET['id']) ? $_GET['id'] : 0; 
@@ -178,11 +185,30 @@ Class Template
             <a href="#" class="plus" title="Додати таблицю"><i class="fas fa-table"></i></a>
 
             <div class="date">
-                10 липня 2018  
+                <form action="/<?php echo $table; ?>" method="post">
+                    <select name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
+                        <option>Дата</option>
+                        <?php 
+                        for($i = 0;  $i <= 4000; $i++ ){
+                            $next_date = date('Y-m-d', strtotime($date_today .' -'.$i .'day'));
+                            if ($next_date >= '2018-07-14') {?>
+                            <option value="<?php echo $next_date; ?>"><?php echo $next_date;?></option> 
+                            <?php }
+
+                        }
+                        ?>
+                    </select>
+                </form>
+                <?php if (empty($date_page)) {
+                    echo $date_today;
+                } 
+                else {
+                    echo $date_page;
+                } ?>
             </div>
         </div>
 
-
+        
 
         <div>
             <table>
@@ -201,20 +227,20 @@ Class Template
                     <td><?php echo $row['dia']; ?></td>
                 </tr>
                 <?php if ($num2) {
-                    while ($row = mysqli_fetch_array($query2)) { ?>
+                    while ($row2 = mysqli_fetch_array($query2)) { ?>
                     <tr>
-                        <td><?php echo $row['kod_tovar']; ?></td>
-                        <td class="width-name"><?php echo $row['name_tovar']; ?></td>
-                        <td><?php echo $row['bochka_tovar']; ?></td>
-                        <td><?php echo $row['fish_tovar']; ?></td>
-                        <td><?php echo $row['gyrtovna_tovar']; ?></td>
-                        <td><?php echo $row['centr_tovar']; ?></td>
-                        <td><?php echo $row['bochka2_tovar']; ?></td>
-                        <td><?php echo $row['fish2_tovar']; ?></td>
-                        <td><?php echo $row['gyrtovna2_tovar']; ?></td>
-                        <td><?php echo $row['centr2_tovar']; ?></td>
-                        <td><?php echo $row['dostavka_tovar']; ?></td>
-                        <td> <a href="<?php echo base_url .$table .'?edit&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="#win1" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+                        <td><?php echo $row2['kod_tovar']; ?></td>
+                        <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
+                        <td><?php echo $row2['bochka_tovar']; ?></td>
+                        <td><?php echo $row2['fish_tovar']; ?></td>
+                        <td><?php echo $row2['gyrtovna_tovar']; ?></td>
+                        <td><?php echo $row2['centr_tovar']; ?></td>
+                        <td><?php echo $row2['bochka2_tovar']; ?></td>
+                        <td><?php echo $row2['fish2_tovar']; ?></td>
+                        <td><?php echo $row2['gyrtovna2_tovar']; ?></td>
+                        <td><?php echo $row2['centr2_tovar']; ?></td>
+                        <td><?php echo $row2['dostavka_tovar']; ?></td>
+                        <td> <a href="<?php echo base_url .$table .'?edit&id='.$row2['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .$table .'?delete&id='.$row2['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                     <?php } } ?>
                 </table>

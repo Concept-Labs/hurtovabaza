@@ -7,9 +7,7 @@
 }
 
 .menu-bar{
-		height: 100%;
 	margin: 2px 0 20px 0;
-	height: 100%;
 }
 .border-top{
 	border-top: 1px solid rgba(201, 201, 201, 0.29);
@@ -23,7 +21,6 @@ ul.menu-bar li a{
 	height: 40px;	
 	color: #C4C4C4;
 	display: block;
-	width: 100%;
 	line-height: 40px;
 	padding-left: 20px;
 }

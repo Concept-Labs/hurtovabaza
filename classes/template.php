@@ -225,7 +225,7 @@ Class Template
                        <?php if (!isset($delete)) {?>
                         <div>
                         <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
-                                Ви дійсно хочете <span style="color: red;">видалити</span>  товар!!!<br/><br/>
+                                Ви дійсно хочете <span style="color: red;">видалити</span> даний товар!!!<br/><br/>
 
                                 <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
                                 <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
@@ -234,7 +234,7 @@ Class Template
                         <?php  } else {
                             echo "<div style='color: green;'>Товар успішно видалено!</div>";
                         }?>
-                    <a class="close"title="Закрыть" href="#close"></a>
+                    <a class="close" title="Закрыть" href="#close"></a>
                     </div>
 
                 <?php

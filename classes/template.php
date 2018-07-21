@@ -186,7 +186,7 @@ Class Template
 
             <div class="date">
                 <form action="/<?php echo $table; ?>" method="post">
-                    <select name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
+                    <select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
                         <option>Дата</option>
                         <?php 
                         for($i = 0;  $i <= 4000; $i++ ){

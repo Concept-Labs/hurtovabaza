@@ -295,6 +295,7 @@ Class Template
                         <?php  } else {
                             echo "<div style='color: green;'>Товар успішно видалено!</div>";
                         }
+
                     }
 
             }

@@ -30,7 +30,8 @@ a{
 .dostavka-head{
 	cursor: pointer;
 		border-left: 1px solid rgba(201, 201, 201, 0.29);
-	padding-right: 40px;
+		border-right: 1px solid rgba(201, 201, 201, 0.29);
+	padding: 0 20px;
 	height: 100%;
 	width: 70px;
 	float: right;
@@ -39,12 +40,41 @@ a{
 	background: #cdcccc;
 }
 .dostavka-head a{
-	height: 50px;
+	height: 100%;
 	width: 100%;
 	display: block;
-	padding-left: 20px;
 	line-height: 55px;
 	color: #515151;
+}
+.search-head{
+	width: 225px;
+	float: right;
+	border-left: 1px solid rgba(201, 201, 201, 0.29);
+	padding: 0	 20px;
+	margin-top: 15px;
+}
+.search-head input{
+	padding: 2%;
+	border: 0px;
+	border-radius: 5px;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+	font: normal 90% 'century gothic', arial;
+}
+.search-head input[type="search"]:hover, .search-head input[type="search"]:focus{
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
+}
+.search-head input[type="submit"]{
+	background-color: #f8c409;
+	cursor: pointer;
+}
+.search-head input[type="submit"]:hover{
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
+}
+.search-head input[type="submit"]:active{
+	background-color: #ca9f08;
+	box-shadow: none;
 }
 .width-name{
 	text-align: center;

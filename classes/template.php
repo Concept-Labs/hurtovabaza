@@ -143,7 +143,6 @@ Class Template
         $roww = mysqli_fetch_array($res);
 
         if (isset($_POST['save'])) {
-            $kod_tovar = $_POST['kod_tovar'];
             $name_tovar = strip_tags($_POST['name_tovar']);
             $bochka_tovar = $_POST['bochka_tovar'];
             $fish_tovar = $_POST['fish_tovar'];
@@ -155,7 +154,7 @@ Class Template
             $centr2_tovar = $_POST['centr2_tovar'];
             $dovtavutu = $bochka2_tovar + $fish2_tovar + $gyrtovna2_tovar + $centr2_tovar;
             echo $name_tovar;
-            mysqli_query($db, "UPDATE `$table` SET `kod_tovar`='$kod_tovar',`name_tovar`='$name_tovar',`bochka_tovar`='$bochka_tovar',`fish_tovar`='$fish_tovar',`gyrtovna_tovar`='$gyrtovna_tovar',`centr_tovar`='$centr_tovar',`bochka2_tovar`='$bochka2_tovar',`fish2_tovar`='$fish2_tovar',`gyrtovna2_tovar`='$gyrtovna2_tovar',`centr2_tovar`='$centr2_tovar',`dostavka_tovar`='$dovtavutu' WHERE id='$id'");
+            mysqli_query($db, "UPDATE `$table` SET `name_tovar`='$name_tovar',`bochka_tovar`='$bochka_tovar',`fish_tovar`='$fish_tovar',`gyrtovna_tovar`='$gyrtovna_tovar',`centr_tovar`='$centr_tovar',`bochka2_tovar`='$bochka2_tovar',`fish2_tovar`='$fish2_tovar',`gyrtovna2_tovar`='$gyrtovna2_tovar',`centr2_tovar`='$centr2_tovar',`dostavka_tovar`='$dovtavutu' WHERE id='$id'");
 
             header("Location: /".$table);
             exit();
@@ -210,7 +209,7 @@ Class Template
         <div>
             <table>
                 <tr class="table-top">
-                    <td><?php echo $row['kod']; ?></td>
+                    <td><?php echo $row['number']; ?></td>
                     <td class="width-name"><?php echo $row['name']; ?></td>
                     <td><?php echo $row['bochka']; ?></td>
                     <td><?php echo $row['fish']; ?></td>
@@ -226,7 +225,7 @@ Class Template
                 <?php if ($num2) {
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>
                     <tr>
-                        <td><?php echo $row2['kod_tovar']; ?></td>
+                        <td><?php echo $row2['id']; ?></td>
                         <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
                         <td><?php echo $row2['bochka_tovar']; ?></td>
                         <td><?php echo $row2['fish_tovar']; ?></td>
@@ -252,7 +251,7 @@ Class Template
                     <form action="<?php echo base_url .$table .'?edit&id='.$roww['id']; ?>" method="post">
                         <table class="add-table">
                             <tr class="table-top">
-                                <td>Код</td>
+                                <td>№</td>
                                 <td class="width-name">Назва</td>
                                 <td>Бочка</td>
                                 <td>Рибний турмінал</td>
@@ -264,7 +263,7 @@ Class Template
                                 <td>Центр</td>
                             </tr>
                             <tr>
-                                <td> <input type="number" name="kod_tovar" value="<?php echo $roww['kod_tovar']; ?>"> </td>
+                                <td> <?php echo $roww['id']; ?></td>
                                 <td> <input type="text" name="name_tovar" value="<?php echo $roww['name_tovar']; ?>"> </td>
                                 <td> <input type="number" name="bochka_tovar" value="<?php echo $roww['bochka_tovar']; ?>"> </td>
                                 <td> <input type="number" name="fish_tovar" value="<?php echo $roww['fish_tovar']; ?>"> </td>

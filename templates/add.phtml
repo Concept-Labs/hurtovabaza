@@ -15,7 +15,6 @@ $errore = $this->get('errore');
 	<form action="/add" method="post">
 		<table class="add-table">
 			<tr class="table-top">
-				<td>Код</td>
 				<td class="width-name">Назва</td>
 				<td>Бочка</td>
 				<td>Рибний турмінал</td>
@@ -27,7 +26,6 @@ $errore = $this->get('errore');
 				<td>Центр</td>
 			</tr>
 			<tr>
-				<td> <input type="number" name="kod_tovar" value="<?php echo @$_POST['kod_tovar']; ?>"> </td>
 				<td> <input type="text" name="name_tovar" value="<?php echo @$_POST['name_tovar']; ?>"> </td>
 				<td> <input type="number" name="bochka_tovar" value="<?php echo @$_POST['bochka_tovar']; ?>"> </td>
 				<td> <input type="number" name="fish_tovar" value="<?php echo @$_POST['fish_tovar']; ?>"> </td>

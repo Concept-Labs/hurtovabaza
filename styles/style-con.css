@@ -33,7 +33,7 @@ a{
 		border-right: 1px solid rgba(201, 201, 201, 0.29);
 	padding: 0 20px;
 	height: 100%;
-	width: 70px;
+	width: auto;
 	float: right;
 }
 .dostavka-head:hover{

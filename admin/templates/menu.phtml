@@ -1,0 +1,15 @@
+<?php $current = $_SERVER['REQUEST_URI']; ?>
+<div class="menu">
+	<div class="logo">
+		<a href="<?php echo base_url; ?>"><img src="<?php echo base_url .'img/logo.png'; ?>" alt="ГуртоваБаза"></a>
+	</div>
+	<ul class="menu-bar">
+		<li class="border-top"><a class="<?php if($current == '/admin/vegetables'): ?>current<?php endif; ?>" href="<?php echo base_url .'vegetables';?>">Овочі</a></li>
+		<li><a class="<?php if($current == '/admin/fruits'): ?>current<?php endif; ?>" href="<?php echo base_url .'fruits';?>">Фрукти</a></li>
+		<li><a class="<?php if($current == '/admin/sausage'): ?>current<?php endif; ?>" href="<?php echo base_url .'sausage';?>">Ковбаса</a></li>
+		<li><a class="<?php if($current == '/admin/fish_sm'): ?>current<?php endif; ?>" href="<?php echo base_url .'fish_sm';?>">Риба С/М</a></li>
+		<li><a class="<?php if($current == '/admin/remake'): ?>current<?php endif; ?>" href="<?php echo base_url .'remake';?>">Переробка</a></li>
+		<li><a class="<?php if($current == '/admin/ovis'): ?>current<?php endif; ?>" href="<?php echo base_url .'ovis';?>">Овіс</a></li>
+		<li><a class="<?php if($current == '/admin/radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'radema';?>">Радема</a></li>
+	</ul>
+</div>

@@ -1,9 +1,9 @@
     <?php 
-    if (!isset($_SESSION['login'])) {            
+    if (!isset($_SESSION['login_admin'])) {            
         ?>
  <div>
- 	<h1>Вхід</h1>
- 	<form action="/index_authorization" method="post">
+ 	<h1>Вхід в адмінпанель</h1>
+ 	<form action="/admin/index_authorization" method="post">
  		<input type="text" name="login" placeholder=" логін"/><br/><br/>
  		<input type="password" name="password" placeholder=" пароль"/><br/><br/>
  		<input type="submit"/ name="log" value="Увійти">
@@ -11,5 +11,5 @@
  </div>
  <?php }
  else {
- 	header("Location: /");
+ 	header("Location: /admin");
  } ?>

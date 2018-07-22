@@ -8,7 +8,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
     // Узнаём путь до файлов сайта
     $site_path = realpath(dirname(__FILE__)) . DIRSEP;
     define ('site_path', $site_path);
-    define('base_url', 'http://' . $_SERVER['HTTP_HOST'] . DIRSEP);
+    define('base_url', 'http://' . $_SERVER['HTTP_HOST'] .'/admin'. DIRSEP);
     include ( site_path .'startup.php' );
     // Создаём объект шаблонов
     $template = new Template( $registry );
@@ -18,7 +18,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
     $registry->set ('router', $router);
     $router->setPath ( site_path . 'controllers' );
     $router->delegate();
-    if (!isset($_SESSION['login'])) {
+    if (!isset($_SESSION['login_admin'])) {
         $template->setFile('templates/index_authorization.phtml');
     }else {
         $template->setFile('templates/index.phtml');

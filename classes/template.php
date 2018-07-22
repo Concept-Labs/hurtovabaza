@@ -184,7 +184,7 @@ Class Template
         if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
         <div class="date">
             <form action="/<?php echo $table; ?>" method="post">
-                <select name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
+                <select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
                     <option>Дата</option>
                     <?php 
                     for($i = 0;  $i <= 4000; $i++ ){
@@ -193,7 +193,6 @@ Class Template
                         if ($next_date >= '2018-07-14') {?>
                         <option value="<?php echo $next_date; ?>"><?php echo $next_date_format;?></option> 
                         <?php }
-
                     }
                     ?>
                 </select>
@@ -243,6 +242,7 @@ Class Template
                 <a href="<?php echo "/add?" .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
                 </div>
 
+
             <?php
         } else { 
             if (isset($_GET['edit'])) {
@@ -281,24 +281,26 @@ Class Template
                     </form>
                     <?php
                 }
-
-                if (isset($_GET['delete'])) {
+                    if (isset($_GET['delete'])) {
                         if (!isset($delete)) {?>
-                        <div>
+                        <div class="delete-block-top zatmenie">
+                            <div class="delete-block">
                             <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
-                                Ви дійсно хочете <span style="color: red;">видалити</span>  товар!!!<br/><br/>
+                                Ви дійсно хочете <span style="color: red;">видалити</span> даний товар!!!<br/><br/>
                                 <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
                                 <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
                             </form>
                         </div>
+                        </div>
+                        
                         <?php  } else {
                             echo "<div style='color: green;'>Товар успішно видалено!</div>";
                         }
 
                     }
 
+                }
+
+
             }
-
-
         }
-    }

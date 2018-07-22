@@ -5,14 +5,15 @@
 	$search_error = $this->get('search_error');
 	if (!empty($search_error)) { ?>
 	<div class="sidebar_error">
-		<span style="color:white;"><?php echo $search_error; ?></span> 
+		<span style="color:red;"><?php echo $search_error; ?></span> 
 	</div>
 	<?php } ?>
-	<div>
-		<h2>Пошук</h2>
+	<div class="sidebar-search">
+		<h2>Пошук</h2> 
+		<br/>
 		<form action="/search" method="get">
-			<input type="search" name="search_query" id="search_form" placeholder=" ваш запит" value="<?php echo @$_GET['search_query']; ?>" minlength="4"/ required>
-			<input type="submit" name="search" class="btn" value="знайти" /><br/><br/>
+			<input class="search-form srch" type="search" name="search_query" id="search_form" placeholder=" введіть ваш запит" value="<?php echo @$_GET['search_query']; ?>" required>
+			<input class="search-btn srch" type="submit" name="search" class="btn" value="знайти" /><br/><br/>
 			<input type="checkbox" class="checkbox" id="allwords" name="allwords" value=" AND " />
 			<label for="allwords">Точний збіг всіх слів</label>
 		</form>

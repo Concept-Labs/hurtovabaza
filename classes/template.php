@@ -122,14 +122,16 @@ Class Template
 
         $date_today = date('Y-m-d');
         $date_page = $_POST['date_page'];
+        $date_today_format = date_format(date_create($date_today), 'd.m.Y');
+        $date_page_format = date_format(date_create($date_page), 'd.m.Y');
+
         if (!empty($date_page)) {
             $query2= mysqli_query($db, "SELECT * FROM $table WHERE date='$date_page'");
         } 
         else {
             $query2= mysqli_query($db, "SELECT * FROM $table WHERE date='$date_today'");
         }
-        $num2 = mysqli_num_rows($query2);
-        $row2 = mysqli_fetch_array($query2);
+        $num2 = mysqli_num_rows($query2);        
 
         //код для редагування статті
         $id = isset($_GET['id']) ? $_GET['id'] : 0; 
@@ -164,6 +166,7 @@ Class Template
             if (isset($_POST['delete_tovar'])) {
                 if ($_POST['delete_tovar'] == 1) {
                     $delete = mysqli_query($db, "DELETE FROM `$table` WHERE id='$id'");
+                    header("Location: /".$table);
                 } else {
                     header("Location: /".$table);
                     exit();
@@ -180,35 +183,28 @@ Class Template
 
         <?php 
         if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
-        
-        <div>
-            <a href="#" class="plus" title="Додати таблицю"><i class="fas fa-table"></i></a>
-
-            <div class="date">
-                <form action="/<?php echo $table; ?>" method="post">
-                    <select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
-                        <option>Дата</option>
-                        <?php 
-                        for($i = 0;  $i <= 4000; $i++ ){
-                            $next_date = date('Y-m-d', strtotime($date_today .' -'.$i .'day'));
-                            if ($next_date >= '2018-07-14') {?>
-                            <option value="<?php echo $next_date; ?>"><?php echo $next_date;?></option> 
-                            <?php }
-
-                        }
-                        ?>
-                    </select>
-                </form>
-                <?php if (empty($date_page)) {
-                    echo $date_today;
-                } 
-                else {
-                    echo $date_page;
-                } ?>
-            </div>
-        </div>
-
-        
+        <div class="date">
+            <form action="/<?php echo $table; ?>" method="post">
+                <select name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
+                    <option>Дата</option>
+                    <?php 
+                    for($i = 0;  $i <= 4000; $i++ ){
+                        $next_date = date('Y-m-d', strtotime($date_today .' -'.$i .'day'));
+                        $next_date_format = date_format(date_create($next_date), 'd.m.Y');
+                        if ($next_date >= '2018-07-14') {?>
+                        <option value="<?php echo $next_date; ?>"><?php echo $next_date_format;?></option> 
+                        <?php }
+                    }
+                    ?>
+                </select>
+            </form>
+            <?php if (empty($date_page)) {
+                echo $date_today_format;
+            } 
+            else {
+                echo $date_page_format;
+            } ?>
+        </div>        
 
         <div>
             <table>
@@ -227,7 +223,7 @@ Class Template
                     <td><?php echo $row['dia']; ?></td>
                 </tr>
                 <?php if ($num2) {
-                    while ($row2 = mysqli_fetch_array($query2)) { ?>
+                    while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>
                     <tr>
                         <td><?php echo $row2['kod_tovar']; ?></td>
                         <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
@@ -246,22 +242,6 @@ Class Template
                 </table>
                 <a href="<?php echo "/add?" .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
                 </div>
-                 <a href="#x" class="overlay" id="win1"></a>
-                   <div class="popup">
-                       <?php if (!isset($delete)) {?>
-                        <div>
-                        <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
-                                Ви дійсно хочете <span style="color: red;">видалити</span> даний товар!!!<br/><br/>
-
-                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
-                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
-                            </form>
-                        </div>
-                        <?php  } else {
-                            echo "<div style='color: green;'>Товар успішно видалено!</div>";
-                        }?>
-                    <a class="close" title="Закрыть" href="#close"></a>
-                    </div>
 
                 <?php
             } else { 
@@ -303,9 +283,18 @@ Class Template
                     }
 
                     if (isset($_GET['delete'])) {
+                        if (!isset($delete)) {?>
+                        <div>
+                            <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
+                                Ви дійсно хочете <span style="color: red;">видалити</span>  товар!!!<br/><br/>
+                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
+                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
+                            </form>
+                        </div>
+                        <?php  } else {
+                            echo "<div style='color: green;'>Товар успішно видалено!</div>";
+                        }
 
-
-                        
                     }
 
                 }

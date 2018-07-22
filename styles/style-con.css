@@ -46,6 +46,9 @@ a{
 	line-height: 55px;
 	color: #515151;
 }
+.purchase{
+	border-right: 0px;
+}
 .search-head{
 	width: 225px;
 	float: right;

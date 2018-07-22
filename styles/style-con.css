@@ -50,14 +50,16 @@ a{
 	border-right: 0px;
 }
 .search-head{
-	width: 225px;
+	width: 220px;
 	float: right;
-	border-left: 1px solid rgba(201, 201, 201, 0.29);
 	padding: 0	 20px;
 	margin-top: 15px;
 }
-.search-head input{
-	padding: 2%;
+input.search-form{
+	width: 160px;
+}
+ input.srch{
+	padding: 3px;
 	border: 0px;
 	border-radius: 5px;
 	-webkit-transition: all .3s;
@@ -65,17 +67,17 @@ a{
 	transition: all .3s;
 	font: normal 90% 'century gothic', arial;
 }
-.search-head input[type="search"]:hover, .search-head input[type="search"]:focus{
+ input[type="search"]:hover.search-form,  input[type="search"]:focus.search-form{
 	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
 }
-.search-head input[type="submit"]{
+ input[type="submit"].search-btn{
 	background-color: #f8c409;
 	cursor: pointer;
 }
-.search-head input[type="submit"]:hover{
+ input[type="submit"]:hover.search-btn{
 	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
 }
-.search-head input[type="submit"]:active{
+ input[type="submit"]:active.search-btn{
 	background-color: #ca9f08;
 	box-shadow: none;
 }
@@ -110,4 +112,34 @@ tr:hover, .table-top:not(:hover){
 	margin-top: 40px;
 	font: normal 150% 'century gothic', arial;
 }
+.delete-block-top{
+	padding-top: 200px;
+}
+.delete-block{
+	-webkit-box-shadow: 1px 1px 30px 0px rgba(48, 50, 50, 1);
+-moz-box-shadow:    1px 1px 30px 0px rgba(48, 50, 50, 1);
+box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
+	border-radius: 5px;
+	width: 40%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 2%;
+	font-size: 120%;
+	background-color: #fff;
+}
+.zatmenie {
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+/* фон затемнения */
+    background-color: rgba(0, 0, 0, 0.65);
+    position: fixed;/*  фиксированное поцизионирование */
+    cursor: default; /* тип курсара */
+}
 
+.sidebar-search input{
+	border: 1px solid silver;
+}

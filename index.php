@@ -18,7 +18,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
     $registry->set ('router', $router);
     $router->setPath ( site_path . 'controllers' );
     $router->delegate();
-    if (!isset($_SESSION['authorization'])) {
+    if (isset($_SESSION['authorization'])) {
         $template->setFile('templates/index_authorization.phtml');
     }else {
         $template->setFile('templates/index.phtml');

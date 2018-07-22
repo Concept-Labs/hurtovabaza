@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 13 2018 г., 20:12
+-- Время создания: Июл 21 2018 г., 21:44
 -- Версия сервера: 10.1.30-MariaDB
 -- Версия PHP: 7.2.2
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `name_baz` (
   `id` int(11) UNSIGNED NOT NULL,
-  `kod` varchar(55) NOT NULL,
+  `number` varchar(55) NOT NULL,
   `name` varchar(55) NOT NULL,
   `bochka` varchar(55) NOT NULL,
   `fish` varchar(55) NOT NULL,
@@ -48,8 +48,8 @@ CREATE TABLE `name_baz` (
 -- Дамп данных таблицы `name_baz`
 --
 
-INSERT INTO `name_baz` (`id`, `kod`, `name`, `bochka`, `fish`, `gyrtovna`, `center`, `bochka2`, `fish2`, `gyrtovna2`, `center2`, `dostavka`, `dia`) VALUES
-(1, 'Код', 'Назва', 'Бочка', 'Рибний термінал', 'Гуртовня', 'Центр', 'Бочка', 'Рибний термінал', 'Гуртовня', 'Центр', 'Доставка', 'Дія');
+INSERT INTO `name_baz` (`id`, `number`, `name`, `bochka`, `fish`, `gyrtovna`, `center`, `bochka2`, `fish2`, `gyrtovna2`, `center2`, `dostavka`, `dia`) VALUES
+(1, '№', 'Назва', 'Бочка', 'Рибний термінал', 'Гуртовня', 'Центр', 'Бочка', 'Рибний термінал', 'Гуртовня', 'Центр', 'Доставити', 'Дія');
 
 --
 -- Индексы сохранённых таблиц

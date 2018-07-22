@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `fish_sm` (
   `id` int(111) UNSIGNED NOT NULL,
-  `kod_tovar` varchar(55) NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
   `fish_tovar` varchar(55) NOT NULL,

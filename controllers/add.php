@@ -28,7 +28,6 @@ Class Controller_Add Extends Controller_Base
       $table = $_SESSION['table'];
 
       if (isset($_POST['add'])) {
-        $kod = $_POST['kod_tovar'];
         $name = $_POST['name_tovar'];
         $bochka = $_POST['bochka_tovar'];
         $fish = $_POST['fish_tovar'];
@@ -40,10 +39,7 @@ Class Controller_Add Extends Controller_Base
         $centr2 = $_POST['centr2_tovar'];
         $date = $_POST['date'];
 
-        if (empty($kod)) {
-            $errore = 'Введіть, будь ласка, <u>код</u> товару!';
-        } 
-        elseif (empty($name)) {
+        if (empty($name)) {
             $errore = 'Введіть, будь ласка, <u>назву</u> товару!';
         }
 
@@ -60,7 +56,7 @@ Class Controller_Add Extends Controller_Base
 
 
         if (empty($errore)) {
-            mysqli_query($db, "INSERT INTO `$table`(`id`, `kod_tovar`, `name_tovar`, `bochka_tovar`, `fish_tovar`, `gyrtovna_tovar`, `centr_tovar`, `bochka2_tovar`, `fish2_tovar`, `gyrtovna2_tovar`, `centr2_tovar`, `dostavka_tovar`, `date`) VALUES (null, '$kod', '$name', '$bochka', '$fish', '$gyrtovna', '$centr', '$bochka2', '$fish2', '$gyrtovna2', '$centr2', '$dovtavutu', '$date')");
+            mysqli_query($db, "INSERT INTO `$table`(`id`, `name_tovar`, `bochka_tovar`, `fish_tovar`, `gyrtovna_tovar`, `centr_tovar`, `bochka2_tovar`, `fish2_tovar`, `gyrtovna2_tovar`, `centr2_tovar`, `dostavka_tovar`, `date`) VALUES (null, '$name', '$bochka', '$fish', '$gyrtovna', '$centr', '$bochka2', '$fish2', '$gyrtovna2', '$centr2', '$dovtavutu', '$date')");
            
             header("Location: /".$table);
             exit();

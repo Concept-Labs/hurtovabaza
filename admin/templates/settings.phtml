@@ -1,5 +1,6 @@
 <?php 
-if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>    
+if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
+<div class="settings">   
 <div>
     <h2>Паролі до сайта</h2><br/><br/>
     <table>
@@ -19,7 +20,7 @@ if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
                 <?php } } ?>
             </tr>
         </table>
-        <a href="<?php echo base_url .'settings/add?site'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></a>
+        <a href="<?php echo base_url .'settings/add?site'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
         </div>
 
         <div>
@@ -41,7 +42,7 @@ if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
                         <?php } } ?>
                     </tr>
                 </table>
-                <a href="<?php echo base_url .'settings/add?delivery'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></a>
+                <a href="<?php echo base_url .'settings/add?delivery'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
                 </div>
 
                 <div>
@@ -63,7 +64,7 @@ if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
                                 <?php } } ?>
                             </tr>
                         </table>
-                        <a href="<?php echo base_url .'settings/add?admin'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></a>
+                        <a href="<?php echo base_url .'settings/add?admin'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
                         </div>
 
 
@@ -170,3 +171,5 @@ if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
                                     }
 
                                 }
+                                ?>
+                                </div> 

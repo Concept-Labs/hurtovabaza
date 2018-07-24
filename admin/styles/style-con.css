@@ -34,10 +34,10 @@ td.width-name a{
 	height: auto;	
 }
 .dostavka-head{
+		padding: 0 20px;
 	cursor: pointer;
 		border-left: 1px solid rgba(201, 201, 201, 0.29);
 		border-right: 1px solid rgba(201, 201, 201, 0.29);
-	padding: 0 20px;
 	height: 100%;
 	width: auto;
 	float: right;
@@ -46,8 +46,6 @@ td.width-name a{
 	background: #cdcccc;
 }
 .dostavka-head a{
-	height: 100%;
-	width: 100%;
 	display: block;
 	line-height: 55px;
 	color: #515151;
@@ -150,7 +148,7 @@ box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
 	border: 1px solid silver;
 }
 
-.head a.current {
+.head a.current, .head a.current i {
     color: #f7be09;
 }
 
@@ -201,4 +199,22 @@ div.slogan i{
 }
 div.slogan:hover i{
 	color: #515151;
+}
+
+.dostavka-head a i{
+	display: block;
+	color: #000;
+	font-size: 150%;
+	line-height: 55px;
+	transition: all .8s;
+}
+.dostavka-head:hover i{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);  
+	transform: rotate(180deg);
+}
+
+.settings div{
+	padding-top: 100px;
 }

@@ -202,7 +202,7 @@ Class Template
 
         <div>
             <table>
-                  <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
+                  <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></i></a>
                 <tr class="table-top">
                     <td><?php echo $row['number']; ?></td>
                     <td class="width-name"><?php echo $row['name']; ?></td>

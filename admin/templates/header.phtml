@@ -4,7 +4,7 @@
 		<a href="<?php echo base_url .'index_authorization/logout';?>">Вихід</a>
 	</div>
 	<div class="dostavka-head">
-		<a class="<?php if($current == '/admin/settings'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings';?>">Настройки</a>
+		<a class="<?php if($current == '/admin/settings'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings';?>"><i class="fas fa-cog"></i></a>
 	</div>
 	<div class="search-head">
 		<form action="<?php echo base_url .'search';?>" method="get">
@@ -13,8 +13,8 @@
 		</form>
 		
 	</div>
-	<div class="dostavka-head">
-		<a class="<?php if($current == '/admin/purchase'): ?>current<?php endif; ?>" href="<?php echo base_url .'purchase';?>">Закупка</a>
+	<div class="dostavka-head" alt="Налаштування">
+		<a  class="<?php if($current == '/admin/purchase'): ?>current<?php endif; ?>" href="<?php echo base_url .'purchase';?>">Закупка</a>
 	</div>
 	<div class="dostavka-head purchase">
 		<a href="/distribution">Розприділення</a>

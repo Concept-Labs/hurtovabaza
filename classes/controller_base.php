@@ -23,6 +23,7 @@ Abstract Class Controller_Base
         $this->_baseTemplate->addCss('styles/dostavka.css');
         $this->_baseTemplate->addCss('styles/input.css');
         $this->_baseTemplate->addCss('styles/mod-window.css');
+         $this->_baseTemplate->addCss('styles/purchase.css');
         $this->_baseTemplate->addCss('styles/style-con.css');
 		$this->_baseTemplate->addCss('styles/style.css');
 		

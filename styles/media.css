@@ -37,3 +37,14 @@
     font-size: 140%;
     }
 }
+
+@media screen and (max-device-width: 1024px){
+    .head a{
+        font-size: 130%;
+        padding: 0;
+    }
+    .dostavka-head{
+        padding: 0 10px;
+    }
+}
+

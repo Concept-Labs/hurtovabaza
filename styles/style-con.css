@@ -13,6 +13,13 @@ a{
 	text-decoration: none;
 		color: #C4C4C4;
 }
+
+td.width-name a{
+	color: #1e91cf;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
 .head{
 	display: block;
 	position: relative;
@@ -148,3 +155,7 @@ box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
     color: #f7be09;
 }
 
+div.content > div.add-errore{
+	float: left;
+	padding-top: 25px;
+}

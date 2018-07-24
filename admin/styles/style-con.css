@@ -218,3 +218,6 @@ div.slogan:hover i{
 .settings div{
 	padding-top: 100px;
 }
+.settings a.add-tovar{
+	margin: 20px 0 0 0;
+}

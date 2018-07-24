@@ -207,6 +207,7 @@ Class Template
 
         <div>
             <table>
+                <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
                 <tr class="table-top">
                     <td><?php echo $row['number']; ?></td>
                     <td class="width-name"><?php echo $row['name']; ?></td>
@@ -225,7 +226,7 @@ Class Template
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>
                     <tr>
                         <td><?php echo $row2['id']; ?></td>
-                        <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
+                        <td class="width-name"><a href="<?php echo base_url .$table .'?edit&id='.$row2['id']; ?>"><?php echo $row2['name_tovar']; ?></a></td>
                         <td><?php echo $row2['bochka_tovar']; ?></td>
                         <td><?php echo $row2['fish_tovar']; ?></td>
                         <td><?php echo $row2['gyrtovna_tovar']; ?></td>
@@ -239,7 +240,6 @@ Class Template
                     </tr>
                     <?php } } ?>
                 </table>
-                <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
                 </div>
 
 

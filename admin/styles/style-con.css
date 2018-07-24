@@ -13,6 +13,12 @@ a{
 	text-decoration: none;
 		color: #C4C4C4;
 }
+td.width-name a{
+	color: #1e91cf;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
 .head{
 	display: block;
 	position: relative;
@@ -33,7 +39,7 @@ a{
 		border-right: 1px solid rgba(201, 201, 201, 0.29);
 	padding: 0 20px;
 	height: 100%;
-	width: 70px;
+	width: auto;
 	float: right;
 }
 .dostavka-head:hover{
@@ -145,5 +151,54 @@ box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
 }
 
 .head a.current {
-    color: #FFFF00;
+    color: #f7be09;
+}
+
+/* div.slogan{
+	width: 130px;
+	position: fixed;
+	color: #515151;
+    padding: 10px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    text-align: center;
+	top: 80%;
+    font-size: 80%;
+    margin: 25px;
+}
+div.slogan i{
+	font-size: 200%;
+		color: #515151;
+		display: inline-block;
+} */
+
+div.slogan{
+	width: 130px;
+	position: fixed;
+	color: #c4c4c4;
+    padding: 10px;
+    background-color: #c7c7c754;
+    border-radius: 10px;
+    text-align: center;
+	top: 80%;
+    font-size: 80%;
+    margin: 25px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+div.slogan:hover{
+	color: #515151;
+	background-color: #e5e5e5;
+	transform: scale(1.1);
+}
+div.slogan i{
+	 -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+	font-size: 200%;
+		color: #c4c4c4;
+}
+div.slogan:hover i{
+	color: #515151;
 }

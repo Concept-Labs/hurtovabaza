@@ -3,6 +3,9 @@
 	<div class="dostavka-head">
 		<a href="<?php echo base_url .'index_authorization/logout';?>">Вихід</a>
 	</div>
+	<div class="dostavka-head">
+		<a class="<?php if($current == '/admin/settings'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings';?>">Настройки</a>
+	</div>
 	<div class="search-head">
 		<form action="<?php echo base_url .'search';?>" method="get">
 			<input class="search-form srch" type="search" name="search_query" placeholder=" введіть ваш запит"/>

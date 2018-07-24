@@ -260,10 +260,10 @@ Class Template
                             <tr>
                                 <td> <?php echo $roww['id']; ?></td>
                                 <td> <input type="text" name="name_tovar" value="<?php echo $roww['name_tovar']; ?>"> </td>
-                                <td> <input type="number" name="bochka_tovar" value="<?php echo $roww['bochka_tovar']; ?>"> </td>
-                                <td> <input type="number" name="fish_tovar" value="<?php echo $roww['fish_tovar']; ?>"> </td>
-                                <td> <input type="number" name="gyrtovna_tovar" value="<?php echo $roww['gyrtovna_tovar']; ?>"> </td>
-                                <td> <input type="number" name="centr_tovar" value="<?php echo $roww['centr_tovar']; ?>"> </td>
+                                <td> <input type="number" name="bochka_tovar" step="0.1" value="<?php echo $roww['bochka_tovar']; ?>"> </td>
+                                <td> <input type="number" name="fish_tovar" step="0.1" value="<?php echo $roww['fish_tovar']; ?>"> </td>
+                                <td> <input type="number" name="gyrtovna_tovar" step="0.1" value="<?php echo $roww['gyrtovna_tovar']; ?>"> </td>
+                                <td> <input type="number" name="centr_tovar" step="0.1" value="<?php echo $roww['centr_tovar']; ?>"> </td>
                                 <td><?php echo $roww['bochka2_tovar']; ?></td>
                                 <td><?php echo $roww['fish2_tovar']; ?></td>
                                 <td><?php echo $roww['gyrtovna2_tovar']; ?></td>

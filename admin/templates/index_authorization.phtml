@@ -1,8 +1,18 @@
-    <?php 
+ <!DOCTYPE html>
+ <html lang="ua">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>АдмінПанель</title>
+ 	<link rel="stylesheet" href="../styles/authorization.css" media="screen">
+ </head>
+ <body>
+ 	    <?php 
     if (!isset($_SESSION['login_admin'])) {            
         ?>
- <div>
- 	<h1>Вхід в адмінпанель</h1>
+ <div class="authorization-block">
+ 	 	<p>Вхід в панель керування</p>
+ 	<h1><img src="../img/logo.png" alt="Гуртова База"></h1>
+
  	<form action="/admin/index_authorization" method="post">
  		<input type="text" name="login" placeholder=" логін"/><br/><br/>
  		<input type="password" name="password" placeholder=" пароль"/><br/><br/>
@@ -13,3 +23,5 @@
  else {
  	header("Location: /admin");
  } ?>
+ </body>
+ </html>

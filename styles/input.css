@@ -2,23 +2,6 @@ input{
 	outline: none;
 }
 
-.dostavka input{
-	text-align: center;
-	outline: none;
-	float: right;
-	width: 60px;
-	padding: 1.45%;
-	border-radius: 50px;
-	background: #fefefe;
-	border: 0px;
-	-webkit-transition: .3s all;
-	-moz-transition: .3s all;
-	-o-transition: .3s all;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
-}
-.dostavka input:hover, .dostavka input:focus{
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
-}
 
 table.add-table input{
 	text-align: center;
@@ -65,7 +48,7 @@ a.add-tovar{
 	border-color: #338f15;
 	border-radius: 3px;
 	max-height: 18px;
-	margin: 15px 0 15px 0;
+	margin: 60px 0 0 0;
 	-webkit-transition: .3s all;
 	-moz-transition: .3s all;
 	-o-transition: .3s all;
@@ -130,6 +113,7 @@ button.confirmation-btn:active{
 }
 
 select.data-page{
+	background-color: #fff;
 	outline: none;
 	cursor: pointer;
 	width: 120px;

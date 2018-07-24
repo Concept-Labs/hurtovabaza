@@ -33,7 +33,7 @@ a{
 		border-right: 1px solid rgba(201, 201, 201, 0.29);
 	padding: 0 20px;
 	height: 100%;
-	width: 70px;
+	width: auto;
 	float: right;
 }
 .dostavka-head:hover{
@@ -145,5 +145,5 @@ box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
 }
 
 .head a.current {
-    color: #FFFF00;
+    color: #f7be09;
 }

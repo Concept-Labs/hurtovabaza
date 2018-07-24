@@ -44,7 +44,7 @@ Class Controller_Index_Authorization Extends Controller_Base
             }
 
             if (!empty($errorsl)) { 
-        echo "<span style='color:red;'>" .$errorsl ."</span>"; 
+        echo "<div class='authorization-error'>" .$errorsl ."</div>"; 
             }
 
             if (empty($errorsl)) {

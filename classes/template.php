@@ -202,6 +202,7 @@ Class Template
 
         <div>
             <table>
+                  <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
                 <tr class="table-top">
                     <td><?php echo $row['number']; ?></td>
                     <td class="width-name"><?php echo $row['name']; ?></td>
@@ -234,7 +235,7 @@ Class Template
                     </tr>
                     <?php } } ?>
                 </table>
-                <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
+              
                 </div>
 
 
@@ -278,8 +279,8 @@ Class Template
                 }
                     if (isset($_GET['delete'])) {
                         if (!isset($delete)) {?>
-                        <div class="delete-block-top zatmenie">
-                            <div class="delete-block">
+                        <div class="medium-block-top zatmenie">
+                            <div class="centr-block">
                             <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
                                 Ви дійсно хочете <span style="color: red;">видалити</span> даний товар!!!<br/><br/>
                                 <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>

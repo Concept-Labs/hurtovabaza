@@ -1,15 +1,25 @@
-    <?php 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Вхід ГБ</title>
+ 	<link rel="stylesheet" href="../styles/authorization.css" media="screen">
+ </head>
+ <body>
+ 	    <?php 
     if (!isset($_SESSION['login'])) {            
         ?>
- <div>
- 	<h1>Вхід</h1>
+ <div class="authorization-block">
+ 	<h1><img src="../img/logo.png" alt="Гуртова База"></h1>
  	<form action="/index_authorization" method="post">
- 		<input type="text" name="login" placeholder=" логін"/><br/><br/>
- 		<input type="password" name="password" placeholder=" пароль"/><br/><br/>
- 		<input type="submit"/ name="log" value="Увійти">
+ 		<input type="text" name="login" placeholder=" ваш логін"/><br/><br/>
+ 		<input type="password" name="password" placeholder=" ваш пароль"/><br/><br/>
+ 		<input type="submit" name="log" value="Увійти" />
  	</form>
  </div>
  <?php }
  else {
  	header("Location: /");
  } ?>
+ </body>
+ </html>

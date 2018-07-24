@@ -1,0 +1,91 @@
+	<?php 
+	$search_query = $this->get('search_query');
+	$num = $this->get('num');
+	$query = $this->get('query');
+	$search_error = $this->get('search_error');
+	if (!empty($search_error)) { ?>
+	<div class="sidebar_error">
+		<span style="color:red;"><?php echo $search_error; ?></span> 
+	</div>
+	<?php } ?>
+	<div class="sidebar-search">
+		<h2>Пошук</h2> 
+		<br/>
+		<form action="<?php echo base_url .'search';?>" method="get">
+			<input class="search-form srch" type="search" name="search_query" id="search_form" placeholder=" введіть ваш запит" value="<?php echo @$_GET['search_query']; ?>" required>
+			<input class="search-btn srch" type="submit" name="search" class="btn" value="знайти" /><br/><br/>
+			<input type="checkbox" class="checkbox" id="allwords" name="allwords" value=" AND " />
+			<label for="allwords">Точний збіг всіх слів</label>
+		</form>
+		<?php
+		if ($num != 0 && !empty($search_query)) {
+			echo '<br/><p style="color:green;">За запитом <b>"'. $search_query.'"</b> знайдено збігів: '.$num.'</p>';
+		} ?>	
+	</div><br/><br/>
+	<?php
+	if ($num != 0 && !empty($search_query)) { ?>
+	<div>
+		<table>
+			<tr class="table-top">
+				<td>№</td>
+				<td class="width-name">Назва</td>
+				<td>Бочка</td>
+				<td>Рибний термінал</td>
+				<td>Гуртовня</td>
+				<td>Центр</td>
+				<td>Бочка</td>
+				<td>Рибний термінал</td>
+				<td>Гуртовня</td>
+				<td>Центр</td>
+				<td>Доставити</td>
+				<td>Дата</td>
+				<td>Дія</td>
+			</tr>
+			<?php
+			while ($row = mysqli_fetch_array($query)) { 
+				$middleUrl = '';
+				switch ($row['table']) {
+					case 'vegetables':
+					$middleUrl = 'vegetables';
+					break;
+					case 'fruits':
+					$middleUrl = 'fruits';
+					break;
+					case 'sausage':
+					$middleUrl = 'sausage';
+					break;
+					case 'fish_sm':
+					$middleUrl = 'fish_sm';
+					break;
+					case 'remake':
+					$middleUrl = 'remake';
+					break;
+					case 'ovis':
+					$middleUrl = 'ovis';
+					break;
+					case 'radema':
+					$middleUrl = 'radema';
+					break;
+				} 
+				$date_format = date_format(date_create($row['date']), 'd.m.Y');
+				?>
+
+				<tr>
+					<td><?php echo $row['id']; ?></td>
+					<td class="width-name"><?php echo $row['name_tovar']; ?></td>
+					<td><?php echo $row['bochka_tovar']; ?></td>
+					<td><?php echo $row['fish_tovar']; ?></td>
+					<td><?php echo $row['gyrtovna_tovar']; ?></td>
+					<td><?php echo $row['centr_tovar']; ?></td>
+					<td><?php echo $row['bochka2_tovar']; ?></td>
+					<td><?php echo $row['fish2_tovar']; ?></td>
+					<td><?php echo $row['gyrtovna2_tovar']; ?></td>
+					<td><?php echo $row['centr2_tovar']; ?></td>
+					<td><?php echo $row['dostavka_tovar']; ?></td>
+					<td><?php echo $date_format; ?></td>
+					<td> <a href="<?php echo base_url .$middleUrl .'?edit&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .$middleUrl .'?delete&id='.$row['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+				</tr>
+				<?php }
+	} ?>
+			</table>
+		</div>

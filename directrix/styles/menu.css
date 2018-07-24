@@ -1,0 +1,41 @@
+.menu{
+	position: fixed;
+	background-color: #515151;	
+	float: left;
+	width: 200px;
+	height: 100%;
+}
+
+.menu-bar{
+	margin: 2px 0 20px 0;
+}
+.border-top{
+	border-top: 1px solid rgba(201, 201, 201, 0.29);
+}
+.logo img{
+	padding: 3%;
+	height: auto;
+	width: 100%;
+}
+ul.menu-bar li a{
+	height: 40px;	
+	color: #C4C4C4;
+	display: block;
+	line-height: 40px;
+	padding-left: 20px;
+}
+ul.menu-bar li{
+	height: 40px;
+	cursor: pointer;
+	width: 100%;
+
+	border-bottom: 1px solid rgba(201, 201, 201, 0.29);
+	list-style-type: none; 
+}
+ul.menu-bar li:hover{
+	background-color: #424242;
+}
+
+.menu a.current {
+    color: #f7be09;
+}

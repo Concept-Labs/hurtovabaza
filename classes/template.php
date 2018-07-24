@@ -136,47 +136,10 @@ Class Template
         //код для редагування статті
         $id = isset($_GET['id']) ? $_GET['id'] : 0; 
 
-
-        $res = mysqli_query($db, "   SELECT * FROM $table WHERE id='$id'");
-
-
-        $roww = mysqli_fetch_array($res);
-
-        if (isset($_POST['save'])) {
-            $name_tovar = strip_tags($_POST['name_tovar']);
-            $bochka_tovar = $_POST['bochka_tovar'];
-            $fish_tovar = $_POST['fish_tovar'];
-            $gyrtovna_tovar = $_POST['gyrtovna_tovar'];
-            $centr_tovar = $_POST['centr_tovar'];
-            
-            mysqli_query($db, "UPDATE `$table` SET `name_tovar`='$name_tovar',`bochka_tovar`='$bochka_tovar',`fish_tovar`='$fish_tovar',`gyrtovna_tovar`='$gyrtovna_tovar',`centr_tovar`='$centr_tovar' WHERE id='$id'");
-
-            header("Location:" .base_url .$table);
-            exit();
-        }
-
-//видалення статті
-        if (isset($_GET['delete'])) {
-            if (isset($_POST['delete_tovar'])) {
-                if ($_POST['delete_tovar'] == 1) {
-                    $delete = mysqli_query($db, "DELETE FROM `$table` WHERE id='$id'");
-                    header("Location:" .base_url .$table);
-                } else {
-                    header("Location:" .base_url .$table);
-                    exit();
-                }
-            }
-
-            
-
-        }
-
         mysqli_close($db);
 
         ?>
 
-        <?php 
-        if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
         <div class="date">
             <form action="<?php echo base_url .$table; ?>" method="post">
                 <select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
@@ -202,7 +165,6 @@ Class Template
 
         <div>
             <table>
-                  <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></i></a>
                 <tr class="table-top">
                     <td><?php echo $row['number']; ?></td>
                     <td class="width-name"><?php echo $row['name']; ?></td>
@@ -215,13 +177,12 @@ Class Template
                     <td><?php echo $row['gyrtovna2']; ?></td>
                     <td><?php echo $row['center2']; ?></td>
                     <td><?php echo $row['dostavka']; ?></td>
-                    <td><?php echo $row['dia']; ?></td>
                 </tr>
                 <?php if ($num2) {
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>
                     <tr>
                         <td><?php echo $row2['id']; ?></td>
-                        <td class="width-name"><a href="<?php echo base_url .$table .'?edit&id='.$row2['id']; ?>"><?php echo $row2['name_tovar']; ?></a></td>
+                        <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
                         <td><?php echo $row2['bochka_tovar']; ?></td>
                         <td><?php echo $row2['fish_tovar']; ?></td>
                         <td><?php echo $row2['gyrtovna_tovar']; ?></td>
@@ -231,72 +192,12 @@ Class Template
                         <td><?php echo $row2['gyrtovna2_tovar']; ?></td>
                         <td><?php echo $row2['centr2_tovar']; ?></td>
                         <td><?php echo $row2['dostavka_tovar']; ?></td>
-                        <td> <a href="<?php echo base_url .$table .'?edit&id='.$row2['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .$table .'?delete&id='.$row2['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                     <?php } } ?>
                 </table>
               
                 </div>
 
-
-            <?php
-        } else { 
-            if (isset($_GET['edit'])) {
-                ?>
-                <div>
-                    <form action="<?php echo base_url .$table .'?edit&id='.$roww['id']; ?>" method="post">
-                        <table class="add-table">
-                            <tr class="table-top">
-                                <td>№</td>
-                                <td class="width-name">Назва</td>
-                                <td>Бочка</td>
-                                <td>Рибний турмінал</td>
-                                <td>Гуртовня</td>
-                                <td>Центр</td>
-                                <td>Бочка</td>
-                                <td>Рибний термінал</td>
-                                <td>Гуртовня</td>
-                                <td>Центр</td>
-                            </tr>
-                            <tr>
-                                <td> <?php echo $roww['id']; ?></td>
-                                <td> <input type="text" name="name_tovar" value="<?php echo $roww['name_tovar']; ?>"> </td>
-                                <td> <input type="number" name="bochka_tovar" step="0.1" value="<?php echo $roww['bochka_tovar']; ?>"> </td>
-                                <td> <input type="number" name="fish_tovar" step="0.1" value="<?php echo $roww['fish_tovar']; ?>"> </td>
-                                <td> <input type="number" name="gyrtovna_tovar" step="0.1" value="<?php echo $roww['gyrtovna_tovar']; ?>"> </td>
-                                <td> <input type="number" name="centr_tovar" step="0.1" value="<?php echo $roww['centr_tovar']; ?>"> </td>
-                                <td><?php echo $roww['bochka2_tovar']; ?></td>
-                                <td><?php echo $roww['fish2_tovar']; ?></td>
-                                <td><?php echo $roww['gyrtovna2_tovar']; ?></td>
-                                <td><?php echo $roww['centr2_tovar']; ?></td>             
-                            </tr>
-                            <input class="sub-save" type="submit" name="save" value=" Зберегти">
-                        </table>
-                        <br/><br/><br/><br/><br/>
-
-                    </form>
-                    <?php
-                }
-                    if (isset($_GET['delete'])) {
-                        if (!isset($delete)) {?>
-                        <div class="medium-block-top zatmenie">
-                            <div class="centr-block">
-                            <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
-                                Ви дійсно хочете <span style="color: red;">видалити</span> даний товар!!!<br/><br/>
-                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
-                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
-                            </form>
-                        </div>
-                        </div>
-                        
-                        <?php  } else {
-                            echo "<div style='color: green;'>Товар успішно видалено!</div>";
-                        }
-
-                    }
-
-                }
-
-
+                <?php
             }
         }

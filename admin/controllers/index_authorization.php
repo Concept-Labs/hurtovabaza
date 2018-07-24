@@ -11,7 +11,7 @@ Class Controller_Index_Authorization Extends Controller_Base
     public function index() 
     {
         
-        $template = $this->_initTemplate('Вхід в адмінпанель');
+        $template = $this->_initTemplate('Вхід і адмінпанель');
         
         $template->setFile('templates/index_authorization.phtml');
 

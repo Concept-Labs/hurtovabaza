@@ -1,0 +1,223 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	font: normal 100% 'century gothic', arial;
+	display: block;
+}
+a{
+	height: 50px;
+	font: normal 100% 'century gothic', arial;
+	text-decoration: none;
+		color: #C4C4C4;
+}
+td.width-name a{
+	color: #1e91cf;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+.head{
+	display: block;
+	position: relative;
+	float: right;
+	width: 100%;
+	background-color:  #e5e5e5;
+	height: 55.5px;
+	border-bottom: 1px solid rgba(201, 201, 201, 0.29);
+}
+
+.content{
+    margin: 0 35px 0 235px;
+	height: auto;	
+}
+.dostavka-head{
+		padding: 0 20px;
+	cursor: pointer;
+		border-left: 1px solid rgba(201, 201, 201, 0.29);
+		border-right: 1px solid rgba(201, 201, 201, 0.29);
+	height: 100%;
+	width: auto;
+	float: right;
+}
+.dostavka-head:hover{
+	background: #cdcccc;
+}
+.dostavka-head a{
+	display: block;
+	line-height: 55px;
+	color: #515151;
+}
+.purchase{
+	border-right: 0px;
+}
+.search-head{
+	width: 220px;
+	float: right;
+	padding: 0	 20px;
+	margin-top: 15px;
+}
+input.search-form{
+	width: 160px;
+}
+ input.srch{
+	padding: 3px;
+	border: 0px;
+	border-radius: 5px;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+	font: normal 90% 'century gothic', arial;
+}
+ input[type="search"]:hover.search-form,  input[type="search"]:focus.search-form{
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
+}
+ input[type="submit"].search-btn{
+	background-color: #f8c409;
+	cursor: pointer;
+}
+ input[type="submit"]:hover.search-btn{
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
+}
+ input[type="submit"]:active.search-btn{
+	background-color: #ca9f08;
+	box-shadow: none;
+}
+.width-name{
+	text-align: center;
+	width: 23%;
+}
+table{
+
+	width: 100%;
+	background-color: #fcfcfc;
+	 border-collapse: collapse;
+	border: 1px solid rgba(201, 201, 201, 0.29);
+	text-align: center;
+	    font-family: sans-serif;
+}
+td{
+
+	border-right: 1px solid rgba(201, 201, 201, 0.29);
+	border-bottom: 1px solid rgba(201, 201, 201, 0.29);
+	padding: 5px 2.5px
+}
+td.border2{
+	border-right: 2px solid rgba(201, 201, 201, 0.29);
+}
+tr:hover, .table-top:not(:hover){
+	background-color: #f4f3f3;
+}
+
+.date{
+	float: left;
+	margin-top: 40px;
+	font: normal 150% 'century gothic', arial;
+}
+.delete-block-top{
+	padding-top: 200px;
+}
+.delete-block{
+	-webkit-box-shadow: 1px 1px 30px 0px rgba(48, 50, 50, 1);
+-moz-box-shadow:    1px 1px 30px 0px rgba(48, 50, 50, 1);
+box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
+	border-radius: 5px;
+	width: 40%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 2%;
+	font-size: 120%;
+	background-color: #fff;
+}
+.zatmenie {
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+/* фон затемнения */
+    background-color: rgba(0, 0, 0, 0.65);
+    position: fixed;/*  фиксированное поцизионирование */
+    cursor: default; /* тип курсара */
+}
+
+.sidebar-search input{
+	border: 1px solid silver;
+}
+
+.head a.current, .head a.current i {
+    color: #f7be09;
+}
+
+/* div.slogan{
+	width: 130px;
+	position: fixed;
+	color: #515151;
+    padding: 10px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    text-align: center;
+	top: 80%;
+    font-size: 80%;
+    margin: 25px;
+}
+div.slogan i{
+	font-size: 200%;
+		color: #515151;
+		display: inline-block;
+} */
+
+div.slogan{
+	width: 130px;
+	position: fixed;
+	color: #c4c4c4;
+    padding: 10px;
+    background-color: #c7c7c754;
+    border-radius: 10px;
+    text-align: center;
+	top: 80%;
+    font-size: 80%;
+    margin: 25px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+div.slogan:hover{
+	color: #515151;
+	background-color: #e5e5e5;
+	transform: scale(1.1);
+}
+div.slogan i{
+	 -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+	font-size: 200%;
+		color: #c4c4c4;
+}
+div.slogan:hover i{
+	color: #515151;
+}
+
+.dostavka-head a i{
+	display: block;
+	color: #000;
+	font-size: 150%;
+	line-height: 55px;
+	transition: all .8s;
+}
+.dostavka-head:hover i{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);  
+	transform: rotate(180deg);
+}
+
+.settings div{
+	padding-top: 100px;
+}
+.settings a.add-tovar{
+	margin: 20px 0 0 0;
+}

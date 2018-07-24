@@ -13,6 +13,12 @@ a{
 	text-decoration: none;
 		color: #C4C4C4;
 }
+td.width-name a{
+	color: #1e91cf;
+	display: block;
+	padding: 0;
+	margin: 0;
+}
 .head{
 	display: block;
 	position: relative;
@@ -146,4 +152,22 @@ box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
 
 .head a.current {
     color: #f7be09;
+}
+
+div.slogan{
+	width: 130px;
+	position: fixed;
+	color: #515151;
+    padding: 10px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    text-align: center;
+	top: 80%;
+    font-size: 80%;
+    margin: 25px;
+}
+div.slogan i{
+	font-size: 200%;
+		color: #515151;
+		display: inline-block;
 }

@@ -226,7 +226,7 @@ Class Template
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>
                     <tr>
                         <td><?php echo $row2['id']; ?></td>
-                        <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
+                        <td class="width-name"><a href="<?php echo base_url .$table .'?edit&id='.$row2['id']; ?>"><?php echo $row2['name_tovar']; ?></a></td>
                         <td><?php echo $row2['bochka_tovar']; ?></td>
                         <td><?php echo $row2['fish_tovar']; ?></td>
                         <td><?php echo $row2['gyrtovna_tovar']; ?></td>

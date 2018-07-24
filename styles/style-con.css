@@ -159,3 +159,21 @@ div.content > div.add-errore{
 	float: left;
 	padding-top: 25px;
 }
+
+div.slogan{
+	width: 130px;
+	position: fixed;
+	color: #515151;
+    padding: 10px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    text-align: center;
+	top: 80%;
+    font-size: 80%;
+    margin: 25px;
+}
+div.slogan i{
+	font-size: 200%;
+		color: #515151;
+		display: inline-block;
+}

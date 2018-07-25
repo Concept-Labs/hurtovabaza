@@ -1,0 +1,34 @@
+@media screen and (max-device-width: 560px)
+{   
+    .dostavka li{
+        width: 95%;
+    }
+    .dostavka li input[type="text"]{
+        width: 120px;
+        font-size: 180%;
+    }
+    .dostavka li .checkbox + label:before{
+        width: 90px;
+        height: 46px;
+        border-radius: 23px;
+    }
+    .dostavka li .checkbox + label:after{
+        width: 42px;
+        height: 42px;
+        border-radius: 21px;
+    }
+    .dostavka li .checkbox + label{
+        padding: 0 0 0 100px;
+    }
+    .dostavka li .checkbox:checked + label:after {
+      left: 46px;
+    }
+    .dostavka li label{
+     font-size: 65%;
+    }
+    input.save-dostavka{
+    padding: 2%;
+    width: 140px;
+    font-size: 140%;
+    }
+}

@@ -13,6 +13,7 @@ a{
 	text-decoration: none;
 		color: #C4C4C4;
 }
+
 td.width-name a{
 	color: #1e91cf;
 	display: block;
@@ -34,10 +35,10 @@ td.width-name a{
 	height: auto;	
 }
 .dostavka-head{
-		padding: 0 20px;
 	cursor: pointer;
 		border-left: 1px solid rgba(201, 201, 201, 0.29);
 		border-right: 1px solid rgba(201, 201, 201, 0.29);
+	padding: 0 20px;
 	height: 100%;
 	width: auto;
 	float: right;
@@ -46,6 +47,8 @@ td.width-name a{
 	background: #cdcccc;
 }
 .dostavka-head a{
+	height: 100%;
+	width: 100%;
 	display: block;
 	line-height: 55px;
 	color: #515151;
@@ -116,10 +119,10 @@ tr:hover, .table-top:not(:hover){
 	margin-top: 40px;
 	font: normal 150% 'century gothic', arial;
 }
-.delete-block-top{
+.medium-block-top{
 	padding-top: 200px;
 }
-.delete-block{
+.centr-block{
 	-webkit-box-shadow: 1px 1px 30px 0px rgba(48, 50, 50, 1);
 -moz-box-shadow:    1px 1px 30px 0px rgba(48, 50, 50, 1);
 box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
@@ -148,27 +151,14 @@ box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
 	border: 1px solid silver;
 }
 
-.head a.current, .head a.current i {
+.head a.current {
     color: #f7be09;
 }
 
-/* div.slogan{
-	width: 130px;
-	position: fixed;
-	color: #515151;
-    padding: 10px;
-    background-color: #e5e5e5;
-    border-radius: 10px;
-    text-align: center;
-	top: 80%;
-    font-size: 80%;
-    margin: 25px;
+div.content > div.add-errore{
+	float: left;
+	padding-top: 25px;
 }
-div.slogan i{
-	font-size: 200%;
-		color: #515151;
-		display: inline-block;
-} */
 
 div.slogan{
 	width: 130px;
@@ -199,6 +189,7 @@ div.slogan i{
 }
 div.slogan:hover i{
 	color: #515151;
+<<<<<<< HEAD
 }
 
 .dostavka-head a i{
@@ -220,4 +211,6 @@ div.slogan:hover i{
 }
 .settings a.add-tovar{
 	margin: 20px 0 0 0;
+=======
+>>>>>>> 592eed9c9180813e18c107d7fc6289db01a5f1e6
 }

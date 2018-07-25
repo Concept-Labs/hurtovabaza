@@ -1,0 +1,19 @@
+.purchase table{
+	width: 50%;
+	text-align: left;
+	margin-bottom: 40px;
+}
+.purchase table td{
+	padding-left: 30px;
+}
+
+@media screen and (max-device-width:1024px){
+	.purchase table{
+	width: 90%;
+	font-size: 150%;
+	}
+	.purchase h2{
+		font-size: 200%;
+	}
+	
+}

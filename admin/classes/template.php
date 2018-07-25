@@ -148,13 +148,8 @@ Class Template
             $fish_tovar = $_POST['fish_tovar'];
             $gyrtovna_tovar = $_POST['gyrtovna_tovar'];
             $centr_tovar = $_POST['centr_tovar'];
-            $bochka2_tovar = $_POST['bochka2_tovar'];
-            $fish2_tovar = $_POST['fish2_tovar'];
-            $gyrtovna2_tovar = $_POST['gyrtovna2_tovar'];
-            $centr2_tovar = $_POST['centr2_tovar'];
-            $dovtavutu = $bochka2_tovar + $fish2_tovar + $gyrtovna2_tovar + $centr2_tovar;
-            echo $name_tovar;
-            mysqli_query($db, "UPDATE `$table` SET `name_tovar`='$name_tovar',`bochka_tovar`='$bochka_tovar',`fish_tovar`='$fish_tovar',`gyrtovna_tovar`='$gyrtovna_tovar',`centr_tovar`='$centr_tovar',`bochka2_tovar`='$bochka2_tovar',`fish2_tovar`='$fish2_tovar',`gyrtovna2_tovar`='$gyrtovna2_tovar',`centr2_tovar`='$centr2_tovar',`dostavka_tovar`='$dovtavutu' WHERE id='$id'");
+            
+            mysqli_query($db, "UPDATE `$table` SET `name_tovar`='$name_tovar',`bochka_tovar`='$bochka_tovar',`fish_tovar`='$fish_tovar',`gyrtovna_tovar`='$gyrtovna_tovar',`centr_tovar`='$centr_tovar' WHERE id='$id'");
 
             header("Location:" .base_url .$table);
             exit();
@@ -207,7 +202,7 @@ Class Template
 
         <div>
             <table>
-                <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
+                  <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></i></a>
                 <tr class="table-top">
                     <td><?php echo $row['number']; ?></td>
                     <td class="width-name"><?php echo $row['name']; ?></td>
@@ -240,6 +235,7 @@ Class Template
                     </tr>
                     <?php } } ?>
                 </table>
+              
                 </div>
 
 
@@ -269,10 +265,10 @@ Class Template
                                 <td> <input type="number" name="fish_tovar" step="0.1" value="<?php echo $roww['fish_tovar']; ?>"> </td>
                                 <td> <input type="number" name="gyrtovna_tovar" step="0.1" value="<?php echo $roww['gyrtovna_tovar']; ?>"> </td>
                                 <td> <input type="number" name="centr_tovar" step="0.1" value="<?php echo $roww['centr_tovar']; ?>"> </td>
-                                <td> <input type="number" name="bochka2_tovar" step="0.1" value="<?php echo $roww['bochka2_tovar']; ?>"> </td>
-                                <td> <input type="number" name="fish2_tovar" step="0.1" value="<?php echo $roww['fish2_tovar']; ?>"> </td>
-                                <td> <input type="number" name="gyrtovna2_tovar" step="0.1" value="<?php echo $roww['gyrtovna2_tovar']; ?>"> </td>
-                                <td> <input type="number" name="centr2_tovar" step="0.1" value="<?php echo $roww['centr2_tovar']; ?>"> </td>             
+                                <td><?php echo $roww['bochka2_tovar']; ?></td>
+                                <td><?php echo $roww['fish2_tovar']; ?></td>
+                                <td><?php echo $roww['gyrtovna2_tovar']; ?></td>
+                                <td><?php echo $roww['centr2_tovar']; ?></td>             
                             </tr>
                             <input class="sub-save" type="submit" name="save" value=" Зберегти">
                         </table>
@@ -283,8 +279,8 @@ Class Template
                 }
                     if (isset($_GET['delete'])) {
                         if (!isset($delete)) {?>
-                        <div class="delete-block-top zatmenie">
-                            <div class="delete-block">
+                        <div class="medium-block-top zatmenie">
+                            <div class="centr-block">
                             <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
                                 Ви дійсно хочете <span style="color: red;">видалити</span> даний товар!!!<br/><br/>
                                 <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>

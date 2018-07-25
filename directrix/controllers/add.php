@@ -33,10 +33,10 @@ Class Controller_Add Extends Controller_Base
         $fish = $_POST['fish_tovar'];
         $gyrtovna = $_POST['gyrtovna_tovar'];
         $centr = $_POST['centr_tovar'];
-        $bochka2 = '';
-        $fish2 = '';
-        $gyrtovna2 = '';
-        $centr2 = '';
+        $bochka2 = $_POST['bochka2_tovar'];
+        $fish2 = $_POST['fish2_tovar'];
+        $gyrtovna2 = $_POST['gyrtovna2_tovar'];
+        $centr2 = $_POST['centr2_tovar'];
         $date = $_POST['date'];
 
         if (empty($name)) {

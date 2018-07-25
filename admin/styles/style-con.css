@@ -190,3 +190,22 @@ div.slogan i{
 div.slogan:hover i{
 	color: #515151;
 }
+
+.dostavka-head a i{
+	display: block;
+	color: #000;
+	font-size: 130%;
+	line-height: 55px;
+	transition: all .8s;
+}
+.dostavka-head:hover i{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);  
+	transform: rotate(180deg);
+}
+
+.settings div{
+	padding-top: 100px;
+}
+.settings a.add-tovar{

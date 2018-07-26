@@ -1,52 +1,69 @@
 <?php 
-if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
-<div class="settings">   
-<div>
-    <h2>Паролі до сайта</h2><br/><br/>
-    <table>
-        <tr>
-            <td>№</td>
-            <td class="width-name">Логін</td>
-            <td>Дата</td>
-            <td>Дія</td>
-        </tr>
-        <tr>
-            <?php if ($num) {
-                while ($row = mysqli_fetch_array($query, MYSQLI_BOTH)) { ?>
-                <td><?php echo $row['id']; ?></td>
-                <td class="width-name"><?php echo $row['name_tovar']; ?></td>
-                <td><?php echo $row['name_tovar']; ?></td>
-                <td> <a href="<?php echo base_url .'settings?edit_site&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_site&id='.$row['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
-                <?php } } ?>
-            </tr>
-        </table>
-        <a href="<?php echo base_url .'settings/add?site'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
-        </div>
+$query = $this->get('query');
+$num = $this->get('num');
 
-        <div>
-            <h2>Паролі до сторінки доставки</h2><br/><br/>
-            <table>
-                <tr>
-                    <td>№</td>
-                    <td class="width-name">Логін</td>
-                    <td>Дата</td>
-                    <td>Дія</td>
-                </tr>
-                <tr>
-                    <?php if ($num2) {
-                        while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>
-                        <td><?php echo $row2['id']; ?></td>
-                        <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
-                        <td><?php echo $row2['name_tovar']; ?></td>
-                        <td> <a href="<?php echo base_url .'settings?edit_delivery&id='.$row2['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_delivery&id='.$row2['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+$query2 = $this->get('query2');
+$num2 = $this->get('num2');
+
+$query3 = $this->get('query3');
+$num3 = $this->get('num3');
+
+$query4 = $this->get('query4');
+$num4 = $this->get('num4');
+$row4 = $this->get('row4');
+
+$roww = $this->get('roww');
+$delete = $this->get('delete');
+
+if (!isset($_GET['edit_site']) && !isset($_GET['delete_site'])) { ?>
+<div class="settings">   
+    <div>
+        <h2>Паролі до сайта</h2><br/><br/>
+        <table>
+            <tr class="table-top">
+                <td>№</td>
+                <td class="width-name">Логін</td>
+                <td>Дата</td>
+                <td>Дія</td>
+            </tr>
+            <?php if ($num) {
+                while ($row = mysqli_fetch_array($query, MYSQLI_BOTH)) {
+                    $date_format = date_format(date_create($row['date']), 'd.m.Y'); ?>
+                    <tr>                
+                        <td><?php echo $row['id']; ?></td>
+                        <td class="width-name"><?php echo $row['login']; ?></td>
+                        <td><?php echo $date_format; ?></td>
+                        <td> <a href="<?php echo base_url .'settings?edit_site&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_site&id='.$row['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
                         <?php } } ?>
                     </tr>
                 </table>
-                <a href="<?php echo base_url .'settings/add?delivery'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
+                <a href="<?php echo base_url .'settings/add?site'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
+            </div>
+
+            <div>
+                <h2>Паролі до сторінки доставки</h2><br/><br/>
+                <table>
+                    <tr>
+                        <td>№</td>
+                        <td class="width-name">Логін</td>
+                        <td>Дата</td>
+                        <td>Дія</td>
+                    </tr>
+                    <tr>
+                        <?php if ($num2) {
+                            while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>
+                            <td><?php echo $row2['id']; ?></td>
+                            <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
+                            <td><?php echo $row2['name_tovar']; ?></td>
+                            <td> <a href="<?php echo base_url .'settings?edit_delivery&id='.$row2['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_delivery&id='.$row2['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+                            <?php } } ?>
+                        </tr>
+                    </table>
+                    <a href="<?php echo base_url .'settings/add?delivery'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
                 </div>
 
                 <div>
-                    <h2>Паролі до панелі керування</h2><br/><br/>
+                    <h2>Паролі до адмінпанелі</h2><br/><br/>
                     <table>
                         <tr>
                             <td>№</td>
@@ -65,6 +82,28 @@ if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
                             </tr>
                         </table>
                         <a href="<?php echo base_url .'settings/add?admin'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
+                    </div>
+
+                    <div>
+                        <h2>Паролі до директорії</h2><br/><br/>
+                        <table>
+                            <tr>
+                                <td>№</td>
+                                <td class="width-name">Логін</td>
+                                <td>Дата</td>
+                                <td>Дія</td>
+                            </tr>
+                            <tr>
+                                <?php if ($num) {
+                                    while ($row = mysqli_fetch_array($query, MYSQLI_BOTH)) { ?>
+                                    <td><?php echo $row['id']; ?></td>
+                                    <td class="width-name"><?php echo $row['name_tovar']; ?></td>
+                                    <td><?php echo $row['name_tovar']; ?></td>
+                                    <td> <a href="<?php echo base_url .'settings?edit_site&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_site&id='.$row['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+                                    <?php } } ?>
+                                </tr>
+                            </table>
+                            <a href="<?php echo base_url .'settings/add?site'; ?>" class="add-tovar" title="Додати користувача"><i class="fas fa-plus"></i></a>
                         </div>
 
 
@@ -72,50 +111,26 @@ if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
                     } else { 
 
                         if (isset($_GET['edit_site'])) {
+                            $errore = $this->get('errore');
                             ?>
                             <div>
-                                <form action="<?php echo base_url .'settings?edit_site&id='.$roww['id']; ?>" method="post">
-                                    <table class="add-table">
-                                        <tr class="table-top">
-                                            <td>№</td>
-                                            <td class="width-name">Логін</td>
-                                            <td>Рік народження вашої мами</td>
-                                            <td>Новий пароль</td>
-                                            <td>Птвердження пароля</td>
-                                        </tr>
-                                        <tr>
-                                            <td> <?php echo $roww['id']; ?></td>
-                                            <td> <input type="text" name="name_tovar" value="<?php echo $roww['name_tovar']; ?>"> </td>
-                                            <td> <input type="text" name="bochka_tovar" step="0.1" value="<?php echo $roww['bochka_tovar']; ?>"> </td>
-                                            <td> <input type="text" name="fish_tovar" step="0.1" value="<?php echo $roww['fish_tovar']; ?>"> </td>
-                                            <td> <input type="text" name="gyrtovna_tovar" step="0.1" value="<?php echo $roww['gyrtovna_tovar']; ?>"> </td>             
-                                        </tr>
-                                        <input class="sub-save" type="submit" name="save" value=" Зберегти">
-                                    </table>
-                                    <br/><br/><br/><br/><br/>
-
-                                </form>
-                                <?php
-                            }
-
-                            if (isset($_GET['edit_delivery'])) {
-                                ?>
+                                <?php 
+                                if (!empty($errore)) echo "<div style='color: red;'>" .$errore ."</div>"; ?>
+                                </div>
                                 <div>
-                                    <form action="<?php echo base_url .'settings?edit_delivery&id='.$roww['id']; ?>" method="post">
+                                    <form action="<?php echo base_url .'settings?edit_site&id='.$roww['id']; ?>" method="post">
                                         <table class="add-table">
                                             <tr class="table-top">
                                                 <td>№</td>
                                                 <td class="width-name">Логін</td>
-                                                <td>Рік народження вашої мами</td>
                                                 <td>Новий пароль</td>
                                                 <td>Птвердження пароля</td>
                                             </tr>
                                             <tr>
                                                 <td> <?php echo $roww['id']; ?></td>
-                                                <td> <input type="text" name="name_tovar" value="<?php echo $roww['name_tovar']; ?>"> </td>
-                                                <td> <input type="text" name="bochka_tovar" step="0.1" value="<?php echo $roww['bochka_tovar']; ?>"> </td>
-                                                <td> <input type="text" name="fish_tovar" step="0.1" value="<?php echo $roww['fish_tovar']; ?>"> </td>
-                                                <td> <input type="text" name="gyrtovna_tovar" step="0.1" value="<?php echo $roww['gyrtovna_tovar']; ?>"> </td>             
+                                                <td><?php echo $roww['login']; ?></td>
+                                                <td> <input type="password" name="password"> </td>
+                                                <td> <input type="password" name="password-confirm"> </td>             
                                             </tr>
                                             <input class="sub-save" type="submit" name="save" value=" Зберегти">
                                         </table>
@@ -125,10 +140,29 @@ if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
                                     <?php
                                 }
 
-                                if (isset($_GET['edit_admin'])) {
+                                if (isset($_GET['delete_site'])) {
+                                            if (!isset($delete)) {
+                                                 ?>
+                                            <div class="delete-block-top zatmenie">
+                                                <div class="delete-block">
+                                                    <form action="<?php echo base_url .'settings?delete_site&id='.$roww['id']; ?>" method="post">
+                                                        Ви дійсно хочете <span style="color: red;">видалити</span> даного користувача!!!<br/><br/>
+                                                        <button type="submit" class="confirmation-btn" name="delete_user" value="1">Так</button>
+                                                        <button type="submit" class="confirmation-btn" name="delete_user" value="0">Ні</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <?php  } else {
+                                                echo "<div style='color: green;'>Користувача успішно видалено!</div>";
+                                            }
+
+                                        }
+
+                                if (isset($_GET['edit_delivery'])) {
                                     ?>
                                     <div>
-                                        <form action="<?php echo base_url .'settings?edit_admin&id='.$roww['id']; ?>" method="post">
+                                        <form action="<?php echo base_url .'settings?edit_delivery&id='.$roww['id']; ?>" method="post">
                                             <table class="add-table">
                                                 <tr class="table-top">
                                                     <td>№</td>
@@ -152,24 +186,51 @@ if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
                                         <?php
                                     }
 
-                                    if (isset($_GET['delete'])) {
-                                        if (!isset($delete)) {?>
-                                        <div class="delete-block-top zatmenie">
-                                            <div class="delete-block">
-                                                <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
-                                                    Ви дійсно хочете <span style="color: red;">видалити</span> даний товар!!!<br/><br/>
-                                                    <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
-                                                    <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
-                                                </form>
-                                            </div>
-                                        </div>
+                                    if (isset($_GET['edit_admin'])) {
+                                        ?>
+                                        <div>
+                                            <form action="<?php echo base_url .'settings?edit_admin&id='.$roww['id']; ?>" method="post">
+                                                <table class="add-table">
+                                                    <tr class="table-top">
+                                                        <td>№</td>
+                                                        <td class="width-name">Логін</td>
+                                                        <td>Рік народження вашої мами</td>
+                                                        <td>Новий пароль</td>
+                                                        <td>Птвердження пароля</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> <?php echo $roww['id']; ?></td>
+                                                        <td> <input type="text" name="name_tovar" value="<?php echo $roww['name_tovar']; ?>"> </td>
+                                                        <td> <input type="text" name="bochka_tovar" step="0.1" value="<?php echo $roww['bochka_tovar']; ?>"> </td>
+                                                        <td> <input type="text" name="fish_tovar" step="0.1" value="<?php echo $roww['fish_tovar']; ?>"> </td>
+                                                        <td> <input type="text" name="gyrtovna_tovar" step="0.1" value="<?php echo $roww['gyrtovna_tovar']; ?>"> </td>             
+                                                    </tr>
+                                                    <input class="sub-save" type="submit" name="save" value=" Зберегти">
+                                                </table>
+                                                <br/><br/><br/><br/><br/>
 
-                                        <?php  } else {
-                                            echo "<div style='color: green;'>Товар успішно видалено!</div>";
+                                            </form>
+                                            <?php
+                                        }
+
+                                        if (isset($_GET['delete'])) {
+                                            if (!isset($delete)) {?>
+                                            <div class="delete-block-top zatmenie">
+                                                <div class="delete-block">
+                                                    <form action="<?php echo base_url .$table .'?delete&id='.$roww['id']; ?>" method="post">
+                                                        Ви дійсно хочете <span style="color: red;">видалити</span> даний товар!!!<br/><br/>
+                                                        <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
+                                                        <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                            <?php  } else {
+                                                echo "<div style='color: green;'>Товар успішно видалено!</div>";
+                                            }
+
                                         }
 
                                     }
-
-                                }
-                                ?>
+                                    ?>
                                 </div> 

@@ -18,10 +18,7 @@ Class Controller_Delivery Extends Controller_Base
         $db = $this->_registry->get('db');
 
         $errorsl = array();
-        //для дебага розкоментувати слід срочку
-        //print_r($data); die;
-        //тут реєструємо
-        //проверяем данні
+        /
         if (isset($_POST['log'])) {    !        
             $login = htmlspecialchars(stripslashes(trim($_POST['login'])));
             $password = htmlspecialchars(stripslashes(md5($_POST['password'])));
@@ -43,9 +40,7 @@ Class Controller_Delivery Extends Controller_Base
             }
 
             if (empty($errorsl)) {
-                session_start([
-    'cookie_lifetime' => 30,
-]);
+                
                 $_SESSION['login_delivery'] = $row['login'];
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 22 2018 г., 21:08
+-- Время создания: Июл 26 2018 г., 20:28
 -- Версия сервера: 10.1.30-MariaDB
 -- Версия PHP: 7.2.2
 
@@ -31,11 +31,13 @@ SET time_zone = "+00:00";
 CREATE TABLE `users_delivery` (
   `id` int(11) UNSIGNED NOT NULL,
   `login` varchar(55) NOT NULL,
-  `password` varchar(55) NOT NULL
+  `password` varchar(55) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
-
+-- Дамп данных таблицы `users_delivery`
+--
 --
 -- Индексы сохранённых таблиц
 --

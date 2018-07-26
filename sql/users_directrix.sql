@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 25 2018 г., 22:06
+-- Время создания: Июл 26 2018 г., 20:31
 -- Версия сервера: 10.1.30-MariaDB
 -- Версия PHP: 7.2.2
 
@@ -31,15 +31,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `users_directrix` (
   `id` int(11) UNSIGNED NOT NULL,
   `login` varchar(55) NOT NULL,
-  `password` varchar(55) NOT NULL
+  `password` varchar(55) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `users_directrix`
---
-
-INSERT INTO `users_directrix` (`id`, `login`, `password`) VALUES
-(2, 'login_directrix', '6464966bf13722516be0c57bc117d777');
 
 --
 -- Индексы сохранённых таблиц
@@ -59,7 +55,7 @@ ALTER TABLE `users_directrix`
 -- AUTO_INCREMENT для таблицы `users_directrix`
 --
 ALTER TABLE `users_directrix`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,30 +1,41 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../styles/authorization.css">
+</head>
+<body class="delivery">	
+	
+
+	<?php 
 $errorsl = $this->get('errorsl');
 
 if (!isset($_SESSION['login_delivery'])) {            
 	?>
-	<div>
+	<div class="authorization-delivery">
 		<?php if (!empty($errorsl)) { ?>
 		<div>
 			<span style="color:red	;"><?php echo $errorsl; ?></span>
 		</div> 
 		<?php } ?>
 		<p>Вхід на сторінку доставки</p>
+		<br/>
 		<form action="<?php echo base_url .'delivery'; ?>" method="post">
-			<input type="text" name="login" placeholder=" ваш логін"/><br/><br/>
-			<input type="password" name="password" placeholder=" ваш пароль"/><br/><br/>
+			<input class="delivery-int" type="text" name="login" placeholder=" ваш логін"/><br/><br/>
+			<input class="delivery-int" type="password" name="password" placeholder=" ваш пароль"/><br/><br/>
 			<input type="submit" name="log" value="Увійти" />
 		</form>
 	</div>
 	<?php }
 	else { ?>
 
-	<div>
+	<div class="delivery-block-menu">
 		<span><a href="#">Бочка</a></span>
 		<span><a href="#">Рибний термінал</a></span>
 		<span><a href="#">Гуртовня</a></span>
 		<span><a href="#">Центр</a></span>
-		<span><a href="<?php echo base_url .'delivery/logout'; ?>">Вихід</a></span>
+			<span><a class="delivery-exit" href="<?php echo base_url .'delivery/logout'; ?>">Вихід</a></span>
 	</div>
 
 	<form action="<?php echo base_url .'delivery';?>" method="post">
@@ -32,11 +43,11 @@ if (!isset($_SESSION['login_delivery'])) {
 			<h2>Фрукти</h2>
 			<ul>
 				<li><input type="checkbox" class="checkbox" id="banan" />
-					<label for="banan">Банани</label><input type="text" name="banan" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" placeholder=" Кількість"></li>
+					<label for="banan">Банан</label><input type="text" name="banan" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" placeholder=" Кількість"></li>
 					<li>	<input type="checkbox" class="checkbox" id="apelsin" />
-						<label for="apelsin">Апeльсини</label><input type="text" name="" placeholder=" Кількість" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"></li>
+						<label for="apelsin">Апeльсин</label><input type="text" name="" placeholder=" Кількість" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"></li>
 						<li>	<input type="checkbox" class="checkbox" id="limon" />
-							<label for="limon">Лимони</label><input type="text" name="limon" placeholder=" Кількість" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"></li>
+							<label for="limon">Лимон</label><input type="text" name="limon" placeholder=" Кількість" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"></li>
 							<li>	<input type="checkbox" class="checkbox" id="laim" />
 								<label for="laim">Лайм</label><input type="text" name="laim" placeholder=" Кількість" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"></li>
 								<li>	<input type="checkbox" class="checkbox" id="greypfruit" />
@@ -464,3 +475,6 @@ if (!isset($_SESSION['login_delivery'])) {
 
 																																																																																																																																																																																																										</form>
 																																																																																																																																																																																																										<?php } ?>
+
+</body>
+</html>

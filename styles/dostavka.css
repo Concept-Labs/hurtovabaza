@@ -1,29 +1,37 @@
 div.dostavka{
 	margin: 0 auto;
 }
+div.dostavka > h2{
+  margin-top: 40px;
+}
 .dostavka li{
-	margin-top: 15px;
 	list-style-type: none;
-	width: 60%;
-	max-width: 600px;
+  border-bottom: 1px solid silver;
+  border-left: 1px solid silver;
+  border-right: 1px solid silver;
+  padding: 10px 5px;
+}
+.dostavka li:hover{
+  background-color: #f4f3f3;
 }
 
-.dostavka input{
+.dostavka input[type="text"]{
   text-align: center;
-  outline: none;
   float: right;
-  width: 60px;
-  padding: 5px;
-  border-radius: 50px;
+  width: 70px;
+ height: 20px;
+  border-radius: 0px;
   background: #fefefe;
-  border: 0px;
+  border-left: 1px solid silver;
   -webkit-transition: .3s all;
   -moz-transition: .3s all;
   -o-transition: .3s all;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
+  
 }
 .dostavka input:hover, .dostavka input:focus{
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
+ -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 1);
+-moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 1);
+box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 1);
 }
 
 .checkbox {
@@ -66,4 +74,116 @@ div.dostavka{
 }
 .checkbox:checked + label:after {
   left: 26px;
+}
+
+/* Блок авторизації для доставки */
+body.delivery{
+  background-color: #fff;
+}
+body.delivery .authorization-delivery{
+  background-color: #fff;
+  padding: 2%;
+  width: 30%;
+  margin: 100px auto;
+  text-align: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 30px 0px rgba(48, 50, 50, 1);
+  -moz-box-shadow:    1px 1px 30px 0px rgba(48, 50, 50, 1);
+  box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
+}
+body.delivery .authorization-delivery img{
+  max-width: 90%;
+  margin-bottom: 30px;
+}
+.authorization-delivery input.delivery-int{
+  max-width: 90%;
+  border-radius: 5px;
+  padding: 4px;
+  border: 0;
+  background-color: #faffbd;
+  outline: none;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+.authorization-delivery input:hover, input:focus{
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
+}
+.authorization-delivery input[type="submit"]{
+  background-color: #fabd07;
+  cursor: pointer;
+}
+.authorization-delivery input[type="submit"]:active{
+  background-color: #c79707;
+  box-shadow: none;
+}
+body.delivery .authorization-error{
+  background-color: red;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  width: 140px;
+  padding: 10px 5px;
+  border-radius: 0 0 5px 5px;
+  font: normal 90% 'century gothic', arial;
+}
+
+
+.width-delivery{
+  width: 60%;
+}
+/* Стилі для меню доставки */
+/* .delivery-block-menu{
+  background-color: #e5e5e5;
+  width: 200px;
+  text-align: center;
+  padding: 10px 0 0 0;
+  margin-top: -20px;
+  border-radius: 0 0 10px 10px;
+}
+.delivery-block-menu span{
+  width: 200px;
+opacity: 0;
+transition: all .3s;
+}
+.delivery-block-menu:active span, .delivery-block-menu:hover span{
+  opacity: 1;
+}
+.delivery-block-menu span a{
+   color: #515151;
+   width: 100%;
+   display: block;
+   height: 30px;
+   line-height: 30px;
+   -webkit-transition: all .2s;
+   -o-transition: all .2s;
+   transition: all .2s;
+}
+
+ */
+ .delivery-block-menu{
+    padding: 10px;
+    background: #e5e5e5;
+    border-radius: 0 0 10px 10px;
+ }
+ .delivery-block-menu span{
+  padding-left: 30px;
+  width: 3.99999%;
+ }
+ .delivery-block-menu span a{
+   color: #515151;
+  line-height: 30px;
+}
+ .delivery-block-menu span a:hover{
+  color: #f25c05;
+}
+
+span a.delivery-exit{
+  float: right;
+  color: #f25c05;
+}
+a.delivery-exit:hover{
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
 }

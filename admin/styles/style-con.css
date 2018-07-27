@@ -13,7 +13,9 @@ a{
 	text-decoration: none;
 		color: #C4C4C4;
 }
-
+.padding-content{
+	padding-top: 50px;
+}
 td.width-name a{
 	color: #1e91cf;
 	display: block;
@@ -208,4 +210,13 @@ div.slogan:hover i{
 .settings div{
 	padding-top: 100px;
 }
-.settings a.add-tovar{
+
+.add-errore{
+	float: left;
+	margin-top: 30px;
+}
+/* Блок розприділення */
+.distribution-block{
+	margin-top: 50px;
+}
+/* кінець розприділення */

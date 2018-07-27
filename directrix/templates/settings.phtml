@@ -27,7 +27,8 @@ $delete4 = $this->get('delete4');
 if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['edit_delivery']) && !isset($_GET['delete_delivery']) && !isset($_GET['edit_admin']) && !isset($_GET['delete_admin']) && !isset($_GET['edit_directrix']) && !isset($_GET['delete_directrix'])) { ?>
 <div class="settings">   
     <div>
-        <h2>Паролі до сайта</h2><br/><br/>
+        <h2>Паролі до сайта</h2>
+        <br/>
         <table>
             <tr class="table-top">
                 <td>№</td>
@@ -42,7 +43,7 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                         <td><?php echo $row['id']; ?></td>
                         <td class="width-name"><a href="<?php echo base_url .'settings?edit_site&id='.$row['id']; ?>"><?php echo $row['login'];?></a></td>
                         <td><?php echo $date_format; ?></td>
-                        <td> <a href="<?php echo base_url .'settings?edit_site&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_site&id='.$row['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+                        <td> <a href="<?php echo base_url .'settings?edit_site&id='.$row['id']; ?>" class="edit" title="Змінити пароль"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_site&id='.$row['id']; ?>" class="delete" title="Видалити пароль"><i class="fas fa-trash-alt"></i></a></td>
                         <?php } } ?>
                     </tr>
                 </table>
@@ -50,7 +51,8 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
             </div>
 
             <div>
-                <h2>Паролі до сторінки доставки</h2><br/><br/>
+                <h2>Паролі до сторінки доставки</h2>
+                <br/>
                 <table>
                     <tr class="table-top">
                         <td>№</td>
@@ -65,7 +67,7 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                         <td><?php echo $row2['id']; ?></td>
                         <td class="width-name"><a href="<?php echo base_url .'settings?edit_delivery&id='.$row2['id']; ?>"><?php echo $row2['login'];?></a></td>
                         <td><?php echo $date_format2; ?></td>
-                        <td> <a href="<?php echo base_url .'settings?edit_delivery&id='.$row2['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_delivery&id='.$row2['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+                        <td> <a href="<?php echo base_url .'settings?edit_delivery&id='.$row2['id']; ?>" class="edit" title="Змінити пароль"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_delivery&id='.$row2['id']; ?>" class="delete" title="Видалити пароль"><i class="fas fa-trash-alt"></i></a></td>
                         <?php } } ?>
                     </tr>
                     </table>
@@ -73,7 +75,8 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                 </div>
 
                 <div>
-                    <h2>Паролі до адмінпанелі</h2><br/><br/>
+                    <h2>Паролі до адмінпанелі</h2>
+                    <br/>
                     <table>
                         <tr class="table-top">
                             <td>№</td>
@@ -88,7 +91,7 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                         <td><?php echo $row3['id']; ?></td>
                         <td class="width-name"><a href="<?php echo base_url .'settings?edit_admin&id='.$row3['id']; ?>"><?php echo $row3['login'];?></a></td>
                         <td><?php echo $date_format3; ?></td>
-                        <td> <a href="<?php echo base_url .'settings?edit_admin&id='.$row3['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_admin&id='.$row3['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+                        <td> <a href="<?php echo base_url .'settings?edit_admin&id='.$row3['id']; ?>" class="edit" title="Змінити пароль"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_admin&id='.$row3['id']; ?>" class="delete" title="Видалити пароль"><i class="fas fa-trash-alt"></i></a></td>
                         <?php } } ?>
                     </tr>
                         </table>
@@ -96,7 +99,8 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                     </div>
 
                     <div>
-                        <h2>Паролі до директорії</h2><br/><br/>
+                        <h2>Паролі до дирекції</h2>
+                        <br/>
                         <table>
                             <tr  class="table-top">
                                 <td>№</td>
@@ -111,7 +115,7 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                         <td><?php echo $row4['id']; ?></td>
                         <td class="width-name"><a href="<?php echo base_url .'settings?edit_directrix&id='.$row4['id']; ?>"><?php echo $row4['login'];?></a></td>
                         <td><?php echo $date_format4; ?></td>
-                        <td> <a href="<?php echo base_url .'settings?edit_directrix&id='.$row4['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_directrix&id='.$row4['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
+                        <td> <a href="<?php echo base_url .'settings?edit_directrix&id='.$row4['id']; ?>" class="edit" title="Змінити пароль"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_directrix&id='.$row4['id']; ?>" class="delete" title="Видалити пароль"><i class="fas fa-trash-alt"></i></a></td>
                         <?php } } ?>
                     </tr>
                             </table>
@@ -127,7 +131,7 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                             ?>
                             <div>
                                 <?php 
-                                if (!empty($errore)) echo "<div style='color: red;'>" .$errore ."</div>"; ?>
+                                if (!empty($errore)) echo "<div style='color: red;  float: right;'>" .$errore ."</div>"; ?>
                                 </div>
                                 <div>
                                     <h3>Змінити пароль</h3>
@@ -177,7 +181,7 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                             ?>
                             <div>
                                 <?php 
-                                if (!empty($errore2)) echo "<div style='color: red;'>" .$errore2 ."</div>"; ?>
+                                if (!empty($errore2)) echo "<div style='color: red; float: right;'>" .$errore2 ."</div>"; ?>
                                 </div>
                                 <div>
                                     <h3>Змінити пароль</h3>
@@ -227,7 +231,7 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                             ?>
                             <div>
                                 <?php 
-                                if (!empty($errore3)) echo "<div style='color: red;'>" .$errore3 ."</div>"; ?>
+                                if (!empty($errore3)) echo "<div style='color: red; float: right;'>" .$errore3 ."</div>"; ?>
                                 </div>
                                 <div>
                                     <h3>Змінити пароль</h3>
@@ -277,7 +281,7 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                             ?>
                             <div>
                                 <?php 
-                                if (!empty($errore4)) echo "<div style='color: red;'>" .$errore4 ."</div>"; ?>
+                                if (!empty($errore4)) echo "<div style='color: red; float: right;'>" .$errore4 ."</div>"; ?>
                                 </div>
                                 <div>
                                     <h3>Змінити пароль</h3>

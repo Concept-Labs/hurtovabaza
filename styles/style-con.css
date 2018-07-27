@@ -14,7 +14,7 @@ a{
 		color: #C4C4C4;
 }
 .padding-content{
-	padding-top: 50px;
+	padding-top: 60px;
 }
 td.width-name a{
 	color: #1e91cf;
@@ -120,6 +120,7 @@ tr:hover, .table-top:not(:hover){
 .date{
 	float: left;
 	font: normal 150% 'century gothic', arial;
+	margin-top: 40px;
 }
 .medium-block-top{
 	padding-top: 200px;

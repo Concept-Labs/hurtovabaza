@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" href="../styles/media.css" media="screen">
         <link rel="stylesheet" href="../styles/purchase.css" media="screen">
+        <script type="text/javascript" src="../script/Jquery.js"></script>
     </head>
     <body>
         {{$header}}
@@ -17,5 +18,30 @@
                 {{$content}}
             </div>            
         </div>
+        <script type="text/javascript">
+       let checkbox = document.querySelector('#banan');
+
+// Сразу ставим переключатель в нужное положение
+setSavedValue(checkbox);
+// Отслеживаем переключение
+checkbox.addEventListener('change', changeSound);
+
+// Извлекаем/создаём состояние чекбокса (default: 1)
+function setSavedValue(e){
+  if(localStorage.getItem('soundState') === null){
+    e.checked = true;
+    localStorage.setItem('soundState', 1);
+  }else{
+    e.checked = localStorage.getItem('soundState') == 1;
+  }
+}
+
+// Меняем состояние в хранилище, после перезагрузки страницы и даже удалении кук, это будет в сохранности
+// Хотя и это очистить легко
+function changeSound(e){
+  // Ваш код, если нужно
+  localStorage.setItem('soundState', localStorage.getItem('soundState') == 1 ? 0 : 1);
+}
+        </script>
     </body>
 </html>

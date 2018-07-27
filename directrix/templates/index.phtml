@@ -7,10 +7,15 @@
         {{$headfiles}}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <link rel="stylesheet" href="../styles/media.css" media="screen">
+        <link rel="stylesheet" href="../styles/style-con.css">
     </head>
     <body>
         {{$header}}
         {{$menu}}
-        <div class="content">{{$content}}</div>
+        <div class="content">
+            <div class="padding-content">
+                {{$content}}
+            </div>      
+        </div>
     </body>
 </html>

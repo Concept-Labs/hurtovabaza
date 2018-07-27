@@ -120,6 +120,7 @@ tr:hover, .table-top:not(:hover){
 .date{
 	float: left;
 	font: normal 150% 'century gothic', arial;
+	margin-top: 40px;
 }
 .medium-block-top{
 	padding-top: 200px;

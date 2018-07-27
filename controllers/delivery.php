@@ -18,7 +18,7 @@ Class Controller_Delivery Extends Controller_Base
         $db = $this->_registry->get('db');
 
         $errorsl = array();
-        /
+        
         if (isset($_POST['log'])) {    !        
             $login = htmlspecialchars(stripslashes(trim($_POST['login'])));
             $password = htmlspecialchars(stripslashes(md5($_POST['password'])));

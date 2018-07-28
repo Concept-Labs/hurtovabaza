@@ -59,7 +59,7 @@ td.width-name a{
 	border-right: 0px;
 }
 .search-head{
-	width: 220px;
+	width: auto;
 	float: right;
 	padding: 0	 20px;
 	margin-top: 15px;

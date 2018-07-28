@@ -13,23 +13,20 @@
         padding: 10px;
     }
     .dostavka li .checkbox + label:before{
-        width: 90px;
-        height: 46px;
+        width: 80px;
+        height: 36px;
         border-radius: 23px;
     }
     .dostavka li .checkbox + label:after{
-        width: 42px;
-        height: 42px;
+        width: 32px;
+        height: 32px;
         border-radius: 21px;
     }
     .dostavka li .checkbox + label{
         padding: 0 0 0 100px;
     }
     .dostavka li .checkbox:checked + label:after {
-      left: 46px;
-    }
-    .dostavka li label{
-     font-size: 65%;
+      left: 45px;
     }
     input.save-dostavka{
     padding: 2%;

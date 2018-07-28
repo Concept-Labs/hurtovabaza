@@ -83,5 +83,9 @@ input[type="submit"]:active{
 		padding: 10px;
 		border-radius: 10px;
 	}
+	.authorization-error{
+	width: 440px;
+	font: normal 250% 'century gothic', arial;
+	}
 }
 

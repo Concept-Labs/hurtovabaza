@@ -3,7 +3,7 @@
 	padding: 0;
 }
 body{
-    background-color: rgba(0, 0, 0, 0.25);
+	background-color: rgba(0, 0, 0, 0.25);
 
 }
 p{
@@ -37,7 +37,7 @@ input{
 	transition: all .3s;
 }
 input:hover, input:focus{
-		box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
 }
 input[type="submit"]{
 	background-color: #fabd07;
@@ -82,5 +82,9 @@ input[type="submit"]:active{
 		font-size: 50px;
 		padding: 10px;
 		border-radius: 10px;
+	}
+	.authorization-error{
+		width: 440px;
+		font: normal 250% 'century gothic', arial;
 	}
 }

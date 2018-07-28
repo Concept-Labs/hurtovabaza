@@ -36,11 +36,6 @@ CREATE TABLE `users_site` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `users_site`
---
-
-INSERT INTO `users_site` (`id`, `login`, `password`, `date`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '0000-00-00');
 
 --
 -- Индексы сохранённых таблиц
@@ -60,7 +55,7 @@ ALTER TABLE `users_site`
 -- AUTO_INCREMENT для таблицы `users_site`
 --
 ALTER TABLE `users_site`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

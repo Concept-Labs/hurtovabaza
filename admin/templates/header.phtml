@@ -11,10 +11,10 @@
 		
 	</div>
 	<div class="dostavka-head">
-		<a class="<?php if($current == '/purchase'): ?>current<?php endif; ?>" href="<?php echo base_url .'purchase';?>">Закупка</a>
+		<a class="<?php if($current == '/admin/purchase'): ?>current<?php endif; ?>" href="<?php echo base_url .'purchase';?>">Закупка</a>
 	</div>
 	<div class="dostavka-head purchase">
-		<a href="<?php echo base_url .'distribution';?>">Розприділення</a>
+		<a class="<?php if($current == '/admin/distribution'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution';?>">Розприділення</a>
 	</div>
 
 </div>

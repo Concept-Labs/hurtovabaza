@@ -12,7 +12,7 @@ Class Controller_Index Extends Controller_Base
     public function index() 
     {
      	
-		$template = $this->_initTemplate('Директорія HurtovaBaza');
+		$template = $this->_initTemplate('Дирекція HurtovaBaza');
         
         $template->setFile('templates/main.phtml');
         

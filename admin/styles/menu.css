@@ -36,6 +36,6 @@ ul.menu-bar li:hover{
 	background-color: #424242;
 }
 
-.menu a.current {
+.menu-bar li a.current {
     color: #f7be09;
 }

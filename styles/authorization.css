@@ -22,7 +22,7 @@ div.authorization-block{
 	box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
 }
 div.authorization-block img{
-	max-width: 90%;
+	max-width: 100%;
 	margin-bottom: 30px;
 }
 input{

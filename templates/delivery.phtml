@@ -37,8 +37,9 @@
 			<span><a href="#">Центр</a></span>
 			<span><a class="delivery-exit" href="<?php echo base_url .'delivery/logout'; ?>">Вихід</a></span>
 		</div>
-
+			
 		<form action="<?php echo base_url .'delivery';?>" method="post">
+			<input class="sub-reset" type="reset" value="Скинути" title="Скинути введення">
 			<div class="dostavka">	
 				<h2>Фрукти</h2>
 				<ul>
@@ -494,9 +495,10 @@
 				<li><input type="checkbox" class="checkbox" id="oil-polsha5l" />
 					<label for="oil-polsha5l">Олія (Польща)5л</label><input type="text" name="oil-polsha5l" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" placeholder=" Кількість">
 				</li>
-				<li><input type="submit" class="sub-save save-dostavka" value="Зберегти"></li>
+				<li style="border: 0;"></li>
 			</ul>
 		</div>
+		<input type="submit" class="sub-save save-dostavka" value="Зберегти">
 	</form>
 <?php } ?>
 </body>

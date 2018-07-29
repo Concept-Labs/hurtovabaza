@@ -4,6 +4,9 @@ div.dostavka{
 div.dostavka > h2{
   margin-top: 40px;
 }
+.dostavka ul{
+  margin-top: 10px;
+}
 .dostavka li{
 	list-style-type: none;
   border-bottom: 1px solid silver;

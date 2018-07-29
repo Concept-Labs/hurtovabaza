@@ -1,16 +1,23 @@
-@media screen and (max-device-width: 800px)
+@media screen and (max-device-width: 1024px)
 {   
+    .head a{
+        font-size: 130%;
+        padding: 0;
+    }
+    .dostavka-head{
+        padding: 0 10px;
+    }
     .dostavka h2{
         font-size: 250%;
     }
     .dostavka li{
-        width: 95%;
-        margin-top: 35px;
+        width: 97%;
+        padding: 15px;
     }
     .dostavka li input[type="text"]{
         width: 120px;
-        font-size: 170%;
-        padding: 10px;
+        font-size: 140%;
+        padding: 5px;
     }
     .dostavka li .checkbox + label:before{
         width: 80px;
@@ -33,15 +40,15 @@
     width: 140px;
     font-size: 140%;
     }
+      .dostavka ul li label{
+     font-size: .7em;
+    }
 }
 
-@media screen and (max-device-width: 1024px){
-    .head a{
-        font-size: 130%;
-        padding: 0;
-    }
-    .dostavka-head{
-        padding: 0 10px;
+@media screen and (min-device-width: 768px){
+    
+      .dostavka ul li label{
+     font-size: 1em;
     }
 }
 

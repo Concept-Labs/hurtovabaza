@@ -18,10 +18,10 @@ div.dostavka > h2{
   background-color: #f4f3f3;
 }
 
-.dostavka input[type="text"]{
+.dostavka input[type="number"]{
   text-align: center;
   float: right;
-  width: 70px;
+  width: 90px;
  height: 20px;
   border-radius: 0px;
   background: #fefefe;

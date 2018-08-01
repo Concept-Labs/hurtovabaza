@@ -217,7 +217,7 @@ Class Template
                     <td><?php echo $row['dostavka']; ?></td>
                     <td><?php echo $row['dia']; ?></td>
                 </tr>
-                <?php if ($num2) {
+                <?php if ($num2 != 0) {
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>
                     <tr>
                         <td><?php echo $row2['id']; ?></td>

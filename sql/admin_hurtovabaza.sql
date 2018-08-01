@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Июл 27 2018 г., 21:11
+-- Время создания: Июл 31 2018 г., 11:33
 -- Версия сервера: 5.5.56-MariaDB
 -- Версия PHP: 5.6.37
 
@@ -51,7 +51,6 @@ CREATE TABLE `fish_sm` (
 
 CREATE TABLE `fruits` (
   `id` int(111) UNSIGNED NOT NULL,
-  `kod_tovar` varchar(55) NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
   `fish_tovar` varchar(55) NOT NULL,
@@ -64,6 +63,13 @@ CREATE TABLE `fruits` (
   `dostavka_tovar` varchar(55) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `fruits`
+--
+
+INSERT INTO `fruits` (`id`, `name_tovar`, `bochka_tovar`, `fish_tovar`, `gyrtovna_tovar`, `centr_tovar`, `bochka2_tovar`, `fish2_tovar`, `gyrtovna2_tovar`, `centr2_tovar`, `dostavka_tovar`, `date`) VALUES
+(3, 'Банани', '45', '0', '0', '0', '0', '0', '0', '0', '0', '2018-07-31');
 
 -- --------------------------------------------------------
 
@@ -102,7 +108,6 @@ INSERT INTO `name_baz` (`id`, `number`, `name`, `bochka`, `fish`, `gyrtovna`, `c
 
 CREATE TABLE `ovis` (
   `id` int(111) UNSIGNED NOT NULL,
-  `kod_tovar` varchar(55) NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
   `fish_tovar` varchar(55) NOT NULL,
@@ -124,7 +129,6 @@ CREATE TABLE `ovis` (
 
 CREATE TABLE `radema` (
   `id` int(111) UNSIGNED NOT NULL,
-  `kod_tovar` varchar(55) NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
   `fish_tovar` varchar(55) NOT NULL,
@@ -146,7 +150,6 @@ CREATE TABLE `radema` (
 
 CREATE TABLE `ramake` (
   `id` int(111) UNSIGNED NOT NULL,
-  `kod_tovar` varchar(55) NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
   `fish_tovar` varchar(55) NOT NULL,
@@ -168,7 +171,6 @@ CREATE TABLE `ramake` (
 
 CREATE TABLE `sausage` (
   `id` int(111) UNSIGNED NOT NULL,
-  `kod_tovar` varchar(55) NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
   `fish_tovar` varchar(55) NOT NULL,
@@ -249,7 +251,6 @@ CREATE TABLE `users_site` (
 
 CREATE TABLE `vegetables` (
   `id` int(111) UNSIGNED NOT NULL,
-  `kod_tovar` varchar(55) NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
   `fish_tovar` varchar(55) NOT NULL,
@@ -353,7 +354,7 @@ ALTER TABLE `fish_sm`
 -- AUTO_INCREMENT для таблицы `fruits`
 --
 ALTER TABLE `fruits`
-  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `name_baz`
@@ -365,7 +366,7 @@ ALTER TABLE `name_baz`
 -- AUTO_INCREMENT для таблицы `ovis`
 --
 ALTER TABLE `ovis`
-  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `radema`
@@ -383,7 +384,7 @@ ALTER TABLE `ramake`
 -- AUTO_INCREMENT для таблицы `sausage`
 --
 ALTER TABLE `sausage`
-  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `users_admin`

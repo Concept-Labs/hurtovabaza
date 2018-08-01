@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Июл 13 2018 г., 20:11
--- Версия сервера: 10.1.30-MariaDB
--- Версия PHP: 7.2.2
+-- Хост: localhost
+-- Время создания: Июл 31 2018 г., 11:31
+-- Версия сервера: 5.5.56-MariaDB
+-- Версия PHP: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `hurtovabaza`
+-- База данных: `admin_hurtovabaza`
 --
 
 -- --------------------------------------------------------
@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `radema` (
   `id` int(111) UNSIGNED NOT NULL,
-  `kod_tovar` varchar(55) NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
   `fish_tovar` varchar(55) NOT NULL,
@@ -44,9 +43,6 @@ CREATE TABLE `radema` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Дамп данных таблицы `radema`
---
 --
 -- Индексы сохранённых таблиц
 --
@@ -65,7 +61,7 @@ ALTER TABLE `radema`
 -- AUTO_INCREMENT для таблицы `radema`
 --
 ALTER TABLE `radema`
-  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

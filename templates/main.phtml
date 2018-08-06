@@ -28,7 +28,7 @@ $result7 = $this->get('result7');
 $num7 = $this->get('num7');
 ?>
 
-<div class="date-purchase">
+<div class="date date-purchase">
 	<form action="<?php echo base_url; ?>" method="post">
 		<select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
 			<option>Дата</option>
@@ -295,7 +295,7 @@ if (!empty($num) || !empty($num2) || !empty($num3) || !empty($num4)|| !empty($nu
 	?>
 	<div>
 		<?php
-		echo "За ".$date_page_format." доставки небуло!";
+		echo "За ".$date_page_format." внесень не було!";
 		?>
 	</div>
 	<?php 

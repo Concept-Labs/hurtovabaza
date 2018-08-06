@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ramake`
+-- Структура таблицы `remake`
 --
 
-CREATE TABLE `ramake` (
+CREATE TABLE `remake` (
   `id` int(111) UNSIGNED NOT NULL,
   `name_tovar` varchar(55) NOT NULL,
   `bochka_tovar` varchar(55) NOT NULL,
@@ -48,9 +48,9 @@ CREATE TABLE `ramake` (
 --
 
 --
--- Индексы таблицы `ramake`
+-- Индексы таблицы `remake`
 --
-ALTER TABLE `ramake`
+ALTER TABLE `remake`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,9 +58,9 @@ ALTER TABLE `ramake`
 --
 
 --
--- AUTO_INCREMENT для таблицы `ramake`
+-- AUTO_INCREMENT для таблицы `remake`
 --
-ALTER TABLE `ramake`
+ALTER TABLE `remake`
   MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 

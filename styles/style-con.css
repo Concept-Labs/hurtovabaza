@@ -122,6 +122,9 @@ tr:hover, .table-top:not(:hover){
 	font: normal 150% 'century gothic', arial;
 	margin-top: 40px;
 }
+.date-purchase{
+	float: none;
+}
 .medium-block-top{
 	padding-top: 200px;
 }

@@ -166,3 +166,17 @@ a.delivery-exit:hover{
   transform: scale(1.1);
 }
 /* кінець меню доставки */
+
+/* таблиця в розділі закупка */
+.purchase table{
+  width: 60%;
+  text-align: left;
+}
+.purchase table tr.table-top, .purchase table tr.table-top td{
+  text-align: center;
+  padding-left: 0px;
+}
+.purchase table td{
+  padding-left: 50px;
+}
+/* кінець таблиці в закупці */

@@ -39,34 +39,9 @@
 				<td>Центр</td>
 				<td>Доставити</td>
 				<td>Дата</td>
-				<td>Дія</td>
 			</tr>
 			<?php
-			while ($row = mysqli_fetch_array($query)) { 
-				$middleUrl = '';
-				switch ($row['table']) {
-					case 'vegetables':
-					$middleUrl = 'vegetables';
-					break;
-					case 'fruits':
-					$middleUrl = 'fruits';
-					break;
-					case 'sausage':
-					$middleUrl = 'sausage';
-					break;
-					case 'fish_sm':
-					$middleUrl = 'fish_sm';
-					break;
-					case 'remake':
-					$middleUrl = 'remake';
-					break;
-					case 'ovis':
-					$middleUrl = 'ovis';
-					break;
-					case 'radema':
-					$middleUrl = 'radema';
-					break;
-				} 
+			while ($row = mysqli_fetch_array($query)) {  
 				$date_format = date_format(date_create($row['date']), 'd.m.Y');
 				?>
 
@@ -83,7 +58,6 @@
 					<td><?php echo $row['centr2_tovar']; ?></td>
 					<td><?php echo $row['dostavka_tovar']; ?></td>
 					<td><?php echo $date_format; ?></td>
-					<td> <a href="<?php echo base_url .$middleUrl .'?edit&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .$middleUrl .'?delete&id='.$row['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
 				</tr>
 				<?php }
 	} ?>

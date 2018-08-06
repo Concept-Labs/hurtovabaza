@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Время создания: Июл 13 2018 г., 20:11
--- Версия сервера: 10.1.30-MariaDB
--- Версия PHP: 7.2.2
+-- Хост: localhost
+-- Время создания: Июл 31 2018 г., 11:30
+-- Версия сервера: 5.5.56-MariaDB
+-- Версия PHP: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `hurtovabaza`
+-- База данных: `admin_hurtovabaza`
 --
 
 -- --------------------------------------------------------
@@ -44,9 +44,6 @@ CREATE TABLE `fish_sm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `fish_sm`
---
---
 -- Индексы сохранённых таблиц
 --
 
@@ -64,7 +61,7 @@ ALTER TABLE `fish_sm`
 -- AUTO_INCREMENT для таблицы `fish_sm`
 --
 ALTER TABLE `fish_sm`
-  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+  MODIFY `id` int(111) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

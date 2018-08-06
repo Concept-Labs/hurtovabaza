@@ -22,7 +22,7 @@ Class Controller_Add Extends Controller_Base
       elseif (isset($_GET['fruits'])) $_SESSION['table'] = 'fruits';
       elseif (isset($_GET['sausage'])) $_SESSION['table'] = 'sausage';
       elseif (isset($_GET['fish_sm'])) $_SESSION['table'] = 'fish_sm';
-      elseif (isset($_GET['ramake'])) $_SESSION['table'] = 'ramake';
+      elseif (isset($_GET['remake'])) $_SESSION['table'] = 'remake';
       elseif (isset($_GET['ovis'])) $_SESSION['table'] = 'ovis';
       elseif (isset($_GET['radema'])) $_SESSION['table'] = 'radema';
       $table = $_SESSION['table'];

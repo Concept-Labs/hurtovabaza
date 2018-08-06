@@ -19,29 +19,5 @@
                 {{$content}}
             </div>            
         </div>
-        <script type="text/javascript">
-       let checkbox = document.querySelector('#banan'); 
-// Сразу ставим переключатель в нужное положение
-setSavedValue(checkbox);
-// Отслеживаем переключение
-checkbox.addEventListener('change', changeSound);
-
-// Извлекаем/создаём состояние чекбокса (default: 1)
-function setSavedValue(e){
-  if(localStorage.getItem('soundState') === null){
-    e.checked = true;
-    localStorage.setItem('soundState', 1);
-  }else{
-    e.checked = localStorage.getItem('soundState') == 1;
-  }
-}
-
-// Меняем состояние в хранилище, после перезагрузки страницы и даже удалении кук, это будет в сохранности
-// Хотя и это очистить легко
-function changeSound(e){
-  // Ваш код, если нужно
-  localStorage.setItem('soundState', localStorage.getItem('soundState') == 1 ? 0 : 1);
-}
-        </script>
     </body>
 </html>

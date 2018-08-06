@@ -67,3 +67,17 @@ div.dostavka{
 .checkbox:checked + label:after {
   left: 26px;
 }
+
+/* таблиця в розділі закупка */
+.purchase table{
+  width: 60%;
+  text-align: left;
+}
+.purchase table tr.table-top, .purchase table tr.table-top td{
+  text-align: center;
+  padding-left: 0px;
+}
+.purchase table td{
+  padding-left: 50px;
+}
+/* кінець таблиці в закупці */

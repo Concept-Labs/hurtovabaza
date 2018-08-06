@@ -185,7 +185,7 @@ Class Template
                     for($i = 0;  $i <= 4000; $i++ ){
                         $next_date = date('Y-m-d', strtotime($date_today .' -'.$i .'day'));
                         $next_date_format = date_format(date_create($next_date), 'd.m.Y');
-                        if ($next_date >= '2018-07-14') {?>
+                        if ($next_date >= '2018-08-01') {?>
                         <option value="<?php echo $next_date; ?>"><?php echo $next_date_format;?></option> 
                         <?php }
                     }

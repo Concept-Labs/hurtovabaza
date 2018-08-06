@@ -57,7 +57,8 @@ input[type="submit"]:active{
 	border-radius: 0 0 5px 5px;
 	font: normal 90% 'century gothic', arial;
 }
-
+/* кінець авторизації */
+/* мобільна версія авторизації */
 @media screen and (max-device-width: 1024px){
 	div.authorization-block p{
 		font-size: 270%;
@@ -88,4 +89,4 @@ input[type="submit"]:active{
 	font: normal 250% 'century gothic', arial;
 	}
 }
-
+/* кінець мобільної версії авторизації */

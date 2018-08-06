@@ -37,6 +37,7 @@ div.dostavka > h2{
 box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 1);
 }
 
+/* чекбокси відмітки в доставці */
 .checkbox {
   position: absolute;
   z-index: -1;
@@ -78,6 +79,7 @@ box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 1);
 .checkbox:checked + label:after {
   left: 26px;
 }
+/* кінець чекбоксів */
 
 /* Блок авторизації для доставки */
 body.delivery{
@@ -130,7 +132,7 @@ body.delivery .authorization-error{
   border-radius: 0 0 5px 5px;
   font: normal 90% 'century gothic', arial;
 }
-
+/* кінець блока авторизації для доставки */
 
 .width-delivery{
   width: 60%;

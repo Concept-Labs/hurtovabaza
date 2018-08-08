@@ -1,0 +1,55 @@
+<?php include 'menu_delivery.phtml'; 
+$errore = $this->get('errore');
+?>
+<div class="add-errore">
+	<?php 
+	if (!empty($errore)) echo "<div style='color: red;'>" .$errore ."</div>"; 
+		if (empty($errore)) {
+			if (!empty($_POST)) {
+				echo "<div style='color: green;'>Товар \"".$_POST['name_tovar']."\" успішно доданий!</div>";
+			}
+		}
+		?>
+	</div>
+	<div>
+		<?php echo $_POST['name_tovars']; ?>
+		<form action="<?php echo base_url .'delivery/bochka';?>" method="post">
+			<table class="add-table">
+				<tr class="table-top">
+					<td class="width-name">Назва</td>
+					<td>Бочка</td>
+				</tr>
+				<tr>
+					<td> 
+						<input name="name_tovars" list="tovars">
+						<datalist id="tovars">
+							<option value="1">Банан</option>
+							<option value="2">Апельсин</option>
+							<option value="3">Лимон</option>
+						</datalist>
+					</td>
+					<td> <input type="number" name="bochka_tovar" step="0.1" value="<?php echo @$_POST['bochka_tovar']; ?>"> </td>			
+				</tr>
+				<input class="sub-save" type="submit" name="add" value=" Зберегти">
+			</table>
+			<input type="hidden" name="date" value="<?php echo date('Y-m-d') ?>" />
+			<br/><br/><br/><br/><br/>
+
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+    //copy options
+    var options = $('#theList option').clone();
+    //react on keyup in textbox
+    $('#search_input').keyup(function () {
+    	var val = $(this).val();
+    	$('#theList').empty();
+      //take only the options containing your filter text or all if empty
+      options.filter(function (idx, el) {
+      	return val === '' || $(el).text().indexOf(val) >= 0;
+      }).appendTo('#theList');//add it to list
+  });
+});
+</script>

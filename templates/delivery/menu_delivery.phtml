@@ -1,0 +1,8 @@
+<?php $current = $_SERVER['REQUEST_URI']; ?>
+<div class="delivery-block-menu">
+	<span><a class="<?php if($current == '/delivery/bochka'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/bochka';?>">Бочка</a></span>
+	<span><a class="<?php if($current == '/delivery/fish_terminal'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/fish_terminal';?>">Рибний термінал</a></span>
+	<span><a class="<?php if($current == '/delivery/gurtovnya'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/gurtovnya';?>">Гуртовня</a></span>
+	<span><a class="<?php if($current == '/delivery/center'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/center';?>">Центр</a></span>
+	<span><a class="delivery-exit" href="<?php echo base_url .'delivery/logout'; ?>">Вихід</a></span>
+</div>

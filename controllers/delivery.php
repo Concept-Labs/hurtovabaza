@@ -172,4 +172,44 @@ public function logout()
 
     $this->_renderLayout($template);
 }
+
+public function bochka() 
+{
+
+    $template = $this->_initTemplate('Бочка');
+
+    $template->setFile('templates/delivery/bochka.phtml');
+
+    $this->_renderLayout($template);
+}
+
+public function fish_terminal() 
+{
+
+    $template = $this->_initTemplate('Рибний термінал');
+
+    $template->setFile('templates/delivery/fish_terminal.phtml');
+
+    $this->_renderLayout($template);
+}
+
+public function gurtovnya() 
+{
+
+    $template = $this->_initTemplate('Гуртовня');
+
+    $template->setFile('templates/delivery/gurtovnya.phtml');
+
+    $this->_renderLayout($template);
+}
+
+public function center() 
+{
+
+    $template = $this->_initTemplate('Центр');
+
+    $template->setFile('templates/delivery/center.phtml');
+
+    $this->_renderLayout($template);
+}
 }

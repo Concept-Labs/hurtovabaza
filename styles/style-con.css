@@ -157,7 +157,7 @@ box-shadow:         1px 1px 30px 0px rgba(48, 50, 50, 1);
 	border: 1px solid silver;
 }
 
-.head a.current, .delivery-block-menu a.current {
+.head a.current {
     color: #f7be09;
 }
 

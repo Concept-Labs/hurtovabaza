@@ -1,1 +1,8 @@
-<?php include 'menu_delivery.phtml'; ?>
+<?php include 'menu_delivery.phtml'; 
+echo $_POST['id_tovar'];?>
+<form action="/delivery/fish_terminal" method="post">
+	<input type="number" name="id_tovar"/>
+	<input type="number" name="number"/>
+	<input type="hidden" name="date" value="<?php echo date('Y-m-d') ?>" />
+	<input type="submit" name="add" value="Додати">
+</form>

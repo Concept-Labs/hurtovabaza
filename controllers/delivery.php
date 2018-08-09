@@ -214,7 +214,7 @@ Class Controller_Delivery Extends Controller_Base
         }
         if ($numm != 0 && $numm2 != 0 && $numm3 != 0 && $numm4 != 0 && $numm5 != 0 && $numm6 != 0 && $numm7 != 0 && $numm8 != 0 && $numm9 != 0) {
             $date_format = date_format(date_create($date), 'd.m.Y');
-            $errore = "За ".$date_format." даний товар вже існує!";
+            $errore = "За <span style='color: black;'>".$date_format."</span> внесення доставки вже існує!";
         }
     }
 

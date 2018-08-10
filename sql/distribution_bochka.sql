@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Авг 01 2018 г., 23:39
+-- Время создания: Авг 10 2018 г., 21:08
 -- Версия сервера: 10.1.30-MariaDB
 -- Версия PHP: 7.2.2
 
@@ -25,26 +25,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `fish_sm_distribution_bochka`
+-- Структура таблицы `distribution_bochka`
 --
 
-CREATE TABLE `fish_sm_distribution_bochka` (
+CREATE TABLE `distribution_bochka` (
   `id` int(10) UNSIGNED NOT NULL,
-  `tovar_id` varchar(55) NOT NULL,
+  `tovar_id` int(55) NOT NULL,
   `number` varchar(55) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
 
 --
 -- Индексы сохранённых таблиц
 --
 
 --
--- Индексы таблицы `fish_sm_distribution_bochka`
+-- Индексы таблицы `distribution_bochka`
 --
-ALTER TABLE `fish_sm_distribution_bochka`
+ALTER TABLE `distribution_bochka`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -52,10 +50,10 @@ ALTER TABLE `fish_sm_distribution_bochka`
 --
 
 --
--- AUTO_INCREMENT для таблицы `fish_sm_distribution_bochka`
+-- AUTO_INCREMENT для таблицы `distribution_bochka`
 --
-ALTER TABLE `fish_sm_distribution_bochka`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+ALTER TABLE `distribution_bochka`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

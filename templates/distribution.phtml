@@ -68,7 +68,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
-			<td rowspan="2">Дія</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+				<td rowspan="2">Дія</td>
+			<?php endif ?>			
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -107,8 +109,10 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_fruits['t4number'];?></td>
 					<td><?php echo $row_fruits['t5number'];?></td>
 					<td><?php echo $zagolom_fruits; ?></td>		
+					<?php if (isset($_SESSION['login_delivery'])): ?>
 					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_fruits['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
 						<a href="<?php echo base_url .'distribution?delete&id='.$row_fruits['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>
 				</tr>
 				<?php } 
 			}?>
@@ -124,7 +128,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
 			<td rowspan="2">Дія</td>
+			<?php endif ?>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -160,8 +166,11 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_driedfruit['t3number'];?></td>
 					<td><?php echo $row_driedfruit['t4number'];?></td>
 					<td><?php echo $row_driedfruit['t5number'];?></td>
-					<td><?php echo $zagolom_driedfruit; ?></td>		
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_driedfruit['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a></td>
+					<td><?php echo $zagolom_driedfruit; ?></td>	
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_driedfruit['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_driedfruit['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
 				</tr>
 				<?php } 
 			}?>
@@ -176,7 +185,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
 			<td rowspan="2">Дія</td>
+			<?php endif ?>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -212,8 +223,11 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_vegetables['t3number'];?></td>
 					<td><?php echo $row_vegetables['t4number'];?></td>
 					<td><?php echo $row_vegetables['t5number'];?></td>
-					<td><?php echo $zagolom_vegetablest; ?></td>	
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_vegetables['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a></td>
+					<td><?php echo $zagolom_vegetablest; ?></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_vegetables['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_vegetables['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
 				</tr>
 				<?php } 
 			}?>
@@ -228,7 +242,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
 			<td rowspan="2">Дія</td>
+			<?php endif ?>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -264,8 +280,11 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_sausage['t3number'];?></td>
 					<td><?php echo $row_sausage['t4number'];?></td>
 					<td><?php echo $row_sausage['t5number'];?></td>
-					<td><?php echo $zagolom_sausage; ?></td>		
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_sausage['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a></td>
+					<td><?php echo $zagolom_sausage; ?></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_sausage['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_sausage['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
 				</tr>
 				<?php } 
 			}?>
@@ -280,7 +299,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
 			<td rowspan="2">Дія</td>
+			<?php endif ?>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -316,8 +337,11 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_cheese['t3number'];?></td>
 					<td><?php echo $row_cheese['t4number'];?></td>
 					<td><?php echo $row_cheese['t5number'];?></td>
-					<td><?php echo $zagolom_cheese; ?></td>		
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_cheese['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a></td>
+					<td><?php echo $zagolom_cheese; ?></td>	
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_cheese['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_cheese['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
 				</tr>
 				<?php } 
 			}?>
@@ -332,7 +356,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
 			<td rowspan="2">Дія</td>
+			<?php endif ?>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -369,7 +395,10 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_fish_processing['t4number'];?></td>
 					<td><?php echo $row_fish_processing['t5number'];?></td>
 					<td><?php echo $zagolom_fish_processing; ?></td>
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_fish_processing['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_fish_processing['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_fish_processing['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
 				</tr>
 				<?php } 
 			}?>
@@ -384,7 +413,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
 			<td rowspan="2">Дія</td>
+			<?php endif ?>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -420,8 +451,11 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_fish_sm['t3number'];?></td>
 					<td><?php echo $row_fish_sm['t4number'];?></td>
 					<td><?php echo $row_fish_sm['t5number'];?></td>
-					<td><?php echo $zagolom_fish_sm; ?></td>		
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_fish_sm['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a></td>
+					<td><?php echo $zagolom_fish_sm; ?></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_fish_sm['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_fish_sm['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
 				</tr>
 				<?php } 
 			}?>
@@ -436,7 +470,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
 			<td rowspan="2">Дія</td>
+			<?php endif ?>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -472,8 +508,11 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_ovis['t3number'];?></td>
 					<td><?php echo $row_ovis['t4number'];?></td>
 					<td><?php echo $row_ovis['t5number'];?></td>
-					<td><?php echo $zagolom_ovis; ?></td>		
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_ovis['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a></td>
+					<td><?php echo $zagolom_ovis; ?></td>	
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_ovis['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_ovis['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
 				</tr>
 				<?php } 
 			}?>
@@ -488,7 +527,9 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
 			<td rowspan="2">Дія</td>
+			<?php endif ?>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -525,7 +566,11 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_radema['t4number'];?></td>
 					<td><?php echo $row_radema['t5number'];?></td>
 					<td><?php echo $zagolom_radema; ?></td>		
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_radema['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_radema['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen">
+						<a href="<?php echo base_url .'distribution?delete&id='.$row_radema['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a>
+					</i></a></td>
+					<?php endif ?>	
 				</tr>
 				<?php } 
 			}?>

@@ -1,1 +1,6 @@
-<?php include 'menu_delivery.phtml'; ?>
+<?php 
+include 'menu_delivery.phtml';
+$table = "distribution_center";
+$tochka = 'center';
+$this->delivery_by_points($table, $tochka);
+ ?>

@@ -54,11 +54,12 @@
 			<div class="dostavka">	
 				<h2>Фрукти</h2>
 				<ul>
-					<li><input type="checkbox" class="checkbox" id="banan" />
-						<label for="banan">Банан</label><input type="number" name="fruits[1]" step="0.1" placeholder=" Кількість">
+					<li <?php if (!empty(@$_POST['1'])) { echo "привіт";
+					} ?>><input type="checkbox" class="checkbox" id="banan" />
+						<label for="banan">Банан</label><input type="number" name="fruits[1]" step="0.1" placeholder=" Кількість" onchange="this.value" value="<?php echo @$_POST['1']; ?>"/>
 					</li>
 					<li>	<input type="checkbox" class="checkbox" id="apelsin" />
-						<label for="apelsin">Апeльсин</label><input type="number" step="0.1" name="fruits[2]" placeholder=" Кількість" >
+						<label for="apelsin">Апeльсин</label><input type="number" step="0.1" name="fruits[2]" placeholder=" Кількість" onchange="alert(this.value)"/>
 					</li>
 					<li>	<input type="checkbox" class="checkbox" id="limon" />
 						<label for="limon">Лимон</label><input type="number" step="0.1" name="fruits[3]" placeholder=" Кількість" >

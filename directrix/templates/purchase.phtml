@@ -1,5 +1,212 @@
-<div style="text-align: center; margin-top: 200px;">
-	<p><i style="color: #000; font-size: 30px;" class="fas fa-wrench"></i></p>
-	На даний момент ця сторінка в розробці </br>
-	<h3>Очікуйте...</h3>
-</div>
+<?php 
+$date_page = $this->get('date_page');
+$date_today_format = $this->get('date_today_format'); 
+$date_page_format = $this->get('date_page_format');     
+
+$result = $this->get('result'); 
+$num = $this->get('num');
+
+$result2 = $this->get('result2'); 
+$num2 = $this->get('num2');
+
+$result3 = $this->get('result3'); 
+$num3 = $this->get('num3');
+
+$result4 = $this->get('result4'); 
+$num4 = $this->get('num4');
+
+$result5 = $this->get('result5'); 
+$num5 = $this->get('num5');
+
+$result6 = $this->get('result6'); 
+$num6 = $this->get('num6');
+
+$result7 = $this->get('result7'); 
+$num7 = $this->get('num7');
+
+$result8 = $this->get('result8'); 
+$num8 = $this->get('num8');
+
+$result9 = $this->get('result9'); 
+$num9 = $this->get('num9');
+?>
+
+<div class="date date-purchase">
+	<form action="<?php echo base_url .'purchase'; ?>" method="post">
+		<select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
+			<option>Дата</option>
+			<?php 
+			for($i = 0;  $i <= 4000; $i++ ){
+				$next_date = date('Y-m-d', strtotime($date_today .' -'.$i .'day'));
+				$next_date_format = date_format(date_create($next_date), 'd.m.Y');
+				if ($next_date >= '2018-08-01') {?>
+				<option value="<?php echo $next_date; ?>"><?php echo $next_date_format;?></option> 
+				<?php }
+			}
+			?>
+		</select>
+	</form>
+	<?php if (empty($date_page)) {
+		echo $date_today_format;
+	} 
+	else {
+		echo $date_page_format;
+	} ?>
+</div>   
+<div class="purchase">
+<?php 
+if (!empty($num) || !empty($num2) || !empty($num3) || !empty($num4)|| !empty($num5) || !empty($num6) || !empty($num7) || !empty($num8) || !empty($num9)) {
+	if ($num != 0): ?>
+	<table>
+		<h2>Фрукти</h2>
+		<tr class="table-top">
+			<td>Назва</td> 
+			<td>Кількість ящиків</td>
+		</tr>
+		<?php while ($row = mysqli_fetch_array($result)) {?>
+		<tr>
+			<td><?php echo $row['label'];?></td> 
+			<td><?php echo $row['number'];?></td>
+		</tr>
+		<?php	}	?>
+	</table><br/>
+<?php endif ?>
+
+<?php if ($num2 != 0): ?>
+	<table>
+		<h2>Сухофрукти</h2>
+		<tr class="table-top">
+			<td>Назва</td> 
+			<td>Кількість ящиків</td>
+		</tr>
+		<?php while ($row2 = mysqli_fetch_array($result2)) {?>
+		<tr>
+			<td><?php echo $row2['label'];?></td> 
+			<td><?php echo $row2['number'];?></td>
+		</tr>
+		<?php	}	?>
+	</table><br/>
+<?php endif ?>
+
+<?php if ($num3 != 0): ?>
+	<table>
+		<h2>Овочі</h2>
+		<tr class="table-top">
+			<td>Назва</td> 
+			<td>Кількість ящиків</td>
+		</tr>
+		<?php while ($row3 = mysqli_fetch_array($result3)) {?>
+		<tr>
+			<td><?php echo $row3['label'];?></td> 
+			<td><?php echo $row3['number'];?></td>
+		</tr>
+		<?php	}	?>
+	</table><br/>
+<?php endif ?>
+
+<?php if ($num4 != 0): ?>
+	<table>
+		<h2>Ковбаса</h2>
+		<tr class="table-top">
+			<td>Назва</td> 
+			<td>Кількість ящиків</td>
+		</tr>
+		<?php while ($row4 = mysqli_fetch_array($result4)) {?>
+		<tr>
+			<td><?php echo $row4['label'];?></td> 
+			<td><?php echo $row4['number'];?></td>
+		</tr>
+		<?php	}	?>
+	</table><br/>
+<?php endif ?>
+
+<?php if ($num5 != 0): ?>
+	<table>
+		<h2>Сир</h2>
+		<tr class="table-top">
+			<td>Назва</td> 
+			<td>Кількість ящиків</td>
+		</tr>
+		<?php while ($row5 = mysqli_fetch_array($result5)) {?>
+		<tr>
+			<td><?php echo $row5['label'];?></td> 
+			<td><?php echo $row5['number'];?></td>
+		</tr>
+		<?php	}	?>
+	</table><br/>
+<?php endif ?>
+
+<?php if ($num6 != 0): ?>
+	<table>
+		<h2>Рибна переробка</h2>
+		<tr class="table-top">
+			<td>Назва</td> 
+			<td>Кількість ящиків</td>
+		</tr>
+		<?php while ($row6 = mysqli_fetch_array($result6)) {?>
+		<tr>
+			<td><?php echo $row6['label'];?></td> 
+			<td><?php echo $row6['number'];?></td>
+		</tr>
+		<?php	}	?>
+	</table><br/>
+<?php endif ?>
+
+<?php if ($num7 != 0): ?>
+	<table>
+		<h2>Риба с/м</h2>
+		<tr class="table-top">
+			<td>Назва</td> 
+			<td>Кількість ящиків</td>
+		</tr>
+		<?php while ($row7 = mysqli_fetch_array($result7)) {?>
+		<tr>
+			<td><?php echo $row7['label'];?></td> 
+			<td><?php echo $row7['number'];?></td>
+		</tr>
+		<?php	}	?>
+	</table><br/>
+<?php endif ?>
+
+<?php if ($num8 != 0): ?>
+	<table>
+		<h2>Овіс</h2>
+		<tr class="table-top">
+			<td>Назва</td> 
+			<td>Кількість ящиків</td>
+		</tr>
+		<?php while ($row8 = mysqli_fetch_array($result8)) {?>
+		<tr>
+			<td><?php echo $row8['label'];?></td> 
+			<td><?php echo $row8['number'];?></td>
+		</tr>
+		<?php	}	?>
+	</table><br/>
+<?php endif ?>
+
+<?php if ($num9 != 0) { ?>
+<table>
+	<h2>Радема</h2>
+	<tr class="table-top">
+		<td>Назва</td> 
+		<td>Кількість ящиків</td>
+	</tr>
+	<?php while ($row9 = mysqli_fetch_array($result9)) {?>
+	<tr>
+		<td><?php echo $row9['label'];?></td> 
+		<td><?php echo $row9['number'];?></td>
+	</tr>
+	<?php	}	?>
+</table><br/>
+<?php }
+}  else 
+{
+	?>
+	<div class="data-no-delivery">
+		<?php
+		echo "За ".$date_page_format." доставки не було!";
+		?>
+	</div>
+</div>	
+	<?php 
+}

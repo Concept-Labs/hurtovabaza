@@ -14,9 +14,9 @@
         width: 97%;
         padding: 15px;
     }
-    .dostavka li input[type="text"]{
+    .dostavka li input[type="number"]{
         width: 120px;
-        font-size: 140%;
+        font-size: 110%;
         padding: 5px;
     }
     .dostavka li .checkbox + label:before{

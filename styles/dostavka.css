@@ -12,7 +12,7 @@ div.dostavka > h2{
   border-bottom: 1px solid silver;
   border-left: 1px solid silver;
   border-right: 1px solid silver;
-  padding: 10px 5px;
+  padding: 10px 15px;
 }
 .dostavka li:hover{
   background-color: #f4f3f3;
@@ -21,8 +21,10 @@ div.dostavka > h2{
 .dostavka input[type="number"]{
   text-align: center;
   float: right;
-  width: 90px;
- height: 20px;
+  width: 10%;
+ height: 25px;
+ margin-right: -14px;
+ margin-top: -5px;
   border-radius: 0px;
   background: #fefefe;
   border-left: 1px solid silver;
@@ -35,6 +37,20 @@ div.dostavka > h2{
  -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 1);
 -moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 1);
 box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 1);
+}
+
+.dostavka input:invalid:not(:placeholder-shown) {
+  background-color: rgba(190, 25, 25, 0.63);
+  border-radius: 5px;
+}
+.dostavka input:valid:not(:placeholder-shown) {
+  background-color: rgba(7, 214, 0, 0.56);
+  border-radius: 5px;
+  width: 60%;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  font-size: 100%;
 }
 
 /* чекбокси відмітки в доставці */

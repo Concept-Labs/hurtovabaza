@@ -1,0 +1,635 @@
+<?php 
+
+$date_page = $this->get('date_page');
+$date_today_format = $this->get('date_today_format'); 
+$date_page_format = $this->get('date_page_format');     
+
+$result_fruits = $this->get('result_fruits'); 
+$num_fruits = $this->get('num_fruits');
+
+$result_driedfruit = $this->get('result_driedfruit'); 
+$num_driedfruit = $this->get('num_driedfruit');
+
+$result_vegetables = $this->get('result_vegetables'); 
+$num_vegetables = $this->get('num_vegetables');
+
+$result_sausage = $this->get('result_sausage'); 
+$num_sausage = $this->get('num_sausage');
+
+$result_cheese = $this->get('result_cheese'); 
+$num_cheese = $this->get('num_cheese');
+
+$result_fish_processing = $this->get('result_fish_processing'); 
+$num_fish_processing = $this->get('num_fish_processing');
+
+$result_fish_sm = $this->get('result_fish_sm'); 
+$num_fish_sm = $this->get('num_fish_sm');
+
+$result_ovis = $this->get('result_ovis'); 
+$num_ovis = $this->get('num_ovis');
+
+$result_radema = $this->get('result_radema'); 
+$num_radema = $this->get('num_radema');
+
+?>
+
+<?php if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
+<div class="date date-purchase">
+	<form action="<?php echo base_url .'distribution'; ?>" method="post">
+		<select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
+			<option>Дата</option>
+			<?php 
+			for($i = 0;  $i <= 4000; $i++ ){
+				$next_date = date('Y-m-d', strtotime($date_today .' -'.$i .'day'));
+				$next_date_format = date_format(date_create($next_date), 'd.m.Y');
+				if ($next_date >= '2018-08-01') {?>
+				<option value="<?php echo $next_date; ?>"><?php echo $next_date_format;?></option> 
+				<?php }
+			}
+			?>
+		</select>
+	</form>
+	<?php if (empty($date_page)) {
+		echo $date_today_format;
+	} 
+	else {
+		echo $date_page_format;
+	} ?>
+</div>
+<br/>
+<div class="distribution-block">
+
+	<table>
+		<h2>Фрукти</h2>
+		<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+				<td rowspan="2">Дія</td>
+			<?php endif ?>			
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+		<?php while ($row_fruits = mysqli_fetch_array($result_fruits)) { 
+
+			if (!empty($row_fruits['t2number']) || !empty($row_fruits['t3number']) || !empty($row_fruits['t4number']) || !empty($row_fruits['t5number'])) { 
+
+				if (empty($row_fruits['t2number'])) {$t2number_fruits = 0;	}else { $t2number_fruits = $row_fruits['t2number'];}
+				if (empty($row_fruits['t3number'])) {$t3number_fruits = 0;	}else { $t3number_fruits = $row_fruits['t3number'];}
+				if (empty($row_fruits['t4number'])) {$t4number_fruits = 0;	}else { $t4number_fruits = $row_fruits['t4number'];}
+				if (empty($row_fruits['t5number'])) {$t5number_fruits = 0;	}else { $t5number_fruits = $row_fruits['t5number'];}
+				
+				$zagolom_fruits = $t2number_fruits + $t3number_fruits + $t4number_fruits + $t5number_fruits;
+				
+				if (!empty($row_fruits['t2date'])) {
+				 	$date = $row_fruits['t2date'];
+				 }
+				 elseif (!empty($row_fruits['t3date'])) {
+				 	$date = $row_fruits['t3date'];
+				 }
+				 elseif (!empty($row_fruits['t4date'])) {
+				 	$date = $row_fruits['t4date'];
+				 }
+				 elseif (!empty($row_fruits['t5date'])) {
+				 	$date = $row_fruits['t5date'];
+				 }  
+				?>
+				<tr>
+					<td><?php echo $row_fruits['label'];?></td>
+					<td><?php echo $row_fruits['t2number'];?></td>
+					<td><?php echo $row_fruits['t3number'];?></td>
+					<td><?php echo $row_fruits['t4number'];?></td>
+					<td><?php echo $row_fruits['t5number'];?></td>
+					<td><?php echo $zagolom_fruits; ?></td>		
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_fruits['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete&id='.$row_fruits['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>
+				</tr>
+				<?php } 
+			}?>
+		</table>
+
+		<br/>
+		<table>
+			<h2>Сухорукти</h2>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+			<td rowspan="2">Дія</td>
+			<?php endif ?>	
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+			<?php while ($row_driedfruit = mysqli_fetch_array($result_driedfruit)) { 
+				if (!empty($row_driedfruit['t2number']) || !empty($row_driedfruit['t3number']) || !empty($row_driedfruit['t4number']) || !empty($row_driedfruit['t5number'])) { 
+					if (empty($row_driedfruit['t2number'])) {$t2number_driedfruit = 0;	}else { $t2number_driedfruit = $row_driedfruit['t2number'];}
+				if (empty($row_driedfruit['t2number'])) {$t2number_driedfruit = 0;	}else { $t2number_driedfruit = $row_driedfruit['t2number'];}
+				if (empty($row_driedfruit['t3number'])) {$t3number_driedfruit = 0;	}else { $t3number_driedfruit = $row_driedfruit['t3number'];}
+				if (empty($row_driedfruit['t4number'])) {$t4number_driedfruit = 0;	}else { $t4number_driedfruit = $row_driedfruit['t4number'];}
+				if (empty($row_driedfruit['t5number'])) {$t5number_driedfruit = 0;	}else { $t5number_driedfruit = $row_driedfruit['t5number'];}
+				
+				$zagolom_driedfruit = $t2number_driedfruit + $t3number_driedfruit + $t4number_driedfruit + $t5number_driedfruit;
+				
+				if (!empty($row_driedfruit['t2date'])) {
+				 	$date = $row_driedfruit['t2date'];
+				 }
+				 elseif (!empty($row_driedfruit['t3date'])) {
+				 	$date = $row_driedfruit['t3date'];
+				 }
+				 elseif (!empty($row_driedfruit['t4date'])) {
+				 	$date = $row_driedfruit['t4date'];
+				 }
+				 elseif (!empty($row_driedfruit['t5date'])) {
+				 	$date = $row_driedfruit['t5date'];
+				 }?>
+				<tr>
+					<td><?php echo $row_driedfruit['label'];?></td>
+					<td><?php echo $row_driedfruit['t2number'];?></td>
+					<td><?php echo $row_driedfruit['t3number'];?></td>
+					<td><?php echo $row_driedfruit['t4number'];?></td>
+					<td><?php echo $row_driedfruit['t5number'];?></td>
+					<td><?php echo $zagolom_driedfruit; ?></td>	
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_driedfruit['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_driedfruit['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
+				</tr>
+				<?php } 
+			}?>
+		</table>
+		<br/>
+		<table>
+			<h2>Овочі</h2>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+			<td rowspan="2">Дія</td>
+			<?php endif ?>	
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+			<?php while ($row_vegetables = mysqli_fetch_array($result_vegetables)) { 
+				if (!empty($row_vegetables['t2number']) || !empty($row_vegetables['t3number']) || !empty($row_vegetables['t4number']) || !empty($row_vegetables['t5number'])) { 
+					if (empty($row_vegetables['t2number'])) {$t2number_vegetables = 0;	}else { $t2number_vegetables = $row_vegetables['t2number'];}
+				if (empty($row_vegetables['t2number'])) {$t2number_vegetables = 0;	}else { $t2number_vegetables = $row_vegetables['t2number'];}
+				if (empty($row_vegetables['t3number'])) {$t3number_vegetables = 0;	}else { $t3number_vegetables = $row_vegetables['t3number'];}
+				if (empty($row_vegetables['t4number'])) {$t4number_vegetables = 0;	}else { $t4number_vegetables = $row_vegetables['t4number'];}
+				if (empty($row_vegetables['t5number'])) {$t5number_vegetables = 0;	}else { $t5number_vegetables = $row_vegetables['t5number'];}
+				
+				$zagolom_vegetables = $t2number_vegetables + $t3number_vegetables + $t4number_vegetables + $t5number_vegetables;
+				
+				if (!empty($row_vegetables['t2date'])) {
+				 	$date = $row_vegetables['t2date'];
+				 }
+				 elseif (!empty($row_vegetables['t3date'])) {
+				 	$date = $row_vegetables['t3date'];
+				 }
+				 elseif (!empty($row_vegetables['t4date'])) {
+				 	$date = $row_vegetables['t4date'];
+				 }
+				 elseif (!empty($row_vegetables['t5date'])) {
+				 	$date = $row_vegetables['t5date'];
+				 }?>
+				<tr>
+					<td><?php echo $row_vegetables['label'];?></td>
+					<td><?php echo $row_vegetables['t2number'];?></td>
+					<td><?php echo $row_vegetables['t3number'];?></td>
+					<td><?php echo $row_vegetables['t4number'];?></td>
+					<td><?php echo $row_vegetables['t5number'];?></td>
+					<td><?php echo $zagolom_vegetablest; ?></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_vegetables['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_vegetables['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
+				</tr>
+				<?php } 
+			}?>
+		</table>
+		<br/>
+		<table>
+			<h2>Ковбаса</h2>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+			<td rowspan="2">Дія</td>
+			<?php endif ?>	
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+			<?php while ($row_sausage = mysqli_fetch_array($result_sausage)) { 
+				if (!empty($row_sausage['t2number']) || !empty($row_sausage['t3number']) || !empty($row_sausage['t4number']) || !empty($row_sausage['t5number'])) { 
+					if (empty($row_sausage['t2number'])) {$t2number_sausage = 0;	}else { $t2number_sausage = $row_sausage['t2number'];}
+				if (empty($row_sausage['t2number'])) {$t2number_sausage = 0;	}else { $t2number_sausage = $row_sausage['t2number'];}
+				if (empty($row_sausage['t3number'])) {$t3number_sausage = 0;	}else { $t3number_sausage = $row_sausage['t3number'];}
+				if (empty($row_sausage['t4number'])) {$t4number_sausage = 0;	}else { $t4number_sausage = $row_sausage['t4number'];}
+				if (empty($row_sausage['t5number'])) {$t5number_sausage = 0;	}else { $t5number_sausage = $row_sausage['t5number'];}
+				
+				$zagolom_sausage = $t2number_sausage + $t3number_sausage + $t4number_sausage + $t5number_sausage;
+				
+				if (!empty($row_sausage['t2date'])) {
+				 	$date = $row_sausage['t2date'];
+				 }
+				 elseif (!empty($row_sausage['t3date'])) {
+				 	$date = $row_sausage['t3date'];
+				 }
+				 elseif (!empty($row_sausage['t4date'])) {
+				 	$date = $row_sausage['t4date'];
+				 }
+				 elseif (!empty($row_sausage['t5date'])) {
+				 	$date = $row_sausage['t5date'];
+				 }?>
+				<tr>
+					<td><?php echo $row_sausage['label'];?></td>
+					<td><?php echo $row_sausage['t2number'];?></td>
+					<td><?php echo $row_sausage['t3number'];?></td>
+					<td><?php echo $row_sausage['t4number'];?></td>
+					<td><?php echo $row_sausage['t5number'];?></td>
+					<td><?php echo $zagolom_sausage; ?></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_sausage['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_sausage['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
+				</tr>
+				<?php } 
+			}?>
+		</table>
+		<br/>
+		<table>
+			<h2>Сир</h2>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+			<td rowspan="2">Дія</td>
+			<?php endif ?>	
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+			<?php while ($row_cheese = mysqli_fetch_array($result_cheese)) { 
+				if (!empty($row_cheese['t2number']) || !empty($row_cheese['t3number']) || !empty($row_cheese['t4number']) || !empty($row_cheese['t5number'])) { 
+					if (empty($row_cheese['t2number'])) {$t2number_cheese = 0;	}else { $t2number_cheese = $row_cheese['t2number'];}
+				if (empty($row_cheese['t2number'])) {$t2number_cheese = 0;	}else { $t2number_cheese = $row_cheese['t2number'];}
+				if (empty($row_cheese['t3number'])) {$t3number_cheese = 0;	}else { $t3number_cheese = $row_cheese['t3number'];}
+				if (empty($row_cheese['t4number'])) {$t4number_cheese = 0;	}else { $t4number_cheese = $row_cheese['t4number'];}
+				if (empty($row_cheese['t5number'])) {$t5number_cheese = 0;	}else { $t5number_cheese = $row_cheese['t5number'];}
+				
+				$zagolom_cheese = $t2number_cheese + $t3number_cheese + $t4number_cheese + $t5number_cheese;
+				
+				if (!empty($row_cheese['t2date'])) {
+				 	$date = $row_cheese['t2date'];
+				 }
+				 elseif (!empty($row_cheese['t3date'])) {
+				 	$date = $row_cheese['t3date'];
+				 }
+				 elseif (!empty($row_cheese['t4date'])) {
+				 	$date = $row_cheese['t4date'];
+				 }
+				 elseif (!empty($row_cheese['t5date'])) {
+				 	$date = $row_cheese['t5date'];
+				 }?>
+				<tr>
+					<td><?php echo $row_cheese['label'];?></td>
+					<td><?php echo $row_cheese['t2number'];?></td>
+					<td><?php echo $row_cheese['t3number'];?></td>
+					<td><?php echo $row_cheese['t4number'];?></td>
+					<td><?php echo $row_cheese['t5number'];?></td>
+					<td><?php echo $zagolom_cheese; ?></td>	
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_cheese['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_cheese['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
+				</tr>
+				<?php } 
+			}?>
+		</table>
+		<br/>
+		<table>
+			<h2>Рибна переробка</h2>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+			<td rowspan="2">Дія</td>
+			<?php endif ?>	
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+			<?php while ($row_fish_processing = mysqli_fetch_array($result_fish_processing)) { 
+				if (!empty($row_fish_processing['t2number']) || !empty($row_fish_processing['t3number']) || !empty($row_fish_processing['t4number']) || !empty($row_fish_processing['t5number'])) { 
+					if (empty($row_fish_processing['t2number'])) {$t2number_fish_processing = 0;	}else { $t2number_fish_processing = $row_fish_processing['t2number'];}
+				if (empty($row_fish_processing['t2number'])) {$t2number_fish_processing = 0;	}else { $t2number_fish_processing = $row_fish_processing['t2number'];}
+				if (empty($row_fish_processing['t3number'])) {$t3number_fish_processing = 0;	}else { $t3number_fish_processing = $row_fish_processing['t3number'];}
+				if (empty($row_fish_processing['t4number'])) {$t4number_fish_processing = 0;	}else { $t4number_fish_processing = $row_fish_processing['t4number'];}
+				if (empty($row_fish_processing['t5number'])) {$t5number_fish_processing = 0;	}else { $t5number_fish_processing = $row_fish_processing['t5number'];}
+				
+				$zagolom_fish_processing = $t2number_fish_processing + $t3number_fish_processing + $t4number_fish_processing + $t5number_fish_processing;
+				
+				if (!empty($row_fish_processing['t2date'])) {
+				 	$date = $row_fish_processing['t2date'];
+				 }
+				 elseif (!empty($row_fish_processing['t3date'])) {
+				 	$date = $row_fish_processing['t3date'];
+				 }
+				 elseif (!empty($row_fish_processing['t4date'])) {
+				 	$date = $row_fish_processing['t4date'];
+				 }
+				 elseif (!empty($row_fish_processing['t5date'])) {
+				 	$date = $row_fish_processing['t5date'];
+				 }?>
+				<tr>
+					<td><?php echo $row_fish_processing['label'];?></td>
+					<td><?php echo $row_fish_processing['t2number'];?></td>
+					<td><?php echo $row_fish_processing['t3number'];?></td>
+					<td><?php echo $row_fish_processing['t4number'];?></td>
+					<td><?php echo $row_fish_processing['t5number'];?></td>
+					<td><?php echo $zagolom_fish_processing; ?></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_fish_processing['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_fish_processing['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
+				</tr>
+				<?php } 
+			}?>
+		</table>
+		<br/>
+		<table>
+			<h2>Риба с/м</h2>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+			<td rowspan="2">Дія</td>
+			<?php endif ?>	
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+			<?php while ($row_fish_sm = mysqli_fetch_array($result_fish_sm)) { 
+				if (!empty($row_fish_sm['t2number']) || !empty($row_fish_sm['t3number']) || !empty($row_fish_sm['t4number']) || !empty($row_fish_sm['t5number'])) { 
+					if (empty($row_fish_sm['t2number'])) {$t2number_fish_sm = 0;	}else { $t2number_fish_sm = $row_fish_sm['t2number'];}
+				if (empty($row_fish_sm['t2number'])) {$t2number_fish_sm = 0;	}else { $t2number_fish_sm = $row_fish_sm['t2number'];}
+				if (empty($row_fish_sm['t3number'])) {$t3number_fish_sm = 0;	}else { $t3number_fish_sm = $row_fish_sm['t3number'];}
+				if (empty($row_fish_sm['t4number'])) {$t4number_fish_sm = 0;	}else { $t4number_fish_sm = $row_fish_sm['t4number'];}
+				if (empty($row_fish_sm['t5number'])) {$t5number_fish_sm = 0;	}else { $t5number_fish_sm = $row_fish_sm['t5number'];}
+				
+				$zagolom_fish_sm = $t2number_fish_sm + $t3number_fish_sm + $t4number_fish_sm + $t5number_fish_sm;
+				
+				if (!empty($row_fish_sm['t2date'])) {
+				 	$date = $row_fish_sm['t2date'];
+				 }
+				 elseif (!empty($row_fish_sm['t3date'])) {
+				 	$date = $row_fish_sm['t3date'];
+				 }
+				 elseif (!empty($row_fish_sm['t4date'])) {
+				 	$date = $row_fish_sm['t4date'];
+				 }
+				 elseif (!empty($row_fish_sm['t5date'])) {
+				 	$date = $row_fish_sm['t5date'];
+				 }?>
+				<tr>
+					<td><?php echo $row_fish_sm['label'];?></td>
+					<td><?php echo $row_fish_sm['t2number'];?></td>
+					<td><?php echo $row_fish_sm['t3number'];?></td>
+					<td><?php echo $row_fish_sm['t4number'];?></td>
+					<td><?php echo $row_fish_sm['t5number'];?></td>
+					<td><?php echo $zagolom_fish_sm; ?></td>
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_fish_sm['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_fish_sm['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
+				</tr>
+				<?php } 
+			}?>
+		</table>
+		<br/>
+		<table>
+			<h2>Овіс</h2>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+			<td rowspan="2">Дія</td>
+			<?php endif ?>	
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+			<?php while ($row_ovis = mysqli_fetch_array($result_ovis)) { 
+				if (!empty($row_ovis['t2number']) || !empty($row_ovis['t3number']) || !empty($row_ovis['t4number']) || !empty($row_ovis['t5number'])) { 
+					if (empty($row_ovis['t2number'])) {$t2number_ovis = 0;	}else { $t2number_ovis = $row_ovis['t2number'];}
+				if (empty($row_ovis['t2number'])) {$t2number_ovis = 0;	}else { $t2number_ovis = $row_ovis['t2number'];}
+				if (empty($row_ovis['t3number'])) {$t3number_ovis = 0;	}else { $t3number_ovis = $row_ovis['t3number'];}
+				if (empty($row_ovis['t4number'])) {$t4number_ovis = 0;	}else { $t4number_ovis = $row_ovis['t4number'];}
+				if (empty($row_ovis['t5number'])) {$t5number_ovis = 0;	}else { $t5number_ovis = $row_ovis['t5number'];}
+				
+				$zagolom_ovis = $t2number_ovis + $t3number_ovis + $t4number_ovis + $t5number_ovis;
+				
+				if (!empty($row_ovis['t2date'])) {
+				 	$date = $row_ovis['t2date'];
+				 }
+				 elseif (!empty($row_ovis['t3date'])) {
+				 	$date = $row_ovis['t3date'];
+				 }
+				 elseif (!empty($row_ovis['t4date'])) {
+				 	$date = $row_ovis['t4date'];
+				 }
+				 elseif (!empty($row_ovis['t5date'])) {
+				 	$date = $row_ovis['t5date'];
+				 }?>
+				<tr>
+					<td><?php echo $row_ovis['label'];?></td>
+					<td><?php echo $row_ovis['t2number'];?></td>
+					<td><?php echo $row_ovis['t3number'];?></td>
+					<td><?php echo $row_ovis['t4number'];?></td>
+					<td><?php echo $row_ovis['t5number'];?></td>
+					<td><?php echo $zagolom_ovis; ?></td>	
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_ovis['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+					<a href="<?php echo base_url .'distribution?delete&id='.$row_ovis['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
+					<?php endif ?>	
+				</tr>
+				<?php } 
+			}?>
+		</table>
+		<br/>
+		<table>
+			<h2>Радема</h2>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<?php if (isset($_SESSION['login_delivery'])): ?>
+			<td rowspan="2">Дія</td>
+			<?php endif ?>	
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+			<?php while ($row_radema = mysqli_fetch_array($result_radema)) { 
+				if (!empty($row_radema['t2number']) || !empty($row_radema['t3number']) || !empty($row_radema['t4number']) || !empty($row_radema['t5number'])) { 
+					if (empty($row_radema['t2number'])) {$t2number_radema = 0;	}else { $t2number_radema = $row_radema['t2number'];}
+				if (empty($row_radema['t2number'])) {$t2number_radema = 0;	}else { $t2number_radema = $row_radema['t2number'];}
+				if (empty($row_radema['t3number'])) {$t3number_radema = 0;	}else { $t3number_radema = $row_radema['t3number'];}
+				if (empty($row_radema['t4number'])) {$t4number_radema = 0;	}else { $t4number_radema = $row_radema['t4number'];}
+				if (empty($row_radema['t5number'])) {$t5number_radema = 0;	}else { $t5number_radema = $row_radema['t5number'];}
+				
+				$zagolom_radema = $t2number_radema + $t3number_radema + $t4number_radema + $t5number_radema;
+				
+				if (!empty($row_radema['t2date'])) {
+				 	$date = $row_radema['t2date'];
+				 }
+				 elseif (!empty($row_radema['t3date'])) {
+				 	$date = $row_radema['t3date'];
+				 }
+				 elseif (!empty($row_radema['t4date'])) {
+				 	$date = $row_radema['t4date'];
+				 }
+				 elseif (!empty($row_radema['t5date'])) {
+				 	$date = $row_radema['t5date'];
+				 }?>
+				<tr>
+					<td><?php echo $row_radema['label'];?></td>
+					<td><?php echo $row_radema['t2number'];?></td>
+					<td><?php echo $row_radema['t3number'];?></td>
+					<td><?php echo $row_radema['t4number'];?></td>
+					<td><?php echo $row_radema['t5number'];?></td>
+					<td><?php echo $zagolom_radema; ?></td>		
+					<?php if (isset($_SESSION['login_delivery'])): ?>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_radema['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen">
+						<a href="<?php echo base_url .'distribution?delete&id='.$row_radema['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a>
+					</i></a></td>
+					<?php endif ?>	
+				</tr>
+				<?php } 
+			}?>
+		</table>
+		<br/>
+	</div> 
+	<?php }
+	else {
+		$roww = $this->get('roww');
+				if (!empty($roww['t2date'])) {
+				 	$date = $roww['t2date'];
+				 }
+				 elseif (!empty($roww['t3date'])) {
+				 	$date = $roww['t3date'];
+				 }
+				 elseif (!empty($roww['t4date'])) {
+				 	$date = $roww['t4date'];
+				 }
+				 elseif (!empty($roww['t5date'])) {
+				 	$date = $roww['t5date'];
+				 } 
+		if (isset($_GET['edit'])) {  ?>
+			<form action="<?php echo base_url .'distribution?edit&id='.$roww['id'].'&date='.$date; ?>" method="post">
+			<table>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+				<tr>
+					<td><?php echo $roww['label'];?></td>
+					<td><input type="number" step="0.1" name="bochka" value="<?php echo $roww['t2number'];?>"></td>
+					<td><input type="number" step="0.1" name="fish_terminal" value="<?php echo $roww['t3number'];?>"></td>
+					<td><input type="number" step="0.1" name="gurtovnya" value="<?php echo $roww['t4number'];?>"></td>
+					<td><input type="number" step="0.1" name="center" value="<?php echo $roww['t5number'];?>"></td>
+				</tr>
+				<input class="sub-save" type="submit" name="save" value=" Зберегти">
+		</table>
+		</form>
+		<?php }
+		if (isset($_GET['delete'])) { ?>
+                        <div class="delete-block-top zatmenie">
+                            <div class="delete-block">
+                            <form action="<?php echo base_url .'distribution?delete&id='.$roww['id'].'&date='.$date; ?>" method="post">
+                                Ви дійсно хочете <span style="color: red;">видалити</span> даний товар розприділення!!!<br/><br/>
+                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
+                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
+                            </form>
+                        </div>
+                        </div>
+                        
+                        <?php  
+                    }
+	} ?>

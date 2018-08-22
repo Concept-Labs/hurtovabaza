@@ -567,9 +567,8 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_radema['t5number'];?></td>
 					<td><?php echo $zagolom_radema; ?></td>		
 					<?php if (isset($_SESSION['login_delivery'])): ?>
-					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_radema['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen">
-						<a href="<?php echo base_url .'distribution?delete&id='.$row_radema['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a>
-					</i></a></td>
+					<td><a href="<?php echo base_url .'distribution?edit&id='.$row_radema['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete&id='.$row_radema['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>
 					<?php endif ?>	
 				</tr>
 				<?php } 

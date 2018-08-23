@@ -37,7 +37,7 @@ Class Controller_Search Extends Controller_Base
             UNION SELECT *, 'fruits' AS 'table' FROM `fruits` WHERE $query_search 
             UNION SELECT *, 'sausage' AS 'table' FROM `sausage` WHERE $query_search
             UNION SELECT *, 'fish_sm' AS 'table' FROM `fish_sm` WHERE $query_search
-            UNION SELECT *, 'ramake' AS 'table' FROM `ramake` WHERE $query_search
+            UNION SELECT *, 'remake' AS 'table' FROM `remake` WHERE $query_search
             UNION SELECT *, 'ovis' AS 'table' FROM `ovis` WHERE $query_search
             UNION SELECT *, 'radema' AS 'table' FROM `radema` WHERE $query_search");
 

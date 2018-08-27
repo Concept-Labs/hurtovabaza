@@ -11,6 +11,7 @@
 	<?php 
 	$errorsl = $this->get('errorsl');
 	$errore = $this->get('errore');
+	$result = $this->get('result');
 
 	if (!isset($_SESSION['login_delivery'])) {            
 		?>
@@ -37,6 +38,14 @@
 			<span><a href="<?php echo base_url .'delivery/gurtovnya';?>">Гуртовня</a></span>
 			<span><a href="<?php echo base_url .'delivery/center';?>">Центр</a></span>
 			<span><a class="delivery-exit" href="<?php echo base_url .'delivery/logout'; ?>">Вихід</a></span>
+		</div>
+
+		<div style="color: green;">
+			<?php if (empty($errore)) {
+				if (isset($result)) {
+					echo "Закупку успішно збережено!";
+				}
+			} ?>
 		</div>
 
 		<a href="#x" class="overlay" id="errore"></a>

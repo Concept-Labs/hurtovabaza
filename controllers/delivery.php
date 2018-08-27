@@ -220,6 +220,7 @@ Class Controller_Delivery Extends Controller_Base
 
     $template->set('errorsl', $errorsl);
     $template->set('errore', $errore);
+    $template->set('result', $result);
     mysqli_close($db);
 
     $this->_renderLayout($template);

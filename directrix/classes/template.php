@@ -206,8 +206,14 @@ Class Template
             <table>
                 <a href="<?php echo base_url .'add?' .$table; ?>" class="add-tovar" title="Додати рядок"><i class="fas fa-plus"></a>
                 <tr class="table-top">
-                    <td><?php echo $row['number']; ?></td>
-                    <td class="width-name"><?php echo $row['name']; ?></td>
+                    <td rowspan="2"><?php echo $row['number']; ?></td>
+                    <td rowspan="2" class="width-name"><?php echo $row['name']; ?></td>
+                    <td colspan="4">Залишок</td>
+                    <td colspan="4">Замовлення</td>
+                    <td rowspan="2"><?php echo $row['dostavka']; ?></td>
+                    <td rowspan="2"><?php echo $row['dia']; ?></td>
+                </tr>
+                <tr class="table-top">
                     <td><?php echo $row['bochka']; ?></td>
                     <td><?php echo $row['fish']; ?></td>
                     <td><?php echo $row['gyrtovna']; ?></td>
@@ -216,8 +222,6 @@ Class Template
                     <td><?php echo $row['fish2']; ?></td>
                     <td><?php echo $row['gyrtovna2']; ?></td>
                     <td><?php echo $row['center2']; ?></td>
-                    <td><?php echo $row['dostavka']; ?></td>
-                    <td><?php echo $row['dia']; ?></td>
                 </tr>
                 <?php if ($num2) {
                     while ($row2 = mysqli_fetch_array($query2, MYSQLI_BOTH)) { ?>

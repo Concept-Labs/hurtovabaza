@@ -27,8 +27,16 @@
 	<div>
 		<table>
 			<tr class="table-top">
-				<td>№</td>
-				<td class="width-name">Назва</td>
+				<td rowspan="2">№</td>
+				<td rowspan="2" class="width-name">Назва</td>
+				<td colspan="4">Залишок</td>
+				<td colspan="4">Замовлення</td>
+				
+				<td rowspan="2">Доставити</td>
+				<td rowspan="2">Дата</td>
+				<td rowspan="2">Дія</td>
+			</tr>
+			<tr class="table-top">
 				<td>Бочка</td>
 				<td>Рибний термінал</td>
 				<td>Гуртовня</td>
@@ -37,9 +45,6 @@
 				<td>Рибний термінал</td>
 				<td>Гуртовня</td>
 				<td>Центр</td>
-				<td>Доставити</td>
-				<td>Дата</td>
-				<td>Дія</td>
 			</tr>
 			<?php
 			while ($row = mysqli_fetch_array($query)) { 
@@ -86,6 +91,6 @@
 					<td> <a href="<?php echo base_url .$middleUrl .'?edit&id='.$row['id']; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .$middleUrl .'?delete&id='.$row['id']; ?>" class="delete" title="Видалити"><i class="fas fa-trash-alt"></i></a></td>
 				</tr>
 				<?php }
-	} ?>
-			</table>
-		</div>
+			} ?>
+		</table>
+	</div>

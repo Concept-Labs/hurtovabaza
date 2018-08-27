@@ -57,238 +57,266 @@ if (!empty($num) || !empty($num2) || !empty($num3) || !empty($num4)|| !empty($nu
 	<table>
 		<h2>Овочі</h2>
 		<tr class="table-top">
-                    <td><?php echo $roww['number']; ?></td>
-                    <td class="width-name"><?php echo $roww['name']; ?></td>
-                    <td><?php echo $roww['bochka']; ?></td>
-                    <td><?php echo $roww['fish']; ?></td>
-                    <td><?php echo $roww['gyrtovna']; ?></td>
-                    <td><?php echo $roww['center']; ?></td>
-                    <td><?php echo $roww['bochka2']; ?></td>
-                    <td><?php echo $roww['fish2']; ?></td>
-                    <td><?php echo $roww['gyrtovna2']; ?></td>
-                    <td><?php echo $roww['center2']; ?></td>
-                    <td><?php echo $roww['dostavka']; ?></td>
-                </tr>
-                <?php while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) { ?>
-                    <tr>
-                        <td><?php echo $row['id']; ?></td>
-                        <td class="width-name"><?php echo $row['name_tovar']; ?></td>
-                        <td><?php echo $row['bochka_tovar']; ?></td>
-                        <td><?php echo $row['fish_tovar']; ?></td>
-                        <td><?php echo $row['gyrtovna_tovar']; ?></td>
-                        <td><?php echo $row['centr_tovar']; ?></td>
-                        <td><?php echo $row['bochka2_tovar']; ?></td>
-                        <td><?php echo $row['fish2_tovar']; ?></td>
-                        <td><?php echo $row['gyrtovna2_tovar']; ?></td>
-                        <td><?php echo $row['centr2_tovar']; ?></td>
-                        <td><?php echo $row['dostavka_tovar']; ?></td>
-                    </tr>
-		<?php	}	?>
-	</table><br/>
+            <td rowspan="2"><?php echo $roww['number']; ?></td>
+            <td rowspan="2" class="width-name"><?php echo $roww['name']; ?></td>
+            <td colspan="4">Залишок</td>
+            <td colspan="4">Замовлення</td>
+            <td rowspan="2"><?php echo $roww['dostavka']; ?></td>
+        </tr>
+        <tr class="table-top">
+            <td><?php echo $roww['bochka']; ?></td>
+            <td><?php echo $roww['fish']; ?></td>
+            <td><?php echo $roww['gyrtovna']; ?></td>
+            <td><?php echo $roww['center']; ?></td>
+            <td><?php echo $roww['bochka2']; ?></td>
+            <td><?php echo $roww['fish2']; ?></td>
+            <td><?php echo $roww['gyrtovna2']; ?></td>
+            <td><?php echo $roww['center2']; ?></td>
+        </tr>
+        <?php while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) { ?>
+        <tr>
+            <td><?php echo $row['id']; ?></td>
+            <td class="width-name"><?php echo $row['name_tovar']; ?></td>
+            <td><?php echo $row['bochka_tovar']; ?></td>
+            <td><?php echo $row['fish_tovar']; ?></td>
+            <td><?php echo $row['gyrtovna_tovar']; ?></td>
+            <td><?php echo $row['centr_tovar']; ?></td>
+            <td><?php echo $row['bochka2_tovar']; ?></td>
+            <td><?php echo $row['fish2_tovar']; ?></td>
+            <td><?php echo $row['gyrtovna2_tovar']; ?></td>
+            <td><?php echo $row['centr2_tovar']; ?></td>
+            <td><?php echo $row['dostavka_tovar']; ?></td>
+        </tr>
+        <?php	}	?>
+    </table><br/>
 <?php endif ?>
 
 <?php if ($num2 != 0): ?>
 	<table>
 		<h2>Фрукти</h2>
 		<tr class="table-top">
-                    <td><?php echo $roww['number']; ?></td>
-                    <td class="width-name"><?php echo $roww['name']; ?></td>
-                    <td><?php echo $roww['bochka']; ?></td>
-                    <td><?php echo $roww['fish']; ?></td>
-                    <td><?php echo $roww['gyrtovna']; ?></td>
-                    <td><?php echo $roww['center']; ?></td>
-                    <td><?php echo $roww['bochka2']; ?></td>
-                    <td><?php echo $roww['fish2']; ?></td>
-                    <td><?php echo $roww['gyrtovna2']; ?></td>
-                    <td><?php echo $roww['center2']; ?></td>
-                    <td><?php echo $roww['dostavka']; ?></td>
-                </tr>
-                <?php while ($row2 = mysqli_fetch_array($result2, MYSQLI_BOTH)) { ?>
-                    <tr>
-                        <td><?php echo $row2['id']; ?></td>
-                        <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
-                        <td><?php echo $row2['bochka_tovar']; ?></td>
-                        <td><?php echo $row2['fish_tovar']; ?></td>
-                        <td><?php echo $row2['gyrtovna_tovar']; ?></td>
-                        <td><?php echo $row2['centr_tovar']; ?></td>
-                        <td><?php echo $row2['bochka2_tovar']; ?></td>
-                        <td><?php echo $row2['fish2_tovar']; ?></td>
-                        <td><?php echo $row2['gyrtovna2_tovar']; ?></td>
-                        <td><?php echo $row2['centr2_tovar']; ?></td>
-                        <td><?php echo $row2['dostavka_tovar']; ?></td>
-                    </tr>
-		<?php	}	?>
-	</table><br/>
+            <td rowspan="2"><?php echo $roww['number']; ?></td>
+            <td rowspan="2" class="width-name"><?php echo $roww['name']; ?></td>
+            <td colspan="4">Залишок</td>
+            <td colspan="4">Замовлення</td>
+            <td rowspan="2"><?php echo $roww['dostavka']; ?></td>
+        </tr>
+        <tr class="table-top">
+            <td><?php echo $roww['bochka']; ?></td>
+            <td><?php echo $roww['fish']; ?></td>
+            <td><?php echo $roww['gyrtovna']; ?></td>
+            <td><?php echo $roww['center']; ?></td>
+            <td><?php echo $roww['bochka2']; ?></td>
+            <td><?php echo $roww['fish2']; ?></td>
+            <td><?php echo $roww['gyrtovna2']; ?></td>
+            <td><?php echo $roww['center2']; ?></td>
+        </tr>
+        <?php while ($row2 = mysqli_fetch_array($result2, MYSQLI_BOTH)) { ?>
+        <tr>
+            <td><?php echo $row2['id']; ?></td>
+            <td class="width-name"><?php echo $row2['name_tovar']; ?></td>
+            <td><?php echo $row2['bochka_tovar']; ?></td>
+            <td><?php echo $row2['fish_tovar']; ?></td>
+            <td><?php echo $row2['gyrtovna_tovar']; ?></td>
+            <td><?php echo $row2['centr_tovar']; ?></td>
+            <td><?php echo $row2['bochka2_tovar']; ?></td>
+            <td><?php echo $row2['fish2_tovar']; ?></td>
+            <td><?php echo $row2['gyrtovna2_tovar']; ?></td>
+            <td><?php echo $row2['centr2_tovar']; ?></td>
+            <td><?php echo $row2['dostavka_tovar']; ?></td>
+        </tr>
+        <?php	}	?>
+    </table><br/>
 <?php endif ?>
 
 <?php if ($num3 != 0): ?>
 	<table>
 		<h2>Ковбаса</h2>
 		<tr class="table-top">
-                    <td><?php echo $roww['number']; ?></td>
-                    <td class="width-name"><?php echo $roww['name']; ?></td>
-                    <td><?php echo $roww['bochka']; ?></td>
-                    <td><?php echo $roww['fish']; ?></td>
-                    <td><?php echo $roww['gyrtovna']; ?></td>
-                    <td><?php echo $roww['center']; ?></td>
-                    <td><?php echo $roww['bochka2']; ?></td>
-                    <td><?php echo $roww['fish2']; ?></td>
-                    <td><?php echo $roww['gyrtovna2']; ?></td>
-                    <td><?php echo $roww['center2']; ?></td>
-                    <td><?php echo $roww['dostavka']; ?></td>
-                </tr>
-                <?php while ($row3 = mysqli_fetch_array($result3, MYSQLI_BOTH)) { ?>
-                    <tr>
-                        <td><?php echo $row3['id']; ?></td>
-                        <td class="width-name"><?php echo $row3['name_tovar']; ?></td>
-                        <td><?php echo $row3['bochka_tovar']; ?></td>
-                        <td><?php echo $row3['fish_tovar']; ?></td>
-                        <td><?php echo $row3['gyrtovna_tovar']; ?></td>
-                        <td><?php echo $row3['centr_tovar']; ?></td>
-                        <td><?php echo $row3['bochka2_tovar']; ?></td>
-                        <td><?php echo $row3['fish2_tovar']; ?></td>
-                        <td><?php echo $row3['gyrtovna2_tovar']; ?></td>
-                        <td><?php echo $row3['centr2_tovar']; ?></td>
-                        <td><?php echo $row3['dostavka_tovar']; ?></td>
-                    </tr>
-		<?php	}	?>
-	</table><br/>
+            <td rowspan="2"><?php echo $roww['number']; ?></td>
+            <td rowspan="2" class="width-name"><?php echo $roww['name']; ?></td>
+            <td colspan="4">Залишок</td>
+            <td colspan="4">Замовлення</td>
+            <td rowspan="2"><?php echo $roww['dostavka']; ?></td>
+        </tr>
+        <tr class="table-top">
+            <td><?php echo $roww['bochka']; ?></td>
+            <td><?php echo $roww['fish']; ?></td>
+            <td><?php echo $roww['gyrtovna']; ?></td>
+            <td><?php echo $roww['center']; ?></td>
+            <td><?php echo $roww['bochka2']; ?></td>
+            <td><?php echo $roww['fish2']; ?></td>
+            <td><?php echo $roww['gyrtovna2']; ?></td>
+            <td><?php echo $roww['center2']; ?></td>
+        </tr>
+        <?php while ($row3 = mysqli_fetch_array($result3, MYSQLI_BOTH)) { ?>
+        <tr>
+            <td><?php echo $row3['id']; ?></td>
+            <td class="width-name"><?php echo $row3['name_tovar']; ?></td>
+            <td><?php echo $row3['bochka_tovar']; ?></td>
+            <td><?php echo $row3['fish_tovar']; ?></td>
+            <td><?php echo $row3['gyrtovna_tovar']; ?></td>
+            <td><?php echo $row3['centr_tovar']; ?></td>
+            <td><?php echo $row3['bochka2_tovar']; ?></td>
+            <td><?php echo $row3['fish2_tovar']; ?></td>
+            <td><?php echo $row3['gyrtovna2_tovar']; ?></td>
+            <td><?php echo $row3['centr2_tovar']; ?></td>
+            <td><?php echo $row3['dostavka_tovar']; ?></td>
+        </tr>
+        <?php	}	?>
+    </table><br/>
 <?php endif ?>
 
 <?php if ($num4 != 0): ?>
 	<table>
 		<h2>Риба С/М</h2>
 		<tr class="table-top">
-                    <td><?php echo $roww['number']; ?></td>
-                    <td class="width-name"><?php echo $roww['name']; ?></td>
-                    <td><?php echo $roww['bochka']; ?></td>
-                    <td><?php echo $roww['fish']; ?></td>
-                    <td><?php echo $roww['gyrtovna']; ?></td>
-                    <td><?php echo $roww['center']; ?></td>
-                    <td><?php echo $roww['bochka2']; ?></td>
-                    <td><?php echo $roww['fish2']; ?></td>
-                    <td><?php echo $roww['gyrtovna2']; ?></td>
-                    <td><?php echo $roww['center2']; ?></td>
-                    <td><?php echo $roww['dostavka']; ?></td>
-                </tr>
-                <?php while ($row4 = mysqli_fetch_array($result4, MYSQLI_BOTH)) { ?>
-                    <tr>
-                        <td><?php echo $row4['id']; ?></td>
-                        <td class="width-name"><?php echo $row4['name_tovar']; ?></td>
-                        <td><?php echo $row4['bochka_tovar']; ?></td>
-                        <td><?php echo $row4['fish_tovar']; ?></td>
-                        <td><?php echo $row4['gyrtovna_tovar']; ?></td>
-                        <td><?php echo $row4['centr_tovar']; ?></td>
-                        <td><?php echo $row4['bochka2_tovar']; ?></td>
-                        <td><?php echo $row4['fish2_tovar']; ?></td>
-                        <td><?php echo $row4['gyrtovna2_tovar']; ?></td>
-                        <td><?php echo $row4['centr2_tovar']; ?></td>
-                        <td><?php echo $row4['dostavka_tovar']; ?></td>
-                    </tr>
-		<?php	}	?>
-	</table><br/>
+            <td rowspan="2"><?php echo $roww['number']; ?></td>
+            <td rowspan="2" class="width-name"><?php echo $roww['name']; ?></td>
+            <td colspan="4">Залишок</td>
+            <td colspan="4">Замовлення</td>
+            <td rowspan="2"><?php echo $roww['dostavka']; ?></td>
+        </tr>
+        <tr class="table-top">
+            <td><?php echo $roww['bochka']; ?></td>
+            <td><?php echo $roww['fish']; ?></td>
+            <td><?php echo $roww['gyrtovna']; ?></td>
+            <td><?php echo $roww['center']; ?></td>
+            <td><?php echo $roww['bochka2']; ?></td>
+            <td><?php echo $roww['fish2']; ?></td>
+            <td><?php echo $roww['gyrtovna2']; ?></td>
+            <td><?php echo $roww['center2']; ?></td>
+        </tr>
+        <?php while ($row4 = mysqli_fetch_array($result4, MYSQLI_BOTH)) { ?>
+        <tr>
+            <td><?php echo $row4['id']; ?></td>
+            <td class="width-name"><?php echo $row4['name_tovar']; ?></td>
+            <td><?php echo $row4['bochka_tovar']; ?></td>
+            <td><?php echo $row4['fish_tovar']; ?></td>
+            <td><?php echo $row4['gyrtovna_tovar']; ?></td>
+            <td><?php echo $row4['centr_tovar']; ?></td>
+            <td><?php echo $row4['bochka2_tovar']; ?></td>
+            <td><?php echo $row4['fish2_tovar']; ?></td>
+            <td><?php echo $row4['gyrtovna2_tovar']; ?></td>
+            <td><?php echo $row4['centr2_tovar']; ?></td>
+            <td><?php echo $row4['dostavka_tovar']; ?></td>
+        </tr>
+        <?php	}	?>
+    </table><br/>
 <?php endif ?>
 
 <?php if ($num5 != 0): ?>
 	<table>
 		<h2>Переробка</h2>
 		<tr class="table-top">
-                    <td><?php echo $roww['number']; ?></td>
-                    <td class="width-name"><?php echo $roww['name']; ?></td>
-                    <td><?php echo $roww['bochka']; ?></td>
-                    <td><?php echo $roww['fish']; ?></td>
-                    <td><?php echo $roww['gyrtovna']; ?></td>
-                    <td><?php echo $roww['center']; ?></td>
-                    <td><?php echo $roww['bochka2']; ?></td>
-                    <td><?php echo $roww['fish2']; ?></td>
-                    <td><?php echo $roww['gyrtovna2']; ?></td>
-                    <td><?php echo $roww['center2']; ?></td>
-                    <td><?php echo $roww['dostavka']; ?></td>
-                </tr>
-                <?php while ($row5 = mysqli_fetch_array($result5, MYSQLI_BOTH)) { ?>
-                    <tr>
-                        <td><?php echo $row5['id']; ?></td>
-                        <td class="width-name"><?php echo $row5['name_tovar']; ?></td>
-                        <td><?php echo $row5['bochka_tovar']; ?></td>
-                        <td><?php echo $row5['fish_tovar']; ?></td>
-                        <td><?php echo $row5['gyrtovna_tovar']; ?></td>
-                        <td><?php echo $row5['centr_tovar']; ?></td>
-                        <td><?php echo $row5['bochka2_tovar']; ?></td>
-                        <td><?php echo $row5['fish2_tovar']; ?></td>
-                        <td><?php echo $row5['gyrtovna2_tovar']; ?></td>
-                        <td><?php echo $row5['centr2_tovar']; ?></td>
-                        <td><?php echo $row5['dostavka_tovar']; ?></td>
-                    </tr>
-		<?php	}	?>
-	</table><br/>
+            <td rowspan="2"><?php echo $roww['number']; ?></td>
+            <td rowspan="2" class="width-name"><?php echo $roww['name']; ?></td>
+            <td colspan="4">Залишок</td>
+            <td colspan="4">Замовлення</td>
+            <td rowspan="2"><?php echo $roww['dostavka']; ?></td>
+        </tr>
+        <tr class="table-top">
+            <td><?php echo $roww['bochka']; ?></td>
+            <td><?php echo $roww['fish']; ?></td>
+            <td><?php echo $roww['gyrtovna']; ?></td>
+            <td><?php echo $roww['center']; ?></td>
+            <td><?php echo $roww['bochka2']; ?></td>
+            <td><?php echo $roww['fish2']; ?></td>
+            <td><?php echo $roww['gyrtovna2']; ?></td>
+            <td><?php echo $roww['center2']; ?></td>
+        </tr>
+        <?php while ($row5 = mysqli_fetch_array($result5, MYSQLI_BOTH)) { ?>
+        <tr>
+            <td><?php echo $row5['id']; ?></td>
+            <td class="width-name"><?php echo $row5['name_tovar']; ?></td>
+            <td><?php echo $row5['bochka_tovar']; ?></td>
+            <td><?php echo $row5['fish_tovar']; ?></td>
+            <td><?php echo $row5['gyrtovna_tovar']; ?></td>
+            <td><?php echo $row5['centr_tovar']; ?></td>
+            <td><?php echo $row5['bochka2_tovar']; ?></td>
+            <td><?php echo $row5['fish2_tovar']; ?></td>
+            <td><?php echo $row5['gyrtovna2_tovar']; ?></td>
+            <td><?php echo $row5['centr2_tovar']; ?></td>
+            <td><?php echo $row5['dostavka_tovar']; ?></td>
+        </tr>
+        <?php	}	?>
+    </table><br/>
 <?php endif ?>
 
 <?php if ($num6 != 0): ?>
 	<table>
 		<h2>Овіс</h2>
 		<tr class="table-top">
-                    <td><?php echo $roww['number']; ?></td>
-                    <td class="width-name"><?php echo $roww['name']; ?></td>
-                    <td><?php echo $roww['bochka']; ?></td>
-                    <td><?php echo $roww['fish']; ?></td>
-                    <td><?php echo $roww['gyrtovna']; ?></td>
-                    <td><?php echo $roww['center']; ?></td>
-                    <td><?php echo $roww['bochka2']; ?></td>
-                    <td><?php echo $roww['fish2']; ?></td>
-                    <td><?php echo $roww['gyrtovna2']; ?></td>
-                    <td><?php echo $roww['center2']; ?></td>
-                    <td><?php echo $roww['dostavka']; ?></td>
-                </tr>
-                <?php while ($row6 = mysqli_fetch_array($result6, MYSQLI_BOTH)) { ?>
-                    <tr>
-                        <td><?php echo $row6['id']; ?></td>
-                        <td class="width-name"><?php echo $row6['name_tovar']; ?></td>
-                        <td><?php echo $row6['bochka_tovar']; ?></td>
-                        <td><?php echo $row6['fish_tovar']; ?></td>
-                        <td><?php echo $row6['gyrtovna_tovar']; ?></td>
-                        <td><?php echo $row6['centr_tovar']; ?></td>
-                        <td><?php echo $row6['bochka2_tovar']; ?></td>
-                        <td><?php echo $row6['fish2_tovar']; ?></td>
-                        <td><?php echo $row6['gyrtovna2_tovar']; ?></td>
-                        <td><?php echo $row6['centr2_tovar']; ?></td>
-                        <td><?php echo $row6['dostavka_tovar']; ?></td>
-                    </tr>
-		<?php	}	?>
-	</table><br/>
+            <td rowspan="2"><?php echo $roww['number']; ?></td>
+            <td rowspan="2" class="width-name"><?php echo $roww['name']; ?></td>
+            <td colspan="4">Залишок</td>
+            <td colspan="4">Замовлення</td>
+            <td rowspan="2"><?php echo $roww['dostavka']; ?></td>
+        </tr>
+        <tr class="table-top">
+            <td><?php echo $roww['bochka']; ?></td>
+            <td><?php echo $roww['fish']; ?></td>
+            <td><?php echo $roww['gyrtovna']; ?></td>
+            <td><?php echo $roww['center']; ?></td>
+            <td><?php echo $roww['bochka2']; ?></td>
+            <td><?php echo $roww['fish2']; ?></td>
+            <td><?php echo $roww['gyrtovna2']; ?></td>
+            <td><?php echo $roww['center2']; ?></td>
+        </tr>
+        <?php while ($row6 = mysqli_fetch_array($result6, MYSQLI_BOTH)) { ?>
+        <tr>
+            <td><?php echo $row6['id']; ?></td>
+            <td class="width-name"><?php echo $row6['name_tovar']; ?></td>
+            <td><?php echo $row6['bochka_tovar']; ?></td>
+            <td><?php echo $row6['fish_tovar']; ?></td>
+            <td><?php echo $row6['gyrtovna_tovar']; ?></td>
+            <td><?php echo $row6['centr_tovar']; ?></td>
+            <td><?php echo $row6['bochka2_tovar']; ?></td>
+            <td><?php echo $row6['fish2_tovar']; ?></td>
+            <td><?php echo $row6['gyrtovna2_tovar']; ?></td>
+            <td><?php echo $row6['centr2_tovar']; ?></td>
+            <td><?php echo $row6['dostavka_tovar']; ?></td>
+        </tr>
+        <?php	}	?>
+    </table><br/>
 <?php endif ?>
 
 <?php if ($num7 != 0) { ?>
-	<table>
-		<h2>Радема</h2>
-		<tr class="table-top">
-                    <td><?php echo $roww['number']; ?></td>
-                    <td class="width-name"><?php echo $roww['name']; ?></td>
-                    <td><?php echo $roww['bochka']; ?></td>
-                    <td><?php echo $roww['fish']; ?></td>
-                    <td><?php echo $roww['gyrtovna']; ?></td>
-                    <td><?php echo $roww['center']; ?></td>
-                    <td><?php echo $roww['bochka2']; ?></td>
-                    <td><?php echo $roww['fish2']; ?></td>
-                    <td><?php echo $roww['gyrtovna2']; ?></td>
-                    <td><?php echo $roww['center2']; ?></td>
-                    <td><?php echo $roww['dostavka']; ?></td>
-                </tr>
-                <?php while ($row7 = mysqli_fetch_array($result7, MYSQLI_BOTH)) { ?>
-                    <tr>
-                        <td><?php echo $row7['id']; ?></td>
-                        <td class="width-name"><?php echo $row7['name_tovar']; ?></td>
-                        <td><?php echo $row7['bochka_tovar']; ?></td>
-                        <td><?php echo $row7['fish_tovar']; ?></td>
-                        <td><?php echo $row7['gyrtovna_tovar']; ?></td>
-                        <td><?php echo $row7['centr_tovar']; ?></td>
-                        <td><?php echo $row7['bochka2_tovar']; ?></td>
-                        <td><?php echo $row7['fish2_tovar']; ?></td>
-                        <td><?php echo $row7['gyrtovna2_tovar']; ?></td>
-                        <td><?php echo $row7['centr2_tovar']; ?></td>
-                        <td><?php echo $row7['dostavka_tovar']; ?></td>
-                    </tr>
-		<?php	}	?>
-	</table><br/>
+<table>
+  <h2>Радема</h2>
+  <tr class="table-top">
+            <td rowspan="2"><?php echo $roww['number']; ?></td>
+            <td rowspan="2" class="width-name"><?php echo $roww['name']; ?></td>
+            <td colspan="4">Залишок</td>
+            <td colspan="4">Замовлення</td>
+            <td rowspan="2"><?php echo $roww['dostavka']; ?></td>
+        </tr>
+        <tr class="table-top">
+            <td><?php echo $roww['bochka']; ?></td>
+            <td><?php echo $roww['fish']; ?></td>
+            <td><?php echo $roww['gyrtovna']; ?></td>
+            <td><?php echo $roww['center']; ?></td>
+            <td><?php echo $roww['bochka2']; ?></td>
+            <td><?php echo $roww['fish2']; ?></td>
+            <td><?php echo $roww['gyrtovna2']; ?></td>
+            <td><?php echo $roww['center2']; ?></td>
+        </tr>
+<?php while ($row7 = mysqli_fetch_array($result7, MYSQLI_BOTH)) { ?>
+<tr>
+    <td><?php echo $row7['id']; ?></td>
+    <td class="width-name"><?php echo $row7['name_tovar']; ?></td>
+    <td><?php echo $row7['bochka_tovar']; ?></td>
+    <td><?php echo $row7['fish_tovar']; ?></td>
+    <td><?php echo $row7['gyrtovna_tovar']; ?></td>
+    <td><?php echo $row7['centr_tovar']; ?></td>
+    <td><?php echo $row7['bochka2_tovar']; ?></td>
+    <td><?php echo $row7['fish2_tovar']; ?></td>
+    <td><?php echo $row7['gyrtovna2_tovar']; ?></td>
+    <td><?php echo $row7['centr2_tovar']; ?></td>
+    <td><?php echo $row7['dostavka_tovar']; ?></td>
+</tr>
+<?php	}	?>
+</table><br/>
 <?php }
 }  else 
 {

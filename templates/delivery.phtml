@@ -56,7 +56,7 @@
 			<a class="close" title="Закрыть" href="#close"></a>
 		</div>
 		<?php if (!empty($errore)) {
-		header("Location:" .base_url .'delivery#errore');
+			header("Location:" .base_url .'delivery#errore');
 		} ?>
 		<form action="<?php echo base_url .'delivery';?>" method="post">
 			<input class="sub-reset" type="reset" value="Скинути" title="Скинути введення">
@@ -695,7 +695,132 @@
 			<input type="hidden" name="date" value="<?php echo date('Y-m-d') ?>" />
 			<input type="submit" class="sub-save save-dostavka" name="save_dostavka" value="Зберегти">
 		</form>
-		<?php } ?>
-		
-	</body>
-	</html>
+		<div>
+			<?php 
+			$date_today = date('Y-m-d');
+			$date_page = $_POST['date_page'];
+			$date_today_format = date_format(date_create($date_today), 'd.m.Y');
+			$date_page_format = date_format(date_create($date_page), 'd.m.Y');
+
+			$query_dostav_fruits = $this->get('query_dostav_fruits');
+			$query_dostav_vegetables = $this->get('query_dostav_vegetables');
+			$query_dostav_sausage = $this->get('query_dostav_sausage');
+			$query_dostav_fish_sm = $this->get('query_dostav_fish_sm');
+			$query_dostav_remake = $this->get('query_dostav_remake');
+			$query_dostav_ovis = $this->get('query_dostav_ovis');
+			$query_dostav_radema = $this->get('query_dostav_radema');
+			
+			$num_fruits = mysqli_num_rows($query_dostav_fruits);
+			$num_vegetables = mysqli_num_rows($query_dostav_vegetables);
+			$num_sausage = mysqli_num_rows($query_dostav_sausage);
+			$num_fish_sm = mysqli_num_rows($query_dostav_fish_sm);
+			$num_remake = mysqli_num_rows($query_dostav_remake);
+			$num_ovis = mysqli_num_rows($query_dostav_ovis);
+			$num_radema = mysqli_num_rows($query_dostav_radema);
+			?>
+
+			<div class="date">
+				<form action="<?php echo base_url .'delivery'; ?>" method="post">
+					<select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
+						<option>Дата</option>
+						<?php 
+						for($i = 0;  $i <= 4000; $i++ ){
+							$next_date = date('Y-m-d', strtotime($date_today .' -'.$i .'day'));
+							$next_date_format = date_format(date_create($next_date), 'd.m.Y');
+							if ($next_date >= '2018-08-01') {?>
+							<option value="<?php echo $next_date; ?>"><?php echo $next_date_format;?></option> 
+							<?php }
+						}
+						?>
+					</select>
+				</form>
+				<?php if (empty($date_page)) {
+					echo $date_today_format;
+				} 
+				else {
+					echo $date_page_format;
+				} ?>
+			</div> 
+			<div>
+				<?php if ($num_fruits) { ?>
+				<table>
+					<h2>Фрукти</h2>
+					<?php while ($row_fruits = mysqli_fetch_array($query_dostav_fruits, MYSQLI_BOTH)) { ?>
+						<tr>
+							<td><?php echo $row_fruits['name_tovar']; ?></td>
+							<td><?php echo $row_fruits['dostavka_tovar']; ?></td>
+						</tr>
+						<?php } } ?>
+					</table>
+
+					<?php if ($num_vegetables) { ?>
+					<table>
+					<h2>Овочі</h2>
+					<?php while ($row_vegetables = mysqli_fetch_array($query_dostav_vegetables, MYSQLI_BOTH)) { ?>
+						<tr>
+							<td><?php echo $row_vegetables['name_tovar']; ?></td>
+							<td><?php echo $row_vegetables['dostavka_tovar']; ?></td>
+						</tr>
+						<?php } } ?>
+					</table>
+					
+					<?php if ($num_sausage) { ?>
+					<table>
+					<h2>Ковбаса</h2>
+					<?php while ($row_sausage = mysqli_fetch_array($query_dostav_sausage, MYSQLI_BOTH)) { ?>
+						<tr>
+							<td><?php echo $row_sausage['name_tovar']; ?></td>
+							<td><?php echo $row_sausage['dostavka_tovar']; ?></td>
+						</tr>
+						<?php } } ?>
+					</table>
+
+					<?php if ($num_fish_sm) { ?>
+					<table>
+					<h2>Риба С/М</h2>
+					<?php while ($row_fish_sm = mysqli_fetch_array($query_dostav_fish_sm, MYSQLI_BOTH)) { ?>
+						<tr>
+							<td><?php echo $row_fish_sm['name_tovar']; ?></td>
+							<td><?php echo $row_fish_sm['dostavka_tovar']; ?></td>
+						</tr>
+						<?php } } ?>
+					</table>
+
+					<?php if ($num_remake) { ?>
+					<table>
+					<h2>Переробка</h2>
+					<?php while ($row_remake = mysqli_fetch_array($query_dostav_remake, MYSQLI_BOTH)) { ?>
+						<tr>
+							<td><?php echo $row_remake['name_tovar']; ?></td>
+							<td><?php echo $row_remake['dostavka_tovar']; ?></td>
+						</tr>
+						<?php } } ?>
+					</table>
+
+					<?php if ($num_ovis) { ?>
+					<table>
+					<h2>Овіс</h2>
+					<?php while ($row_ovis = mysqli_fetch_array($query_dostav_ovis, MYSQLI_BOTH)) { ?>
+						<tr>
+							<td><?php echo $row_ovis['name_tovar']; ?></td>
+							<td><?php echo $row_ovis['dostavka_tovar']; ?></td>
+						</tr>
+						<?php } } ?>
+					</table>
+
+					<?php if ($num_radema) { ?>
+					<table>
+					<h2>Радема</h2>
+					<?php while ($row_radema = mysqli_fetch_array($query_dostav_radema, MYSQLI_BOTH)) { ?>
+						<tr>
+							<td><?php echo $row_radema['name_tovar']; ?></td>
+							<td><?php echo $row_radema['dostavka_tovar']; ?></td>
+						</tr>
+						<?php } } ?>
+					</table>
+				</div>
+			</div>
+			<?php } ?>
+
+		</body>
+		</html>

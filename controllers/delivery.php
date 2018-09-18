@@ -221,78 +221,109 @@ Class Controller_Delivery Extends Controller_Base
     $template->set('errorsl', $errorsl);
     $template->set('errore', $errore);
     $template->set('result', $result);
-    mysqli_close($db);
 
-    $this->_renderLayout($template);
-}
+    $date_today = date('Y-m-d');
+    $date_page = $_POST['date_page'];
 
-public function logout() 
-{
 
-    $template = $this->_initTemplate('Вихід');
+    if (!empty($date_page)) {
+        $query_dostav_fruits= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM fruits WHERE date='$date_page'");
+        $query_dostav_vegetables= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM vegetables WHERE date='$date_page'");
+        $query_dostav_sausage= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM sausage WHERE date='$date_page'");
+        $query_dostav_fish_sm= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM fish_sm WHERE date='$date_page'");
+        $query_dostav_remake= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM remake WHERE date='$date_page'");
+        $query_dostav_ovis= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM ovis WHERE date='$date_page'");
+        $query_dostav_radema= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM radema WHERE date='$date_page'");
+    } 
+    else {
+        $query_dostav_fruits= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM fruits WHERE date='$date_today'");
+        $query_dostav_vegetables= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM vegetables WHERE date='$date_today'");
+        $query_dostav_sausage= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM sausage WHERE date='$date_today'");
+        $query_dostav_fish_sm= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM fish_sm WHERE date='$date_today'");
+        $query_dostav_remake= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM remake WHERE date='$date_today'");
+        $query_dostav_ovis= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM ovis WHERE date='$date_today'");
+        $query_dostav_radema= mysqli_query($db, "SELECT `id`, `name_tovar`, `dostavka_tovar`, `date` FROM radema WHERE date='$date_today'");
+    }
+        $template->set('query_dostav_fruits', $query_dostav_fruits);
+        $template->set('query_dostav_vegetables', $query_dostav_vegetables);
+        $template->set('query_dostav_sausage', $query_dostav_sausage);
+        $template->set('query_dostav_fish_sm', $query_dostav_fish_sm);
+        $template->set('query_dostav_remake', $query_dostav_remake);
+        $template->set('query_dostav_ovis', $query_dostav_ovis);
+        $template->set('query_dostav_radema', $query_dostav_radema);
 
-    $template->setFile('templates/delivery/logout.phtml');
+        mysqli_close($db);
 
-    $this->_renderLayout($template);
-}
-
-public function bochka() 
-{
-
-    $template = $this->_initTemplate('Бочка');
-
-    $template->setFile('templates/delivery/bochka.phtml');
-
-    $this->_renderLayout($template);
-}
-
-public function fish_terminal() 
-{
-
-    $template = $this->_initTemplate('Рибний термінал');
-
-    $template->setFile('templates/delivery/fish_terminal.phtml');
-
-    $db = $this->_registry->get('db');
-
-    if (isset($_POST['add'])) {
-        $id_tovar = $_POST['id_tovar'];
-        $number = $_POST['number'];
-        $date = $_POST['date'];
-        $query = "SELECT * FROM driedfruit_distribution_bochka WHERE tovar_id='$id_tovar' AND date='$date'";
-        $result = mysqli_query($db, $query);
-        $num = mysqli_num_rows($result);
-        echo $num;
-
-        if ($num == 0) {
-            $query = "INSERT INTO `driedfruit_distribution_bochka`(`id`, `tovar_id`, `number`, `date`) VALUES ('null','$id_tovar','$number','$date')";
-            $result = mysqli_query($db, $query);
-        }
-        else {
-            echo "За ".$date." даний товар вже існує!";
-        }
+        $this->_renderLayout($template);
     }
 
-    $this->_renderLayout($template);
-}
+    public function logout() 
+    {
 
-public function gurtovnya() 
-{
+        $template = $this->_initTemplate('Вихід');
 
-    $template = $this->_initTemplate('Гуртовня');
+        $template->setFile('templates/delivery/logout.phtml');
 
-    $template->setFile('templates/delivery/gurtovnya.phtml');
+        $this->_renderLayout($template);
+    }
 
-    $this->_renderLayout($template);
-}
+    public function bochka() 
+    {
 
-public function center() 
-{
+        $template = $this->_initTemplate('Бочка');
 
-    $template = $this->_initTemplate('Центр');
+        $template->setFile('templates/delivery/bochka.phtml');
 
-    $template->setFile('templates/delivery/center.phtml');
+        $this->_renderLayout($template);
+    }
 
-    $this->_renderLayout($template);
-}
+    public function fish_terminal() 
+    {
+
+        $template = $this->_initTemplate('Рибний термінал');
+
+        $template->setFile('templates/delivery/fish_terminal.phtml');
+
+        $db = $this->_registry->get('db');
+
+        if (isset($_POST['add'])) {
+            $id_tovar = $_POST['id_tovar'];
+            $number = $_POST['number'];
+            $date = $_POST['date'];
+            $query = "SELECT * FROM driedfruit_distribution_bochka WHERE tovar_id='$id_tovar' AND date='$date'";
+            $result = mysqli_query($db, $query);
+            $num = mysqli_num_rows($result);
+            echo $num;
+
+            if ($num == 0) {
+                $query = "INSERT INTO `driedfruit_distribution_bochka`(`id`, `tovar_id`, `number`, `date`) VALUES ('null','$id_tovar','$number','$date')";
+                $result = mysqli_query($db, $query);
+            }
+            else {
+                echo "За ".$date." даний товар вже існує!";
+            }
+        }
+
+        $this->_renderLayout($template);
+    }
+
+    public function gurtovnya() 
+    {
+
+        $template = $this->_initTemplate('Гуртовня');
+
+        $template->setFile('templates/delivery/gurtovnya.phtml');
+
+        $this->_renderLayout($template);
+    }
+
+    public function center() 
+    {
+
+        $template = $this->_initTemplate('Центр');
+
+        $template->setFile('templates/delivery/center.phtml');
+
+        $this->_renderLayout($template);
+    }
 }

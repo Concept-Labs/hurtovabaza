@@ -212,7 +212,7 @@ a.delivery-exit:hover{
   float: left;
 }
 .delivery-dostavka-block h2{
-  margin-top: 15px;
+  margin-top: 16px;
 }
 .delivery-dostavka-block .width-name-delivery{
   width: 80%;
@@ -220,6 +220,9 @@ a.delivery-exit:hover{
 .date-delivery{
   float: left;
   font: normal 150% 'century gothic', arial;
+}
+.delivery-dostavka-block table{
+  margin-bottom: 54px;
 }
 .delivery-dostavka-block tr{
   height: 40px;

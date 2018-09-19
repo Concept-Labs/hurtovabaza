@@ -28,20 +28,21 @@ a.add-tovar:active{
 
 /* кнопка скинути */
 input.sub-reset{
+	margin: 50px -50px 0 0;
 	font: normal 80% 'century gothic', arial;
 	cursor: pointer;
 	border: none;
 	color: #fff;
-	    display: block;
-    float: right;
-    padding: .6%;
-    background-color: #1e91cf;
-    border-color: #1978ab;
-    border-radius: 3px;
-    -webkit-transition: .3s all;
-    -moz-transition: .3s all;
-    -o-transition: .3s all;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
+	display: block;
+	float: right;
+	padding: .6%;
+	background-color: #1e91cf;
+	border-color: #1978ab;
+	border-radius: 3px;
+	-webkit-transition: .3s all;
+	-moz-transition: .3s all;
+	-o-transition: .3s all;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
 } 
 input.sub-reset:hover{
 	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
@@ -58,17 +59,17 @@ input.sub-save{
 	cursor: pointer;
 	border: none;
 	color: #fff;
-	    display: block;
-    float: right;
-    padding: .6%;
-    background-color: #1e91cf;
-    border-color: #1978ab;
-    border-radius: 3px;
-    margin: 15px 0 15px 0;
-    -webkit-transition: .3s all;
-    -moz-transition: .3s all;
-    -o-transition: .3s all;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
+	display: block;
+	float: right;
+	padding: .6%;
+	background-color: #1e91cf;
+	border-color: #1978ab;
+	border-radius: 3px;
+	margin: 15px 0 15px 0;
+	-webkit-transition: .3s all;
+	-moz-transition: .3s all;
+	-o-transition: .3s all;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
 } 
 input.sub-save:hover{
 	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
@@ -89,13 +90,13 @@ button.confirmation-btn{
 	cursor: pointer;
 	border: none;
 	color: #fff;
-    padding: .8%;
-    background-color: #1e91cf;
-    border-color: #1978ab;
-    border-radius: 3px;
-     -webkit-transition: .3s all;
-    -moz-transition: .3s all;
-    -o-transition: .3s all;
+	padding: .8%;
+	background-color: #1e91cf;
+	border-color: #1978ab;
+	border-radius: 3px;
+	-webkit-transition: .3s all;
+	-moz-transition: .3s all;
+	-o-transition: .3s all;
 }
 button.confirmation-btn:hover{
 	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
@@ -117,7 +118,7 @@ select.data-page{
 	transition: all .3s;
 }
 select.data-page:hover{
-		box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
 }
 /* форма вибору в доставці при вводі розприділення */
 

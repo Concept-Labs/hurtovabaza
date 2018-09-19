@@ -1,14 +1,17 @@
 @media screen and (max-device-width: 1024px)
 {   
+    div.dostavka{
+        width: 75%;
+    }
     .head a{
-        font-size: 130%;
+        font-size: 110%;
         padding: 0;
     }
     .dostavka-head{
         padding: 0 10px;
     }
     .dostavka h2{
-        font-size: 250%;
+        font-size: 160%;
     }
     .dostavka li{
         width: 97%;
@@ -16,7 +19,7 @@
     }
     .dostavka li input[type="number"]{
         width: 120px;
-        font-size: 110%;
+        font-size: 95%;
         padding: 5px;
     }
     .dostavka li .checkbox + label:before{
@@ -42,6 +45,9 @@
     }
       .dostavka ul li label{
      font-size: .7em;
+    }
+    .delivery-dostavka-block h2{
+        font-size: 120%;
     }
 }
 

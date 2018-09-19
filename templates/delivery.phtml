@@ -59,7 +59,7 @@
 			header("Location:" .base_url .'delivery#errore');
 		} ?>
 		<form action="<?php echo base_url .'delivery';?>" method="post">
-			<input class="sub-reset" type="reset" value="Скинути" title="Скинути введення">
+			<!-- <input class="sub-reset" type="reset" value="Скинути" title="Скинути введення"> -->
 			<div class="dostavka">	
 				<h2>Фрукти</h2>
 				<ul>
@@ -691,11 +691,12 @@
 						<label for="oil-polsha5l">Олія (Польща)5л</label><input type="number" step="0.1" name="radema[201]"  placeholder=" Кількість">
 					</li>
 				</ul>
+					<input type="submit" class="sub-save save-dostavka" name="save_dostavka" value="Зберегти">
 			</div>
 			<input type="hidden" name="date" value="<?php echo date('Y-m-d') ?>" />
-			<input type="submit" class="sub-save save-dostavka" name="save_dostavka" value="Зберегти">
+		
 		</form>
-		<div>
+		<div class="delivery-zakupka">
 			<?php 
 			$date_today = date('Y-m-d');
 			$date_page = $_POST['date_page'];
@@ -719,10 +720,10 @@
 			$num_radema = mysqli_num_rows($query_dostav_radema);
 			?>
 
-			<div class="date">
+			<div class="date-delivery">
 				<form action="<?php echo base_url .'delivery'; ?>" method="post">
 					<select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
-						<option>Дата</option>
+						<option>Дата замовлення</option>
 						<?php 
 						for($i = 0;  $i <= 4000; $i++ ){
 							$next_date = date('Y-m-d', strtotime($date_today .' -'.$i .'day'));
@@ -741,13 +742,13 @@
 					echo $date_page_format;
 				} ?>
 			</div> 
-			<div>
+			<div class="delivery-dostavka-block">
 				<?php if ($num_fruits) { ?>
 				<table>
 					<h2>Фрукти</h2>
 					<?php while ($row_fruits = mysqli_fetch_array($query_dostav_fruits, MYSQLI_BOTH)) { ?>
 						<tr>
-							<td><?php echo $row_fruits['name_tovar']; ?></td>
+							<td class="width-name-delivery"><?php echo $row_fruits['name_tovar']; ?></td>
 							<td><?php echo $row_fruits['dostavka_tovar']; ?></td>
 						</tr>
 						<?php } } ?>
@@ -758,7 +759,7 @@
 					<h2>Овочі</h2>
 					<?php while ($row_vegetables = mysqli_fetch_array($query_dostav_vegetables, MYSQLI_BOTH)) { ?>
 						<tr>
-							<td><?php echo $row_vegetables['name_tovar']; ?></td>
+							<td class="width-name-delivery"><?php echo $row_vegetables['name_tovar']; ?></td>
 							<td><?php echo $row_vegetables['dostavka_tovar']; ?></td>
 						</tr>
 						<?php } } ?>
@@ -769,7 +770,7 @@
 					<h2>Ковбаса</h2>
 					<?php while ($row_sausage = mysqli_fetch_array($query_dostav_sausage, MYSQLI_BOTH)) { ?>
 						<tr>
-							<td><?php echo $row_sausage['name_tovar']; ?></td>
+							<td class="width-name-delivery"><?php echo $row_sausage['name_tovar']; ?></td>
 							<td><?php echo $row_sausage['dostavka_tovar']; ?></td>
 						</tr>
 						<?php } } ?>
@@ -780,7 +781,7 @@
 					<h2>Риба С/М</h2>
 					<?php while ($row_fish_sm = mysqli_fetch_array($query_dostav_fish_sm, MYSQLI_BOTH)) { ?>
 						<tr>
-							<td><?php echo $row_fish_sm['name_tovar']; ?></td>
+							<td class="width-name-delivery"><?php echo $row_fish_sm['name_tovar']; ?></td>
 							<td><?php echo $row_fish_sm['dostavka_tovar']; ?></td>
 						</tr>
 						<?php } } ?>
@@ -791,7 +792,7 @@
 					<h2>Переробка</h2>
 					<?php while ($row_remake = mysqli_fetch_array($query_dostav_remake, MYSQLI_BOTH)) { ?>
 						<tr>
-							<td><?php echo $row_remake['name_tovar']; ?></td>
+							<td class="width-name-delivery"><?php echo $row_remake['name_tovar']; ?></td>
 							<td><?php echo $row_remake['dostavka_tovar']; ?></td>
 						</tr>
 						<?php } } ?>
@@ -802,7 +803,7 @@
 					<h2>Овіс</h2>
 					<?php while ($row_ovis = mysqli_fetch_array($query_dostav_ovis, MYSQLI_BOTH)) { ?>
 						<tr>
-							<td><?php echo $row_ovis['name_tovar']; ?></td>
+							<td class="width-name-delivery"><?php echo $row_ovis['name_tovar']; ?></td>
 							<td><?php echo $row_ovis['dostavka_tovar']; ?></td>
 						</tr>
 						<?php } } ?>
@@ -813,7 +814,7 @@
 					<h2>Радема</h2>
 					<?php while ($row_radema = mysqli_fetch_array($query_dostav_radema, MYSQLI_BOTH)) { ?>
 						<tr>
-							<td><?php echo $row_radema['name_tovar']; ?></td>
+							<td class="width-name-delivery"><?php echo $row_radema['name_tovar']; ?></td>
 							<td><?php echo $row_radema['dostavka_tovar']; ?></td>
 						</tr>
 						<?php } } ?>

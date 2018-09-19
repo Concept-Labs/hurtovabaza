@@ -1,5 +1,6 @@
 div.dostavka{
-	margin: 0 auto;
+	float: left;
+  width: 78%;
 }
 div.dostavka > h2{
   margin-top: 40px;
@@ -21,7 +22,7 @@ div.dostavka > h2{
 .dostavka input[type="number"]{
   text-align: center;
   float: right;
-  width: 10%;
+  width: 13%;
  height: 25px;
  margin-right: -14px;
  margin-top: -5px;
@@ -39,11 +40,11 @@ div.dostavka > h2{
 box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 1);
 }
 
-.dostavka input:invalid:not(:placeholder-shown) {
+.dostavka li input:invalid:not(:placeholder-shown) {
   background-color: rgba(190, 25, 25, 0.63);
   border-radius: 5px;
 }
-.dostavka input:valid:not(:placeholder-shown) {
+.dostavka li input:valid:not(:placeholder-shown) {
   background-color: rgba(7, 214, 0, 0.56);
   border-radius: 5px;
   width: 60%;
@@ -156,6 +157,8 @@ body.delivery .authorization-error{
 /* Стилі для меню доставки */
  .delivery-block-menu{
   margin-top: -5px;
+  width: auto;
+  min-width: 555px;
     padding: 10px;
     background: #e5e5e5;
     border-radius: 0 0 10px 10px;
@@ -196,3 +199,25 @@ a.delivery-exit:hover{
   padding-left: 50px;
 }
 /* кінець таблиці в закупці */
+
+.delivery-zakupka{
+  width: 20%;
+  height: auto;
+  float: right;
+}
+.delivery-dostavka-block{
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.delivery-dostavka-block h2{
+  margin-top: 15px;
+}
+.delivery-dostavka-block .width-name-delivery{
+  width: 80%;
+}
+.date-delivery{
+  float: left;
+  font: normal 150% 'century gothic', arial;
+  margin-top: 20px;
+}

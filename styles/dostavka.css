@@ -10,10 +10,11 @@ div.dostavka > h2{
   margin-top: 10px;
 }
 .dostavka li{
+  background-color: #fcfcfc;
 	list-style-type: none;
-  border-bottom: 1px solid silver;
-  border-left: 1px solid silver;
-  border-right: 1px solid silver;
+  border-bottom: 1px solid rgba(201, 201, 201, 0.29);
+  border-left: 1px solid rgba(201, 201, 201, 0.29);
+  border-right: 1px solid rgba(201, 201, 201, 0.29);
   padding: 10px 15px;
 }
 .dostavka li:hover{
@@ -29,7 +30,7 @@ div.dostavka > h2{
  margin-top: -7px;
   border-radius: 0px;
   background: #fefefe;
-  border-left: 1px solid silver;
+  border-left: 1px solid rgba(201, 201, 201, 0.29);
   -webkit-transition: .3s all;
   -moz-transition: .3s all;
   -o-transition: .3s all;

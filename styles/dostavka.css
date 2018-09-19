@@ -1,4 +1,5 @@
 div.dostavka{
+  margin-top: 39px;
 	float: left;
   width: 78%;
 }
@@ -24,8 +25,8 @@ div.dostavka > h2{
   float: right;
   width: 13%;
  height: 25px;
- margin-right: -14px;
- margin-top: -5px;
+ margin-right: -12px;
+ margin-top: -7px;
   border-radius: 0px;
   background: #fefefe;
   border-left: 1px solid silver;
@@ -219,5 +220,7 @@ a.delivery-exit:hover{
 .date-delivery{
   float: left;
   font: normal 150% 'century gothic', arial;
-  margin-top: 20px;
+}
+.delivery-dostavka-block tr{
+  height: 40px;
 }

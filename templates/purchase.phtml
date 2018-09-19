@@ -72,22 +72,6 @@ if (!empty($num) || !empty($num2) || !empty($num3) || !empty($num4)|| !empty($nu
 	</table><br/>
 <?php endif ?>
 
-<?php if ($num2 != 0): ?>
-	<table>
-		<h2>Сухофрукти</h2>
-		<tr class="table-top">
-			<td>Назва</td> 
-			<td>Кількість ящиків</td>
-		</tr>
-		<?php while ($row2 = mysqli_fetch_array($result2)) {?>
-		<tr>
-			<td><?php echo $row2['label'];?></td> 
-			<td><?php echo $row2['number'];?></td>
-		</tr>
-		<?php	}	?>
-	</table><br/>
-<?php endif ?>
-
 <?php if ($num3 != 0): ?>
 	<table>
 		<h2>Овочі</h2>

@@ -67,24 +67,6 @@ Class Controller_Delivery Extends Controller_Base
         }
 
 
-        if (isset($_POST['driedfruit']) && !empty($_POST['driedfruit'])) {
-            $driedfruit = $_POST['driedfruit'];
-            $date2 = $_POST['date'];
-            $valuesArr2 = array();
-            foreach($driedfruit as $tovar_id2 => $number2){
-                $valuesArr2[] = "('', '$tovar_id2', '$number2', '$date2')";
-            }
-
-            $query_select2 = "SELECT * FROM driedfruit_delivery WHERE tovar_id='$tovar_id2' AND date='$date2'";
-            $resultat2 = mysqli_query($db, $query_select2);
-            $numm2 = mysqli_num_rows($resultat2);
-
-            if ($numm2 == 0) {
-                $query2 = "INSERT INTO driedfruit_delivery (id, tovar_id, number, date) VALUES " .implode(',', $valuesArr2);
-                $result2 = mysqli_query($db, $query2);
-            }
-        }
-
         if (isset($_POST['vegetables']) && !empty($_POST['vegetables'])) {
             $vegetables = $_POST['vegetables'];
             $date3 = $_POST['date'];
@@ -212,12 +194,12 @@ Class Controller_Delivery Extends Controller_Base
 
 
         }
-        if ($numm != 0 && $numm2 != 0 && $numm3 != 0 && $numm4 != 0 && $numm5 != 0 && $numm6 != 0 && $numm7 != 0 && $numm8 != 0 && $numm9 != 0) {
+        if ($numm != 0 && $numm3 != 0 && $numm4 != 0 && $numm5 != 0 && $numm6 != 0 && $numm7 != 0 && $numm8 != 0 && $numm9 != 0) {
             $date_format = date_format(date_create($date), 'd.m.Y');
             $errore = "За <span style='color: black;'>".$date_format."</span> внесення доставки вже існує!";
         }
     }
-
+    
     $template->set('errorsl', $errorsl);
     $template->set('errore', $errore);
     $template->set('result', $result);

@@ -166,9 +166,6 @@ Class Template
                     exit();
                 }
             }
-
-            
-
         }
 
         mysqli_close($db);

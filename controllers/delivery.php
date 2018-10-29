@@ -47,6 +47,39 @@ Class Controller_Delivery Extends Controller_Base
 
     }
 
+    $query_tovar_fruits= "SELECT * FROM tovar_fruits";
+    $resultat_tovar_fruits = mysqli_query($db, $query_tovar_fruits);
+    $template->set('resultat_tovar_fruits', $resultat_tovar_fruits);
+
+    $query_tovar_vegetables= "SELECT * FROM tovar_vegetables";
+    $resultat_tovar_vegetables = mysqli_query($db, $query_tovar_vegetables);
+    $template->set('resultat_tovar_vegetables', $resultat_tovar_vegetables);
+
+    $query_tovar_sausage= "SELECT * FROM tovar_sausage";
+    $resultat_tovar_sausage = mysqli_query($db, $query_tovar_sausage);
+    $template->set('resultat_tovar_sausage', $resultat_tovar_sausage);
+
+    $query_tovar_cheese= "SELECT * FROM tovar_cheese";
+    $resultat_tovar_cheese = mysqli_query($db, $query_tovar_cheese);
+    $template->set('resultat_tovar_cheese', $resultat_tovar_cheese);
+
+    $query_tovar_fish_processing= "SELECT * FROM tovar_fish_processing";
+    $resultat_tovar_fish_processing = mysqli_query($db, $query_tovar_fish_processing);
+    $template->set('resultat_tovar_fish_processing', $resultat_tovar_fish_processing);
+
+    $query_tovar_fish_sm = "SELECT * FROM tovar_fish_sm";
+    $resultat_tovar_fish_sm = mysqli_query($db, $query_tovar_fish_sm);
+    $template->set('resultat_tovar_fish_sm', $resultat_tovar_fish_sm);
+
+    $query_tovar_ovis= "SELECT * FROM tovar_ovis";
+    $resultat_tovar_ovis = mysqli_query($db, $query_tovar_ovis);
+    $template->set('resultat_tovar_ovis', $resultat_tovar_ovis);
+
+    $query_tovar_radema= "SELECT * FROM tovar_radema";
+    $resultat_tovar_radema = mysqli_query($db, $query_tovar_radema);
+    $template->set('resultat_tovar_radema', $resultat_tovar_radema);
+
+
     if (isset($_POST['save_dostavka'])) {
         if (isset($_POST['fruits']) && !empty($_POST['fruits'])) {
             $fruits = $_POST['fruits'];
@@ -267,24 +300,6 @@ Class Controller_Delivery Extends Controller_Base
         $template->setFile('templates/delivery/fish_terminal.phtml');
 
         $db = $this->_registry->get('db');
-
-        if (isset($_POST['add'])) {
-            $id_tovar = $_POST['id_tovar'];
-            $number = $_POST['number'];
-            $date = $_POST['date'];
-            $query = "SELECT * FROM driedfruit_distribution_bochka WHERE tovar_id='$id_tovar' AND date='$date'";
-            $result = mysqli_query($db, $query);
-            $num = mysqli_num_rows($result);
-            echo $num;
-
-            if ($num == 0) {
-                $query = "INSERT INTO `driedfruit_distribution_bochka`(`id`, `tovar_id`, `number`, `date`) VALUES ('null','$id_tovar','$number','$date')";
-                $result = mysqli_query($db, $query);
-            }
-            else {
-                echo "За ".$date." даний товар вже існує!";
-            }
-        }
 
         $this->_renderLayout($template);
     }

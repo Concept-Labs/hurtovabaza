@@ -210,45 +210,185 @@ Class Template
 
         $db = $this->registry->get('db');
         $errors = array();
-        if (isset($_POST['add_distribution'])) {
+        
+        if (isset($_GET['tovar'])) {
+            $tovar = $_GET['tovar']; 
+            if (isset($_POST['add_distribution'])) {
 
-            $name_tovars = $_POST['name_tovars'];
-            $number = $_POST['number'];
-            $date = $_POST['date'];
-
-            $query_select_label = "SELECT * FROM `name_tovar` WHERE id='$name_tovars'";
-            $result_label = mysqli_query($db, $query_select_label);
-            $row = mysqli_fetch_array($result_label);
-
-            $query_select = "SELECT * FROM $table WHERE tovar_id='$name_tovars' AND date='$date'";
-            $resultat = mysqli_query($db, $query_select);
-            $numm = mysqli_num_rows($resultat);
-
-            if (empty($name_tovars)) {
-                $errors = 'Заповніть поле "Назва"!';
-            }
-            elseif (!ctype_digit($name_tovars)) {
-                $errors = 'В полі "Назва", потрібно записати назву товару цифрами із запропонованого списку!';
-            }
-            elseif (empty($number)) {
-                $errors = 'Заповніть поле "Кількість"!';
-            }
-            elseif ($numm != 0) {
-                $errors = 'Сьогодні товар "'.$row['label'].'" був вже доданий!';
-            }
-
-            if (empty($errors)) {
-                if ($numm == 0) {
-                    $query = "INSERT INTO $table (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
-                    $result = mysqli_query($db, $query);
+                switch ($tovar) {
+                    case 'fruits':
+                    $table_tovar = 'tovar_fruits';
+                    break;
+                    case 'vegetables':
+                    $table_tovar = 'tovar_vegetables';
+                    break;
+                    case 'sausage':
+                    $table_tovar = 'tovar_sausage';
+                    break;
+                    case 'cheese':
+                    $table_tovar = 'tovar_cheese';
+                    break;
+                    case 'fish_processing':
+                    $table_tovar = 'tovar_fish_processing';
+                    break;
+                    case 'fish_sm':
+                    $table_tovar = 'tovar_fish_sm';
+                    break;
+                    case 'ovis':
+                    $table_tovar = 'tovar_ovis';
+                    break;
+                    case 'radema':
+                    $table_tovar = 'tovar_radema';
+                    break;
                 }
-            }
-            
+
+                if ($tochka == 'bochka') {
+                    $table_fruits = "distribution_bochka_fruits";
+                    $table_vegetables = "distribution_bochka_vegetables";
+                    $table_sausage = "distribution_bochka_sausage";
+                    $table_cheese = "distribution_bochka_cheese";
+                    $table_fish_processing = "distribution_bochka_fish_processing";
+                    $table_fish_sm = "distribution_bochka_fish_sm";
+                    $table_ovis = "distribution_bochka_ovis";
+                    $table_radema = "distribution_bochka_radema";
+                }
+                elseif ($tochka == 'fish_terminal') {
+                    $table_fruits = "distribution_fish_terminal_fruits";
+                    $table_vegetables = "distribution_fish_terminal_vegetables";
+                    $table_sausage = "distribution_fish_terminal_sausage";
+                    $table_cheese = "distribution_fish_terminal_cheese";
+                    $table_fish_processing = "distribution_fish_terminal_fish_processing";
+                    $table_fish_sm = "distribution_fish_terminal_fish_sm";
+                    $table_ovis = "distribution_fish_terminal_ovis";
+                    $table_radema = "distribution_fish_terminal_radema";
+                }
+                elseif ($tochka == 'gurtovnya') {
+                    $table_fruits = "distribution_gurtovnya_fruits";
+                    $table_vegetables = "distribution_gurtovnya_vegetables";
+                    $table_sausage = "distribution_gurtovnya_sausage";
+                    $table_cheese = "distribution_gurtovnya_cheese";
+                    $table_fish_processing = "distribution_gurtovnya_fish_processing";
+                    $table_fish_sm = "distribution_gurtovnya_fish_sm";
+                    $table_ovis = "distribution_gurtovnya_ovis";
+                    $table_radema = "distribution_gurtovnya_radema";
+                }
+                elseif ($tochka == 'center') {
+                    $table_fruits = "distribution_center_fruits";
+                    $table_vegetables = "distribution_center_vegetables";
+                    $table_sausage = "distribution_center_sausage";
+                    $table_cheese = "distribution_center_cheese";
+                    $table_fish_processing = "distribution_center_fish_processing";
+                    $table_fish_sm = "distribution_center_fish_sm";
+                    $table_ovis = "distribution_center_ovis";
+                    $table_radema = "distribution_center_radema";
+                }
+
+                $name_tovars = $_POST['name_tovars'];
+                $number = $_POST['number'];
+                $date = $_POST['date'];
+
+                $query_select_label = "SELECT * FROM $table_tovar WHERE id='$name_tovars'";
+                $result_label = mysqli_query($db, $query_select_label);
+                $row = mysqli_fetch_array($result_label);
+
+                switch ($tovar) {
+                    case 'fruits':
+                    $query_select = "SELECT * FROM $table_fruits WHERE tovar_id='$name_tovars' AND date='$date'";
+                    break;
+                    case 'vegetables':
+                    $query_select = "SELECT * FROM $table_vegetables WHERE tovar_id='$name_tovars' AND date='$date'";
+                    break;
+                    case 'sausage':
+                    $query_select = "SELECT * FROM $table_sausage WHERE tovar_id='$name_tovars' AND date='$date'";
+                    break;
+                    case 'cheese':
+                    $query_select = "SELECT * FROM $table_cheese WHERE tovar_id='$name_tovars' AND date='$date'";
+                    break;
+                    case 'fish_processing':
+                    $query_select = "SELECT * FROM $table_fish_processing WHERE tovar_id='$name_tovars' AND date='$date'";
+                    break;
+                    case 'fish_sm':
+                    $query_select = "SELECT * FROM $table_fish_sm WHERE tovar_id='$name_tovars' AND date='$date'";
+                    break;
+                    case 'ovis':
+                    $query_select = "SELECT * FROM $table_ovis WHERE tovar_id='$name_tovars' AND date='$date'";
+                    break;
+                    case 'radema':
+                    $query_select = "SELECT * FROM $table_radema WHERE tovar_id='$name_tovars' AND date='$date'";
+                    break;
+                }
+
+                $resultat = mysqli_query($db, $query_select);
+                $numm = mysqli_num_rows($resultat);
+
+                if (empty($name_tovars)) {
+                    $errors = 'Заповніть поле "Назва"!';
+                }
+                elseif (!ctype_digit($name_tovars)) {
+                    $errors = 'В полі "Назва", потрібно записати назву товару цифрами із запропонованого списку!';
+                }
+                elseif (empty($number)) {
+                    $errors = 'Заповніть поле "Кількість"!';
+                }
+                elseif ($numm != 0) {
+                    $errors = 'Сьогодні товар "'.$row['label'].'" був вже доданий!';
+                }
+
+                if (empty($errors)) {
+                    if ($numm == 0) {
+                        switch ($tovar) {
+                            case 'fruits':
+                            $query = "INSERT INTO $table_fruits (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            break;
+                            case 'vegetables':
+                            $query = "INSERT INTO $table_vegetables (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            break;
+                            case 'sausage':
+                            $query = "INSERT INTO $table_sausage (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            break;
+                            case 'cheese':
+                            $query = "INSERT INTO $table_cheese (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            break;
+                            case 'fish_processing':
+                            $query = "INSERT INTO $table_fish_processing (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            break;
+                            case 'fish_sm':
+                            $query = "INSERT INTO $table_fish_sm (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            break;
+                            case 'ovis':
+                            $query = "INSERT INTO $table_ovis (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            break;
+                            case 'radema':
+                            $query = "INSERT INTO $table_radema (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            break;
+                        }                       
+                        $result = mysqli_query($db, $query);
+                    }
+
+                }
+
+            } 
         }
+
 
         mysqli_close($db); 
         ?>
 
+        <?php if (!isset($_GET['tovar'])) { ?>
+        <div>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=cheese';?>">Сир</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=ovis';?>">Овіс</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=radema';?>">Радема</a>
+        </div>
+        <?php } 
+        else {?>
+
+        <?php if (isset($_GET['tovar'])) { ?>
         <div class="add-errore">
             <?php 
             if (!empty($errors)) echo "<div style='color: red;'>" .$errors ."</div>"; 
@@ -260,7 +400,7 @@ Class Template
                 ?>
             </div>
             <div>
-                <form action="<?php echo base_url .'delivery/'.$tochka;?>" method="post">
+                <form action="<?php echo base_url .'delivery/'.$tochka.'?tovar='.$tovar;?>" method="post">
                     <table class="add-delivery">
                         <tr class="table-top">
                             <td>Назва товару</td>
@@ -485,6 +625,7 @@ Class Template
             </div>
 
 
-            <?php
+            <?php }
         }
     }
+}

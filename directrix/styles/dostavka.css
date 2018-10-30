@@ -64,3 +64,25 @@ div.dostavka{
   padding-left: 50px;
 }
 /* кінець таблиці в закупці */
+
+.delivery-block-menu{
+  margin-bottom: 30px;
+  margin-top: -5px;
+  width: auto;
+  min-width: 555px;
+  padding: 10px;
+  background: #e5e5e5;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(201, 201, 201, 0.29);
+}
+.delivery-block-menu span{
+  padding-left: 30px;
+  width: 3.99999%;
+}
+.delivery-block-menu span a{
+ color: #515151;
+ line-height: 30px;
+}
+.delivery-block-menu span a:hover{
+  color: #f25c05;
+}

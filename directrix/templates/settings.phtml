@@ -25,10 +25,10 @@ $roww4 = $this->get('roww4');
 $delete4 = $this->get('delete4');
 
 if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['edit_delivery']) && !isset($_GET['delete_delivery']) && !isset($_GET['edit_admin']) && !isset($_GET['delete_admin']) && !isset($_GET['edit_directrix']) && !isset($_GET['delete_directrix'])) { ?>
-<div class="settings">  
 <div>
-    <a href="<?php echo base_url .'settings/tovars'; ?>">Управління товарами</a>
+    <a class="seting-tovar" href="<?php echo base_url .'settings/tovars'; ?>"><i class="fas fa-sliders-h"></i> Управління товарами</a>
 </div> 
+<div class="settings">  
     <div>
         <h2>Паролі до сайта</h2>
         <br/>

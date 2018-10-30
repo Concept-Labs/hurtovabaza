@@ -1,6 +1,6 @@
 div.dostavka{
   margin-top: 39px;
-	float: left;
+  float: left;
   width: 78%;
 }
 div.dostavka > h2{
@@ -11,7 +11,7 @@ div.dostavka > h2{
 }
 .dostavka li{
   background-color: #fcfcfc;
-	list-style-type: none;
+  list-style-type: none;
   border-bottom: 1px solid rgba(201, 201, 201, 0.29);
   border-left: 1px solid rgba(201, 201, 201, 0.29);
   border-right: 1px solid rgba(201, 201, 201, 0.29);
@@ -25,9 +25,9 @@ div.dostavka > h2{
   text-align: center;
   float: right;
   width: 13%;
- height: 25px;
- margin-right: -12px;
- margin-top: -7px;
+  height: 25px;
+  margin-right: -12px;
+  margin-top: -7px;
   border-radius: 0px;
   background: #fefefe;
   border-left: 1px solid rgba(201, 201, 201, 0.29);
@@ -38,8 +38,8 @@ div.dostavka > h2{
 }
 .dostavka input:hover, .dostavka input:focus{
  -webkit-box-shadow: 0px 0px 8px 0px rgba(50, 50, 50, 1);
--moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 1);
-box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 1);
+ -moz-box-shadow:    0px 0px 8px 0px rgba(50, 50, 50, 1);
+ box-shadow:         0px 0px 8px 0px rgba(50, 50, 50, 1);
 }
 
 .dostavka li input:invalid:not(:placeholder-shown) {
@@ -131,7 +131,7 @@ body.delivery .authorization-delivery img{
   transition: all .3s;
 }
 .authorization-delivery input:hover, input:focus{
-    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25), 0 5px 18px 0 rgba(0, 0, 0, 0.20);
 }
 .authorization-delivery input[type="submit"]{
   background-color: #fabd07;
@@ -157,23 +157,24 @@ body.delivery .authorization-error{
   width: 60%;
 }
 /* Стилі для меню доставки */
- .delivery-block-menu{
+.delivery-block-menu{
   margin-top: -5px;
   width: auto;
   min-width: 555px;
-    padding: 10px;
-    background: #e5e5e5;
-    border-radius: 0 0 10px 10px;
- }
- .delivery-block-menu span{
+  padding: 10px;
+  background: #e5e5e5;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(201, 201, 201, 0.29);
+}
+.delivery-block-menu span{
   padding-left: 30px;
   width: 3.99999%;
- }
- .delivery-block-menu span a{
-   color: #515151;
-  line-height: 30px;
 }
- .delivery-block-menu span a:hover{
+.delivery-block-menu span a{
+ color: #515151;
+ line-height: 30px;
+}
+.delivery-block-menu span a:hover{
   color: #f25c05;
 }
 
@@ -227,4 +228,8 @@ a.delivery-exit:hover{
 }
 .delivery-dostavka-block tr{
   height: 40px;
+}
+
+table.add-delivery{
+  margin-top: 30px;
 }

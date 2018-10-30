@@ -377,29 +377,61 @@ Class Template
         ?>
 
         <?php if (!isset($_GET['tovar'])) { ?>
-        <div>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
+        <div class="delivery-block-menu">
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
+            </span>
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
+            </span>
+            <span>
             <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=cheese';?>">Сир</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=ovis';?>">Овіс</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=radema';?>">Радема</a>
+            </span>
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=cheese';?>">Сир</a>
+            </span>
+            <span>      
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
+            </span>
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
+            </span>
+            <span>
+                  <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=ovis';?>">Овіс</a>
+            </span>
+            <span>
+                <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=radema';?>">Радема</a>
+            </span>       
         </div>
         <?php } 
         else {?>
 
         <?php if (isset($_GET['tovar'])) { ?>
-        <div>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=cheese';?>">Сир</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=ovis';?>">Овіс</a>
-            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=radema';?>">Радема</a>
+        <div class="delivery-block-menu">
+            <span>
+                <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
+            </span>
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
+            </span>
+            <span>
+                <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
+            </span>
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=cheese';?>">Сир</a>
+            </span>
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
+            </span>
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
+            </span>
+            <span>
+                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=ovis';?>">Овіс</a>
+            </span>
+            <span>
+                <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=radema';?>">Радема</a>
+            </span>     
         </div>
         <div class="add-errore">
             <?php 

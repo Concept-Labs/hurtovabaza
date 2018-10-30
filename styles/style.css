@@ -5,6 +5,15 @@ i{
 td.add-name{
 	width: 20%;
 }
+.delivery-block-menu{
+  margin-top: -5px;
+  width: auto;
+  min-width: 555px;
+  padding: 10px;
+  background: #e5e5e5;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(201, 201, 201, 0.29);
+}
 td a{
 	width: auto;
 }

@@ -29,31 +29,59 @@
 else {
 	if (isset($_GET['the'])) { 
 		$result_label = $this->get('result_label');
-		$errors = $this->get('errors');?>
+		$errors = $this->get('errors');
+		switch ($_GET['the']) {
+                    case 'fruits':
+                    $current = 'fruits';
+                    break;
+                    case 'vegetables':
+                    $current = 'vegetables';
+                    break;
+                    case 'sausage':
+                    $current = 'sausage';
+                    break;
+                    case 'cheese':
+                    $current = 'cheese';
+                    break;
+                    case 'fish_processing':
+                    $current = 'fish_processing';
+                    break;
+                    case 'fish_sm':
+                    $current = 'fish_sm';
+                    break;
+                    case 'ovis':
+                    $current = 'ovis';
+                    break;
+                    case 'radema':
+                    $current = 'radema';
+                    break;
+                }
+                ?>
 		<div class="delivery-block-menu">
+			
 			<span>
-				<a href="<?php echo base_url .'settings/tovars?the=fruits';?>">Фрукти</a>
+				<a class="<?php if($current == 'fruits'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=fruits';?>">Фрукти</a>
 			</span>
 			<span>
-				<a href="<?php echo base_url .'settings/tovars?the=vegetables';?>">Овочі</a>
+				<a class="<?php if($current == 'vegetables'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=vegetables';?>">Овочі</a>
 			</span>
 			<span>
-				<a href="<?php echo base_url .'settings/tovars?the=sausage';?>">Ковбаса</a>
+				<a class="<?php if($current == 'sausage'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=sausage';?>">Ковбаса</a>
 			</span>
 			<span>
-				<a href="<?php echo base_url .'settings/tovars?the=cheese';?>">Сир</a>
+				<a class="<?php if($current == 'cheese'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=cheese';?>">Сир</a>
 			</span>
 			<span>
-				<a href="<?php echo base_url .'settings/tovars?the=fish_processing';?>">Рибна переробка</a>
+				<a class="<?php if($current == 'fish_processing'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=fish_processing';?>">Рибна переробка</a>
 			</span>
 			<span>
-				<a href="<?php echo base_url .'settings/tovars?the=fish_sm';?>">Риба с/м</a>
+				<a class="<?php if($current == 'fish_sm'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=fish_sm';?>">Риба с/м</a>
 			</span>
 			<span>
-				<a href="<?php echo base_url .'settings/tovars?the=ovis';?>">Овіс</a>
+				<a class="<?php if($current == 'ovis'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=ovis';?>">Овіс</a>
 			</span>
 			<span>
-				<a href="<?php echo base_url .'settings/tovars?the=radema';?>">Радема</a>
+				<a class="<?php if($current == 'radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=radema';?>">Радема</a>
 			</span>		
 		</div>
 		<?php if (!isset($_GET['add']) && !isset($_GET['edit']) && !isset($_GET['delete'])) {?>

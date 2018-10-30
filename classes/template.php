@@ -406,31 +406,32 @@ Class Template
         <?php } 
         else {?>
 
-        <?php if (isset($_GET['tovar'])) { ?>
+        <?php if (isset($_GET['tovar'])) { 
+            $current = $_SERVER['REQUEST_URI'];?>
         <div class="delivery-block-menu">
             <span>
-                <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
+                <a class="<?php if($current == '/delivery/bochka?tovar=fruits' || $current == '/delivery/fish_terminal?tovar=fruits' || $current == '/delivery/gurtovnya?tovar=fruits' || $current == '/delivery/center?tovar=fruits'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
             </span>
             <span>
-                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
+                 <a class="<?php if($current == '/delivery/bochka?tovar=vegetables' || $current == '/delivery/fish_terminal?tovar=vegetables' || $current == '/delivery/gurtovnya?tovar=vegetables' || $current == '/delivery/center?tovar=vegetables'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
             </span>
             <span>
-                <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
+                <a class="<?php if($current == '/delivery/bochka?tovar=sausage' || $current == '/delivery/fish_terminal?tovar=sausage' || $current == '/delivery/gurtovnya?tovar=sausage' || $current == '/delivery/center?tovar=sausage'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
             </span>
             <span>
-                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=cheese';?>">Сир</a>
+                 <a class="<?php if($current == '/delivery/bochka?tovar=cheese' || $current == '/delivery/fish_terminal?tovar=cheese' || $current == '/delivery/gurtovnya?tovar=cheese' || $current == '/delivery/center?tovar=cheese'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/'.$tochka .'?tovar=cheese';?>">Сир</a>
             </span>
             <span>
-                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
+                 <a class="<?php if($current == '/delivery/bochka?tovar=fish_processing' || $current == '/delivery/fish_terminal?tovar=fish_processing' || $current == '/delivery/gurtovnya?tovar=fish_processing' || $current == '/delivery/center?tovar=fish_processing'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
             </span>
             <span>
-                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
+                 <a class="<?php if($current == '/delivery/bochka?tovar=fish_sm' || $current == '/delivery/fish_terminal?tovar=fish_sm' || $current == '/delivery/gurtovnya?tovar=fish_sm' || $current == '/delivery/center?tovar=fish_sm'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
             </span>
             <span>
-                 <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=ovis';?>">Овіс</a>
+                 <a class="<?php if($current == '/delivery/bochka?tovar=ovis' || $current == '/delivery/fish_terminal?tovar=ovis' || $current == '/delivery/gurtovnya?tovar=ovis' || $current == '/delivery/center?tovar=ovis'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/'.$tochka .'?tovar=ovis';?>">Овіс</a>
             </span>
             <span>
-                <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=radema';?>">Радема</a>
+                <a class="<?php if($current == '/delivery/bochka?tovar=radema' || $current == '/delivery/fish_terminal?tovar=radema' || $current == '/delivery/gurtovnya?tovar=radema' || $current == '/delivery/center?tovar=radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'delivery/'.$tochka .'?tovar=radema';?>">Радема</a>
             </span>     
         </div>
         <div class="add-errore">

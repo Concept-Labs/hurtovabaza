@@ -239,8 +239,8 @@ Class Template
                     $table_tovar = 'tovar_radema';
                     break;
                 }
-                $query_select = "SELECT * FROM $table_tovar";
-                $result_select = mysqli_query($db, $query_select);
+                $query_selected = "SELECT * FROM $table_tovar";
+                $result_selected = mysqli_query($db, $query_selected);
 
             if (isset($_POST['add_distribution'])) {
 
@@ -391,6 +391,16 @@ Class Template
         else {?>
 
         <?php if (isset($_GET['tovar'])) { ?>
+        <div>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=cheese';?>">Сир</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=ovis';?>">Овіс</a>
+            <a href="<?php echo base_url .'delivery/'.$tochka .'?tovar=radema';?>">Радема</a>
+        </div>
         <div class="add-errore">
             <?php 
             if (!empty($errors)) echo "<div style='color: red;'>" .$errors ."</div>"; 
@@ -412,7 +422,7 @@ Class Template
                             <td> 
                                 <select name="name_tovars" id="">
                                     <option >Виберіть товар</option>
-                                    <?php while ($row_tovar = mysqli_fetch_array($result_select)) {?>
+                                    <?php while ($row_tovar = mysqli_fetch_array($result_selected)) {?>
                                     <option value="<?php echo $row_tovar['id'] ?>"><?php echo $row_tovar['label'] ?></option>
                                     <?php } ?>
                                 </select>

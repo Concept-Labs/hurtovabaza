@@ -1,0 +1,108 @@
+<?php if (!isset($_GET['the'])) {?>
+<div>
+	<a href="<?php echo base_url .'settings/tovars?the=fruits';?>">Фрукти</a>
+	<a href="<?php echo base_url .'settings/tovars?the=vegetables';?>">Овочі</a>
+	<a href="<?php echo base_url .'settings/tovars?the=sausage';?>">Ковбаса</a>
+	<a href="<?php echo base_url .'settings/tovars?the=cheese';?>">Сир</a>
+	<a href="<?php echo base_url .'settings/tovars?the=fish_processing';?>">Рибна переробка</a>
+	<a href="<?php echo base_url .'settings/tovars?the=fish_sm';?>">Риба с/м</a>
+	<a href="<?php echo base_url .'settings/tovars?the=ovis';?>">Овіс</a>
+	<a href="<?php echo base_url .'settings/tovars?the=radema';?>">Радема</a>
+</div>
+<?php } 
+else {
+	if (isset($_GET['the'])) { 
+		$result_label = $this->get('result_label');
+		$errors = $this->get('errors');?>
+		<div>
+			<a href="<?php echo base_url .'settings/tovars?the=fruits';?>">Фрукти</a>
+			<a href="<?php echo base_url .'settings/tovars?the=vegetables';?>">Овочі</a>
+			<a href="<?php echo base_url .'settings/tovars?the=sausage';?>">Ковбаса</a>
+			<a href="<?php echo base_url .'settings/tovars?the=cheese';?>">Сир</a>
+			<a href="<?php echo base_url .'settings/tovars?the=fish_processing';?>">Рибна переробка</a>
+			<a href="<?php echo base_url .'settings/tovars?the=fish_sm';?>">Риба с/м</a>
+			<a href="<?php echo base_url .'settings/tovars?the=ovis';?>">Овіс</a>
+			<a href="<?php echo base_url .'settings/tovars?the=radema';?>">Радема</a>
+		</div>
+		<?php if (!isset($_GET['add']) && !isset($_GET['edit']) && !isset($_GET['delete'])) {?>
+		<div>
+			<table>
+				<tr class="table-top">
+					<td>Назва товару</td>
+					<td>Назва товару на латинських символах</td>
+					<td>Дія</td>
+				</tr>
+				<?php while ($row_label = mysqli_fetch_array($result_label)) {?>
+				<tr>
+					<td><?php echo $row_label['label']; ?></td>
+					<td><?php echo $row_label['name']; ?></td>
+					<td><a href="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&edit&id='.$row_label['id']; ?>" class="edit" title="Редагувати товар"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&delete&id='.$row_label['id']; ?>" class="delete" title="Видалити товар"><i class="fas fa-trash-alt"></i></a></td>
+				</tr>
+				<?php } ?>
+			</table>
+			<a href="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&add'; ?>" class="add-tovar" title="Додати товар"><i class="fas fa-plus"></i></a>
+		</div>
+		<?php }
+		else { ?>
+		<?php if (isset($_GET['add'])) {?>
+		<div class="add-errore">
+			<?php 
+			if (!empty($errors)) echo "<div style='color: red;'>" .$errors ."</div>"; 
+				if (empty($errors)) {
+					if (!empty($_POST)) {
+						echo "<div style='color: green;'>Товар \"".$row['label']."\" успішно доданий!</div>";
+					}
+				}
+				?>
+			</div>
+			<div>
+				<form action="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&add'; ?>" method="post">
+					<table>
+						<tr class="table-top">
+							<td>Назва товару</td>
+							<td>Назва товару на латинських символах</td>
+						</tr>
+						<tr>
+							<td><input type="text" name="label"></td>
+							<td><input type="text" name="name" pattern="^[0-9a-zA-Z_-]+$"></td>
+						</tr>
+					</table>
+					<input class="sub-save" type="submit" name="add_tovar" value=" Додати">
+				</form>
+			</div>
+			<?php } ?>
+			<?php if (isset($_GET['edit'])) {
+				$roww = $this->get('roww');?>
+				<div>
+					<form action="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&edit&id='.$roww['id']; ?>" method="post">
+						<table>
+							<tr class="table-top">
+								<td>Назва товару</td>
+								<td>Назва товару на латинських символах</td>
+							</tr>
+							<tr>
+								<td><input type="text" name="label_edit" value="<?php echo $roww['label'];?>"></td>
+								<td><input type="text" name="name_edit" pattern="^[0-9a-zA-Z_-]+$" value="<?php echo $roww['name'];?>"></td>
+							</tr>
+						</table>
+						<input class="sub-save" type="submit" name="save_tovar" value=" Зберегти">
+					</form>
+				</div>
+				<?php } ?>
+
+				<?php if (isset($_GET['delete'])) { 
+					$roww = $this->get('roww');?>
+				<div class="delete-block-top zatmenie">
+					<div class="delete-block">
+						<form action="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&delete&id='.$roww['id']; ?>" method="post">
+							Ви дійсно хочете <span style="color: red;">видалити</span> даний товар розприділення!!!<br/><br/>
+							<button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
+							<button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
+						</form>
+					</div>
+				</div>
+				<?php } ?>
+
+				<?php }
+			}
+		} ?>

@@ -57,6 +57,20 @@ a.add-td:active{
 	box-shadow: none;
 	background:  #1978ab;
 }
+.setting_tovar_block a.add-tovar{
+	float: right;
+	padding: 5px 8px;
+	font-size: 14px;
+	background-color: #26b22a;
+	border-color: #338f15;
+	border-radius: 3px;
+	max-height: 18px;
+	margin: 20px 0 60px 0;
+	-webkit-transition: .3s all;
+	-moz-transition: .3s all;
+	-o-transition: .3s all;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.20);
+}
 a.add-tovar{
 	float: right;
 	padding: 5px 8px;

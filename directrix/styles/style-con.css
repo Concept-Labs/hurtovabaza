@@ -185,6 +185,9 @@ tr:hover, .table-top:not(:hover){
 .head a.current, .head a.current i {
 	color: #f7be09;
 }
+.delivery-block-menu a.current, .delivery-block-menu a.current i {
+	color: #f7be09;
+}
 
 div.slogan{
 	width: 130px;

@@ -1,28 +1,28 @@
 <?php if (!isset($_GET['the'])) {?>
 <div class="delivery-block-menu">
 	<span>
-		<a href="<?php echo base_url .'settings/tovars?the=fruits';?>">Фрукти</a>
+		<a href="<?php echo base_url .'settings_tovars?the=fruits';?>">Фрукти</a>
 	</span>
 	<span>
-		<a href="<?php echo base_url .'settings/tovars?the=vegetables';?>">Овочі</a>
+		<a href="<?php echo base_url .'settings_tovars?the=vegetables';?>">Овочі</a>
 	</span>
 	<span>
-		<a href="<?php echo base_url .'settings/tovars?the=sausage';?>">Ковбаса</a>
+		<a href="<?php echo base_url .'settings_tovars?the=sausage';?>">Ковбаса</a>
 	</span>
 	<span>
-		<a href="<?php echo base_url .'settings/tovars?the=cheese';?>">Сир</a>
+		<a href="<?php echo base_url .'settings_tovars?the=cheese';?>">Сир</a>
 	</span>
 	<span>
-		<a href="<?php echo base_url .'settings/tovars?the=fish_processing';?>">Рибна переробка</a>
+		<a href="<?php echo base_url .'settings_tovars?the=fish_processing';?>">Рибна переробка</a>
 	</span>
 	<span>
-		<a href="<?php echo base_url .'settings/tovars?the=fish_sm';?>">Риба с/м</a>
+		<a href="<?php echo base_url .'settings_tovars?the=fish_sm';?>">Риба с/м</a>
 	</span>
 	<span>
-		<a href="<?php echo base_url .'settings/tovars?the=ovis';?>">Овіс</a>
+		<a href="<?php echo base_url .'settings_tovars?the=ovis';?>">Овіс</a>
 	</span>
 	<span>
-		<a href="<?php echo base_url .'settings/tovars?the=radema';?>">Радема</a>
+		<a href="<?php echo base_url .'settings_tovars?the=radema';?>">Радема</a>
 	</span>
 </div>
 <?php } 
@@ -60,28 +60,28 @@ else {
 		<div class="delivery-block-menu">
 			
 			<span>
-				<a class="<?php if($current == 'fruits'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=fruits';?>">Фрукти</a>
+				<a class="<?php if($current == 'fruits'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings_tovars?the=fruits';?>">Фрукти</a>
 			</span>
 			<span>
-				<a class="<?php if($current == 'vegetables'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=vegetables';?>">Овочі</a>
+				<a class="<?php if($current == 'vegetables'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings_tovars?the=vegetables';?>">Овочі</a>
 			</span>
 			<span>
-				<a class="<?php if($current == 'sausage'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=sausage';?>">Ковбаса</a>
+				<a class="<?php if($current == 'sausage'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings_tovars?the=sausage';?>">Ковбаса</a>
 			</span>
 			<span>
-				<a class="<?php if($current == 'cheese'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=cheese';?>">Сир</a>
+				<a class="<?php if($current == 'cheese'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings_tovars?the=cheese';?>">Сир</a>
 			</span>
 			<span>
-				<a class="<?php if($current == 'fish_processing'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=fish_processing';?>">Рибна переробка</a>
+				<a class="<?php if($current == 'fish_processing'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings_tovars?the=fish_processing';?>">Рибна переробка</a>
 			</span>
 			<span>
-				<a class="<?php if($current == 'fish_sm'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=fish_sm';?>">Риба с/м</a>
+				<a class="<?php if($current == 'fish_sm'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings_tovars?the=fish_sm';?>">Риба с/м</a>
 			</span>
 			<span>
-				<a class="<?php if($current == 'ovis'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=ovis';?>">Овіс</a>
+				<a class="<?php if($current == 'ovis'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings_tovars?the=ovis';?>">Овіс</a>
 			</span>
 			<span>
-				<a class="<?php if($current == 'radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings/tovars?the=radema';?>">Радема</a>
+				<a class="<?php if($current == 'radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'settings_tovars?the=radema';?>">Радема</a>
 			</span>		
 		</div>
 		<?php if (!isset($_GET['add']) && !isset($_GET['edit']) && !isset($_GET['delete'])) {?>
@@ -96,11 +96,11 @@ else {
 				<tr>
 					<td><?php echo $row_label['label']; ?></td>
 					<td><?php echo $row_label['name']; ?></td>
-					<td><a href="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&edit&id='.$row_label['id']; ?>" class="edit" title="Редагувати товар"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&delete&id='.$row_label['id']; ?>" class="delete" title="Видалити товар"><i class="fas fa-trash-alt"></i></a></td>
+					<td><a href="<?php echo base_url .'settings_tovars?the='.$_GET['the'].'&edit&id='.$row_label['id']; ?>" class="edit" title="Редагувати товар"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings_tovars?the='.$_GET['the'].'&delete&id='.$row_label['id']; ?>" class="delete" title="Видалити товар"><i class="fas fa-trash-alt"></i></a></td>
 				</tr>
 				<?php } ?>
 			</table>
-			<a href="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&add'; ?>" class="add-tovar" title="Додати товар"><i class="fas fa-plus"></i></a>
+			<a href="<?php echo base_url .'settings_tovars?the='.$_GET['the'].'&add'; ?>" class="add-tovar" title="Додати товар"><i class="fas fa-plus"></i></a>
 		</div>
 		<?php }
 		else { ?>
@@ -116,7 +116,7 @@ else {
 				?>
 			</div>
 			<div>
-				<form action="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&add'; ?>" method="post">
+				<form action="<?php echo base_url .'settings_tovars?the='.$_GET['the'].'&add'; ?>" method="post">
 					<table>
 						<tr class="table-top">
 							<td>Назва товару</td>
@@ -134,7 +134,7 @@ else {
 			<?php if (isset($_GET['edit'])) {
 				$roww = $this->get('roww');?>
 				<div>
-					<form action="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&edit&id='.$roww['id']; ?>" method="post">
+					<form action="<?php echo base_url .'settings_tovars?the='.$_GET['the'].'&edit&id='.$roww['id']; ?>" method="post">
 						<table>
 							<tr class="table-top">
 								<td>Назва товару</td>
@@ -154,7 +154,7 @@ else {
 					$roww = $this->get('roww');?>
 				<div class="delete-block-top zatmenie">
 					<div class="delete-block">
-						<form action="<?php echo base_url .'settings/tovars?the='.$_GET['the'].'&delete&id='.$roww['id']; ?>" method="post">
+						<form action="<?php echo base_url .'settings_tovars?the='.$_GET['the'].'&delete&id='.$roww['id']; ?>" method="post">
 							Ви дійсно хочете <span style="color: red;">видалити</span> даний товар розприділення!!!<br/><br/>
 							<button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
 							<button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>

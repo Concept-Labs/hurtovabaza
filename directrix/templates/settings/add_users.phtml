@@ -17,11 +17,22 @@ $page = $this->get('page');
 		<table class="add-table">
 			<tr class="table-top">
 				<td class="width-name">Логін</td>
+				<?php if (isset($_GET['admin'])): ?>
+					<td>Точка</td>
+				<?php endif ?>				
 				<td>Пароль</td>
 				<td>Пітвердження пароля</td>
 			</tr>
 			<tr>
 				<td> <input type="text" name="login" value="<?php echo @$_POST['login']; ?>"> </td>
+				<?php if (isset($_GET['admin'])): ?>
+				<td>
+					<select name="tochka" required>
+					<option value="">Виберіть точку</option>
+					<option value="bochka">Бочка</option>
+					<option value="center">Центр</option>
+				</select></td>
+				<?php endif ?>
 				<td> <input type="password" name="password"> </td>
 				<td> <input type="password" name="password-confirm"> </td>			
 			</tr>

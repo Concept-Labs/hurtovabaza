@@ -1,0 +1,40 @@
+<?php $current = $_SERVER['REQUEST_URI']; ?>
+<div class="delivery-block-menu">
+	<span><a class="<?php if($current == '/distribution/bochka' 
+	|| $current == '/distribution/bochka?tovar=fruits' 
+	|| $current == '/distribution/bochka?tovar=vegetables' 
+	|| $current == '/distribution/bochka?tovar=sausage' 
+	|| $current == '/distribution/bochka?tovar=cheese' 
+	|| $current == '/distribution/bochka?tovar=fish_processing' 
+	|| $current == '/distribution/bochka?tovar=fish_sm' 
+	|| $current == '/distribution/bochka?tovar=ovis' 
+	|| $current == '/distribution/bochka?tovar=radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/bochka';?>">Бочка</a></span>
+	<span><a class="<?php if($current == '/distribution/fish_terminal' 
+	|| $current == '/distribution/fish_terminal?tovar=fruits' 
+	|| $current == '/distribution/fish_terminal?tovar=vegetables' 
+	|| $current == '/distribution/fish_terminal?tovar=sausage' 
+	|| $current == '/distribution/fish_terminal?tovar=cheese' 
+	|| $current == '/distribution/fish_terminal?tovar=fish_processing' 
+	|| $current == '/distribution/fish_terminal?tovar=fish_sm' 
+	|| $current == '/distribution/fish_terminal?tovar=ovis' 
+	|| $current == '/distribution/fish_terminal?tovar=radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/fish_terminal';?>">Рибний термінал</a></span>
+	<span><a class="<?php if($current == '/distribution/gurtovnya' 
+	|| $current == '/distribution/gurtovnya?tovar=fruits' 
+	|| $current == '/distribution/gurtovnya?tovar=vegetables' 
+	|| $current == '/distribution/gurtovnya?tovar=sausage' 
+	|| $current == '/distribution/gurtovnya?tovar=cheese' 
+	|| $current == '/distribution/gurtovnya?tovar=fish_processing' 
+	|| $current == '/distribution/gurtovnya?tovar=fish_sm' 
+	|| $current == '/distribution/gurtovnya?tovar=ovis' 
+	|| $current == '/distribution/gurtovnya?tovar=radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/gurtovnya';?>">Гуртовня</a></span>
+	<span><a class="<?php if($current == '/distribution/center' 
+	|| $current == '/distribution/center?tovar=fruits' 
+	|| $current == '/distribution/center?tovar=vegetables' 
+	|| $current == '/distribution/center?tovar=sausage' 
+	|| $current == '/distribution/center?tovar=cheese' 
+	|| $current == '/distribution/center?tovar=fish_processing' 
+	|| $current == '/distribution/center?tovar=fish_sm' 
+	|| $current == '/distribution/center?tovar=ovis' 
+	|| $current == '/distribution/center?tovar=radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/center';?>">Центр</a></span>
+	<span><a class="delivery-exit" href="<?php echo base_url .'distribution/invoice'; ?>">Накладна</a></span>
+</div>

@@ -84,15 +84,25 @@ if (!isset($_GET['edit_site']) && !isset($_GET['delete_site']) && !isset($_GET['
                         <tr class="table-top">
                             <td>№</td>
                             <td class="width-name">Логін</td>
+                            <td>Точка</td>
                             <td>Дата</td>
                             <td>Дія</td>
                         </tr>
             <?php if ($num3) {
                 while ($row3 = mysqli_fetch_array($query3, MYSQLI_BOTH)) {
-                    $date_format3 = date_format(date_create($row3['date']), 'd.m.Y'); ?>
+                    $date_format3 = date_format(date_create($row3['date']), 'd.m.Y');
+                    switch ($row3['tochka']) {
+                         case 'bochka':
+                             $tochka = 'Бочка';
+                             break;
+                         case 'center':
+                             $tochka = 'Центр';
+                             break;   
+                     } ?>
                     <tr>                
                         <td><?php echo $row3['id']; ?></td>
                         <td class="width-name"><a href="<?php echo base_url .'settings?edit_admin&id='.$row3['id']; ?>"><?php echo $row3['login'];?></a></td>
+                        <td><?php echo $tochka; ?></td>
                         <td><?php echo $date_format3; ?></td>
                         <td> <a href="<?php echo base_url .'settings?edit_admin&id='.$row3['id']; ?>" class="edit" title="Змінити пароль"> <i class="fas fa-pen"></i></a> <a href="<?php echo base_url .'settings?delete_admin&id='.$row3['id']; ?>" class="delete" title="Видалити пароль"><i class="fas fa-trash-alt"></i></a></td>
                         <?php } } ?>

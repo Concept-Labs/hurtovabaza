@@ -253,6 +253,7 @@ public function add_users()
 
     if (isset($_POST['add'])) {
         $login = $_POST['login'];
+        $tochka = $_POST['tochka'];
         $password = md5($_POST['password']);
         $password_confirm = $_POST['password-confirm'];
         $date = $_POST['date'];
@@ -266,7 +267,13 @@ public function add_users()
         }
 
         if (empty($errore)) {
-            mysqli_query($db, "INSERT INTO `$table`(`id`, `login`, `password`, `date`) VALUES (null, '$login', '$password', '$date')");
+            if (!isset($_GET['admin'])) {
+               mysqli_query($db, "INSERT INTO `$table`(`id`, `login`, `password`, `date`) VALUES (null, '$login', '$password', '$date')");
+            }
+            else {
+                mysqli_query($db, "INSERT INTO `$table`(`id`, `login`, `password`, `tochka`, `date`) VALUES (null, '$login', '$password', '$tochka', '$date')");
+            }
+            
 
             header("Location:" .base_url .'settings');
             exit();

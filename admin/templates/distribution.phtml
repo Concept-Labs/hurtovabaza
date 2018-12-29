@@ -7,9 +7,6 @@ $date_page_format = $this->get('date_page_format');
 $result_fruits = $this->get('result_fruits'); 
 $num_fruits = $this->get('num_fruits');
 
-$result_driedfruit = $this->get('result_driedfruit'); 
-$num_driedfruit = $this->get('num_driedfruit');
-
 $result_vegetables = $this->get('result_vegetables'); 
 $num_vegetables = $this->get('num_vegetables');
 
@@ -32,7 +29,14 @@ $result_radema = $this->get('result_radema');
 $num_radema = $this->get('num_radema');
 
 ?>
-
+<?php if (!isset($_GET['edit']) && !isset($_GET['delete'])) { ?>
+<div class="delivery-block-menu">
+			<span><a href="<?php echo base_url .'distribution/bochka';?>">Бочка</a></span>
+			<span><a href="<?php echo base_url .'distribution/fish_terminal';?>">Рибний термінал</a></span>
+			<span><a href="<?php echo base_url .'distribution/gurtovnya';?>">Гуртовня</a></span>
+			<span><a href="<?php echo base_url .'distribution/center';?>">Центр</a></span>
+			<span><a class="delivery-exit" href="<?php echo base_url .'distribution/invoice'; ?>">Накладна</a></span>
+</div>
 <div class="date date-purchase">
 	<form action="<?php echo base_url .'distribution'; ?>" method="post">
 		<select class="data-page" name="date_page" onchange="this.form.submit()" value="<?php echo $next_date;?>">
@@ -66,7 +70,9 @@ $num_radema = $this->get('num_radema');
 			<td>Рибний термінал</td>
 			<td>Гуртовня</td>
 			<td>Центр</td>
-			<td rowspan="2">Загальна кількість (кг)</td>	
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<td rowspan="2">Накладна (кг)</td>
+			<td rowspan="2">Дія</td>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -104,62 +110,15 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_fruits['t3number'];?></td>
 					<td><?php echo $row_fruits['t4number'];?></td>
 					<td><?php echo $row_fruits['t5number'];?></td>
-					<td><?php echo $zagolom_fruits; ?></td>		
+					<td><?php echo $zagolom_fruits; ?></td>	
+					<td><?php echo $row_fruits['t6number']; ?></td>		
+					<td><a href="<?php echo base_url .'distribution?edit=fruits&id='.$row_fruits['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete=fruits&id='.$row_fruits['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>			
 				</tr>
 				<?php } 
 			}?>
 		</table>
 
-		<br/>
-		<table>
-			<h2>Сухорукти</h2>
-			<tr class="table-top">
-			<td rowspan="2" class="width-name">Назва</td>
-			<td>Бочка</td>
-			<td>Рибний термінал</td>
-			<td>Гуртовня</td>
-			<td>Центр</td>
-			<td rowspan="2">Загальна кількість (кг)</td>
-		</tr>
-		<tr class="table-top">
-			<td>Кількість (кг)</td>
-			<td>Кількість (кг)</td>
-			<td>Кількість (кг)</td>
-			<td>Кількість (кг)</td>
-		</tr>
-			<?php while ($row_driedfruit = mysqli_fetch_array($result_driedfruit)) { 
-				if (!empty($row_driedfruit['t2number']) || !empty($row_driedfruit['t3number']) || !empty($row_driedfruit['t4number']) || !empty($row_driedfruit['t5number'])) { 
-					if (empty($row_driedfruit['t2number'])) {$t2number_driedfruit = 0;	}else { $t2number_driedfruit = $row_driedfruit['t2number'];}
-				if (empty($row_driedfruit['t2number'])) {$t2number_driedfruit = 0;	}else { $t2number_driedfruit = $row_driedfruit['t2number'];}
-				if (empty($row_driedfruit['t3number'])) {$t3number_driedfruit = 0;	}else { $t3number_driedfruit = $row_driedfruit['t3number'];}
-				if (empty($row_driedfruit['t4number'])) {$t4number_driedfruit = 0;	}else { $t4number_driedfruit = $row_driedfruit['t4number'];}
-				if (empty($row_driedfruit['t5number'])) {$t5number_driedfruit = 0;	}else { $t5number_driedfruit = $row_driedfruit['t5number'];}
-				
-				$zagolom_driedfruit = $t2number_driedfruit + $t3number_driedfruit + $t4number_driedfruit + $t5number_driedfruit;
-				
-				if (!empty($row_driedfruit['t2date'])) {
-				 	$date = $row_driedfruit['t2date'];
-				 }
-				 elseif (!empty($row_driedfruit['t3date'])) {
-				 	$date = $row_driedfruit['t3date'];
-				 }
-				 elseif (!empty($row_driedfruit['t4date'])) {
-				 	$date = $row_driedfruit['t4date'];
-				 }
-				 elseif (!empty($row_driedfruit['t5date'])) {
-				 	$date = $row_driedfruit['t5date'];
-				 }?>
-				<tr>
-					<td><?php echo $row_driedfruit['label'];?></td>
-					<td><?php echo $row_driedfruit['t2number'];?></td>
-					<td><?php echo $row_driedfruit['t3number'];?></td>
-					<td><?php echo $row_driedfruit['t4number'];?></td>
-					<td><?php echo $row_driedfruit['t5number'];?></td>
-					<td><?php echo $zagolom_driedfruit; ?></td>	
-				</tr>
-				<?php } 
-			}?>
-		</table>
 		<br/>
 		<table>
 			<h2>Овочі</h2>
@@ -170,6 +129,8 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<td rowspan="2">Накладна (кг)</td>
+			<td rowspan="2">Дія</td>
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -206,6 +167,9 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_vegetables['t4number'];?></td>
 					<td><?php echo $row_vegetables['t5number'];?></td>
 					<td><?php echo $zagolom_vegetablest; ?></td>
+					<td><?php echo $row_vegetables['t6number']; ?></td>
+					<td><a href="<?php echo base_url .'distribution?edit=vegetables&id='.$row_vegetables['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete=vegetables&id='.$row_vegetables['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>	
 				</tr>
 				<?php } 
 			}?>
@@ -220,6 +184,8 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<td rowspan="2">Накладна (кг)</td>
+			<td rowspan="2">Дія</td>
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -255,7 +221,10 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_sausage['t3number'];?></td>
 					<td><?php echo $row_sausage['t4number'];?></td>
 					<td><?php echo $row_sausage['t5number'];?></td>
-					<td><?php echo $zagolom_sausage; ?></td>	
+					<td><?php echo $zagolom_sausage; ?></td>
+					<td><?php echo $row_sausage['t6number']; ?></td>
+					<td><a href="<?php echo base_url .'distribution?edit=sausage&id='.$row_sausage['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete=sausage&id='.$row_sausage['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>		
 				</tr>
 				<?php } 
 			}?>
@@ -270,6 +239,8 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<td rowspan="2">Накладна (кг)</td>
+			<td rowspan="2">Дія</td>
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -306,6 +277,9 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_cheese['t4number'];?></td>
 					<td><?php echo $row_cheese['t5number'];?></td>
 					<td><?php echo $zagolom_cheese; ?></td>	
+					<td><?php echo $row_cheese['t6number']; ?></td>
+					<td><a href="<?php echo base_url .'distribution?edit=cheese&id='.$row_cheese['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete=cheese&id='.$row_cheese['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>	
 				</tr>
 				<?php } 
 			}?>
@@ -320,6 +294,8 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<td rowspan="2">Накладна (кг)</td>
+			<td rowspan="2">Дія</td>
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -356,6 +332,9 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_fish_processing['t4number'];?></td>
 					<td><?php echo $row_fish_processing['t5number'];?></td>
 					<td><?php echo $zagolom_fish_processing; ?></td>
+					<td><?php echo $row_fish_processing['t6number']; ?></td>
+					<td><a href="<?php echo base_url .'distribution?edit=fish_processing&id='.$row_fish_processing['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete=fish_processing&id='.$row_fish_processing['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>	
 				</tr>
 				<?php } 
 			}?>
@@ -370,6 +349,8 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<td rowspan="2">Накладна (кг)</td>
+			<td rowspan="2">Дія</td>
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -406,6 +387,9 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_fish_sm['t4number'];?></td>
 					<td><?php echo $row_fish_sm['t5number'];?></td>
 					<td><?php echo $zagolom_fish_sm; ?></td>
+					<td><?php echo $row_fish_sm['t6number']; ?></td>
+					<td><a href="<?php echo base_url .'distribution?edit=fish_sm&id='.$row_fish_sm['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete=fish_sm&id='.$row_fish_sm['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>	
 				</tr>
 				<?php } 
 			}?>
@@ -419,7 +403,9 @@ $num_radema = $this->get('num_radema');
 			<td>Рибний термінал</td>
 			<td>Гуртовня</td>
 			<td>Центр</td>
-			<td rowspan="2">Загальна кількість (кг)</td>	
+			<td rowspan="2">Загальна кількість (кг)</td>
+			<td rowspan="2">Накладна (кг)</td>
+			<td rowspan="2">Дія</td>	
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -455,7 +441,10 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_ovis['t3number'];?></td>
 					<td><?php echo $row_ovis['t4number'];?></td>
 					<td><?php echo $row_ovis['t5number'];?></td>
-					<td><?php echo $zagolom_ovis; ?></td>	
+					<td><?php echo $zagolom_ovis; ?></td>
+					<td><?php echo $row_ovis['t6number']; ?></td>
+					<td><a href="<?php echo base_url .'distribution?edit=ovis&id='.$row_ovis['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete=ovis&id='.$row_ovis['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>		
 				</tr>
 				<?php } 
 			}?>
@@ -470,6 +459,8 @@ $num_radema = $this->get('num_radema');
 			<td>Гуртовня</td>
 			<td>Центр</td>
 			<td rowspan="2">Загальна кількість (кг)</td>
+			<td rowspan="2">Накладна (кг)</td>
+			<td rowspan="2">Дія</td>
 		</tr>
 		<tr class="table-top">
 			<td>Кількість (кг)</td>
@@ -505,11 +496,90 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $row_radema['t3number'];?></td>
 					<td><?php echo $row_radema['t4number'];?></td>
 					<td><?php echo $row_radema['t5number'];?></td>
-					<td><?php echo $zagolom_radema; ?></td>		
+					<td><?php echo $zagolom_radema; ?></td>
+					<td><?php echo $row_radema['t6number']; ?></td>
+					<td><a href="<?php echo base_url .'distribution?edit=radema&id='.$row_radema['id'].'&date='.$date; ?>" class="edit" title="Редагувати"> <i class="fas fa-pen"></i></a>
+						<a href="<?php echo base_url .'distribution?delete=radema&id='.$row_radema['id'].'&date='.$date; ?>" class="delete" title="Видалити"> <i class="fas fa-trash-alt"></i></a></td>			
 				</tr>
 				<?php } 
 			}?>
 		</table>
 		<br/>
 	</div> 
+	<?php }
+	else {
+		$roww = $this->get('roww');
+		$row_admin_tochka = $this->get('row_admin_tochka');
+				if (!empty($roww['t2date'])) {
+				 	$date = $roww['t2date'];
+				 }
+				 elseif (!empty($roww['t3date'])) {
+				 	$date = $roww['t3date'];
+				 }
+				 elseif (!empty($roww['t4date'])) {
+				 	$date = $roww['t4date'];
+				 }
+				 elseif (!empty($roww['t5date'])) {
+				 	$date = $roww['t5date'];
+				 } 
+		if (isset($_GET['edit'])) {  ?>
+			<form action="<?php echo base_url .'distribution?edit='.$_GET['edit'].'&id='.$roww['id'].'&date='.$date; ?>" method="post">
+			<table>
+			<tr class="table-top">
+			<td rowspan="2" class="width-name">Назва</td>
+			<td>Бочка</td>
+			<td>Рибний термінал</td>
+			<td>Гуртовня</td>
+			<td>Центр</td>
+			<td rowspan="2">Накладна (кг)</td>
+		</tr>
+		<tr class="table-top">
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+			<td>Кількість (кг)</td>
+		</tr>
+				<tr>
+					<td><?php echo $roww['label'];?></td>
+					<?php if ($row_admin_tochka['tochka'] == 'bochka') { ?>
+					<td><input type="number" step="0.1" name="bochka" value="<?php echo $roww['t2number'];?>"></td>
+					<td><input type="number" step="0.1" name="fish_terminal" value="<?php echo $roww['t3number'];?>"></td>
+					<td><input type="number" step="0.1" name="gurtovnya" value="<?php echo $roww['t4number'];?>"></td>
+					<?php }
+					else { ?>
+						<td><?php echo $roww['t2number'];?></td>
+						<td><?php echo $roww['t3number'];?></td>
+						<td><?php echo $roww['t4number'];?></td>
+					<?php } ?>
+					<?php if ($row_admin_tochka['tochka'] == 'center') { ?>
+					<td><input type="number" step="0.1" name="center" value="<?php echo $roww['t5number'];?>"></td>
+					<?php }
+					else { ?>
+						<td><?php echo $roww['t5number'];?></td>
+					<?php } ?>
+					<?php if ($row_admin_tochka['tochka'] == 'bochka') { ?>
+							<td><input type="number" step="0.1" name="number_invoice" value="<?php echo $roww['t6number_invoice'];?>"></td>
+					<?php }
+					else { ?>
+					<td><?php echo $roww['t6number']; ?></td>
+					<?php } ?>
+				</tr>
+				<input class="sub-save" type="submit" name="save" value=" Зберегти">
+		</table>
+		</form>
+		<?php }
+		if (isset($_GET['delete'])) { ?>
+                        <div class="delete-block-top zatmenie">
+                            <div class="delete-block">
+                            <form action="<?php echo base_url .'distribution?delete='.$_GET['delete'].'&id='.$roww['id'].'&date='.$date; ?>" method="post">
+                                Ви дійсно хочете <span style="color: red;">видалити</span> даний товар розприділення!!!<br/><br/>
+                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="1">Так</button>
+                                <button type="submit" class="confirmation-btn" name="delete_tovar" value="0">Ні</button>
+                            </form>
+                        </div>
+                        </div>
+                        
+                        <?php  
+                    }
+	} ?>
 	

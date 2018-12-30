@@ -518,28 +518,28 @@ Class Template
             $current = $_SERVER['REQUEST_URI'];?>
         <div class="delivery-block-menu">
             <span>
-                <a class="<?php if($current == '/distribution/bochka?tovar=fruits' || $current == '/distribution/fish_terminal?tovar=fruits' || $current == '/distribution/gurtovnya?tovar=fruits' || $current == '/distribution/center?tovar=fruits'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
+                <a class="<?php if($current == '/admin/distribution/bochka?tovar=fruits' || $current == '/admin/distribution/fish_terminal?tovar=fruits' || $current == '/admin/distribution/gurtovnya?tovar=fruits' || $current == '/admin/distribution/center?tovar=fruits' || $current == '/admin/distribution/invoice?tovar=fruits'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=fruits';?>">Фрукти</a>
             </span>
             <span>
-                 <a class="<?php if($current == '/distribution/bochka?tovar=vegetables' || $current == '/distribution/fish_terminal?tovar=vegetables' || $current == '/distribution/gurtovnya?tovar=vegetables' || $current == '/distribution/center?tovar=vegetables'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
+                 <a class="<?php if($current == '/admin/distribution/bochka?tovar=vegetables' || $current == '/admin/distribution/fish_terminal?tovar=vegetables' || $current == '/admin/distribution/gurtovnya?tovar=vegetables' || $current == '/admin/distribution/center?tovar=vegetables' || $current == '/admin/distribution/invoice?tovar=vegetables'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=vegetables';?>">Овочі</a>
             </span>
             <span>
-                <a class="<?php if($current == '/distribution/bochka?tovar=sausage' || $current == '/distribution/fish_terminal?tovar=sausage' || $current == '/distribution/gurtovnya?tovar=sausage' || $current == '/distribution/center?tovar=sausage'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
+                <a class="<?php if($current == '/admin/distribution/bochka?tovar=sausage' || $current == '/admin/distribution/fish_terminal?tovar=sausage' || $current == '/admin/distribution/gurtovnya?tovar=sausage' || $current == '/admin/distribution/center?tovar=sausage' || $current == '/admin/distribution/invoice?tovar=sausage'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=sausage';?>">Ковбаса</a>
             </span>
             <span>
-                 <a class="<?php if($current == '/distribution/bochka?tovar=cheese' || $current == '/distribution/fish_terminal?tovar=cheese' || $current == '/distribution/gurtovnya?tovar=cheese' || $current == '/distribution/center?tovar=cheese'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=cheese';?>">Сир</a>
+                 <a class="<?php if($current == '/admin/distribution/bochka?tovar=cheese' || $current == '/admin/distribution/fish_terminal?tovar=cheese' || $current == '/admin/distribution/gurtovnya?tovar=cheese' || $current == '/admin/distribution/center?tovar=cheese' || $current == '/admin/distribution/invoice?tovar=cheese'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=cheese';?>">Сир</a>
             </span>
             <span>
-                 <a class="<?php if($current == '/distribution/bochka?tovar=fish_processing' || $current == '/distribution/fish_terminal?tovar=fish_processing' || $current == '/distribution/gurtovnya?tovar=fish_processing' || $current == '/distribution/center?tovar=fish_processing'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
+                 <a class="<?php if($current == '/admin/distribution/bochka?tovar=fish_processing' || $current == '/admin/distribution/fish_terminal?tovar=fish_processing' || $current == '/admin/distribution/gurtovnya?tovar=fish_processing' || $current == '/admin/distribution/center?tovar=fish_processing' || $current == '/admin/distribution/invoice?tovar=fish_processing'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=fish_processing';?>">Рибна переробка</a>
             </span>
             <span>
-                 <a class="<?php if($current == '/distribution/bochka?tovar=fish_sm' || $current == '/distribution/fish_terminal?tovar=fish_sm' || $current == '/distribution/gurtovnya?tovar=fish_sm' || $current == '/distribution/center?tovar=fish_sm'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
+                 <a class="<?php if($current == '/admin/distribution/bochka?tovar=fish_sm' || $current == '/admin/distribution/fish_terminal?tovar=fish_sm' || $current == '/admin/distribution/gurtovnya?tovar=fish_sm' || $current == '/admin/distribution/center?tovar=fish_sm' || $current == '/admin/distribution/invoice?tovar=fish_sm'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=fish_sm';?>">Риба с/м</a>
             </span>
             <span>
-                 <a class="<?php if($current == '/distribution/bochka?tovar=ovis' || $current == '/distribution/fish_terminal?tovar=ovis' || $current == '/distribution/gurtovnya?tovar=ovis' || $current == '/distribution/center?tovar=ovis'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=ovis';?>">Овіс</a>
+                 <a class="<?php if($current == '/admin/distribution/bochka?tovar=ovis' || $current == '/admin/distribution/fish_terminal?tovar=ovis' || $current == '/admin/distribution/gurtovnya?tovar=ovis' || $current == '/admin/distribution/center?tovar=ovis' || $current == '/admin/distribution/invoice?tovar=ovis'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=ovis';?>">Овіс</a>
             </span>
             <span>
-                <a class="<?php if($current == '/distribution/bochka?tovar=radema' || $current == '/distribution/fish_terminal?tovar=radema' || $current == '/distribution/gurtovnya?tovar=radema' || $current == '/distribution/center?tovar=radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=radema';?>">Радема</a>
+                <a class="<?php if($current == '/admin/distribution/bochka?tovar=radema' || $current == '/admin/distribution/fish_terminal?tovar=radema' || $current == '/admin/distribution/gurtovnya?tovar=radema' || $current == '/admin/distribution/center?tovar=radema' || $current == '/admin/distribution/invoice?tovar=radema'): ?>current<?php endif; ?>" href="<?php echo base_url .'distribution/'.$tochka .'?tovar=radema';?>">Радема</a>
             </span>     
         </div>
         <div class="add-errore">

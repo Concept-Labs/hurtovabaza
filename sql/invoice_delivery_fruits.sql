@@ -36,11 +36,6 @@ CREATE TABLE `invoice_delivery_fruits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `invoice_delivery_fruits`
---
-
-INSERT INTO `invoice_delivery_fruits` (`id`, `tovar_id`, `number`, `date`) VALUES
-(1, 2, 88, '2018-12-29');
 
 --
 -- Индексы сохранённых таблиц
@@ -60,7 +55,7 @@ ALTER TABLE `invoice_delivery_fruits`
 -- AUTO_INCREMENT для таблицы `invoice_delivery_fruits`
 --
 ALTER TABLE `invoice_delivery_fruits`
-  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

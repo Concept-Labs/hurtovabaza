@@ -543,14 +543,18 @@ $num_radema = $this->get('num_radema');
 					<td><?php echo $roww['label'];?></td>
 					<?php if ($row_admin_tochka['tochka'] == 'bochka') { ?>
 					<td><input type="number" step="0.1" name="bochka" value="<?php echo $roww['t2number'];?>"></td>
-					<td><input type="number" step="0.1" name="fish_terminal" value="<?php echo $roww['t3number'];?>"></td>
-					<td><input type="number" step="0.1" name="gurtovnya" value="<?php echo $roww['t4number'];?>"></td>
 					<?php }
 					else { ?>
 						<td><?php echo $roww['t2number'];?></td>
+					<?php } ?>
+					<?php if ($row_admin_tochka['tochka'] == 'fish_terminal_and_gurtovnya') { ?>
+						<td><input type="number" step="0.1" name="fish_terminal" value="<?php echo $roww['t3number'];?>"></td>
+						<td><input type="number" step="0.1" name="gurtovnya" value="<?php echo $roww['t4number'];?>"></td>
+					<?php }
+					else { ?>
 						<td><?php echo $roww['t3number'];?></td>
 						<td><?php echo $roww['t4number'];?></td>
-					<?php } ?>
+					<?php } ?>	
 					<?php if ($row_admin_tochka['tochka'] == 'center') { ?>
 					<td><input type="number" step="0.1" name="center" value="<?php echo $roww['t5number'];?>"></td>
 					<?php }

@@ -196,7 +196,7 @@ Class Controller_Distribution Extends Controller_Base
       mysqli_query($db, "UPDATE `$distribution_fish_terminal` SET `number`='$number_fish_terminal' WHERE tovar_id='$id' AND date='$date'");
       mysqli_query($db, "UPDATE `$distribution_gurtovnya` SET `number`='$number_gurtovnya' WHERE tovar_id='$id' AND date='$date'");
       mysqli_query($db, "UPDATE `$distribution_center` SET `number`='$number_center' WHERE tovar_id='$id' AND date='$date'");
-      mysqli_query($db, "UPDATE `$distribution_invoice` SET `number_invoice`='$number_invoice' WHERE tovar_id='$id' AND date='$date'");
+      mysqli_query($db, "UPDATE `$distribution_invoice` SET `number`='$number_invoice' WHERE tovar_id='$id' AND date='$date'");
 
 
       header("Location:" .base_url .'distribution');

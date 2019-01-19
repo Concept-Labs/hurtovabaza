@@ -268,10 +268,10 @@ public function add_users()
 
         if (empty($errore)) {
             if (!isset($_GET['admin'])) {
-               mysqli_query($db, "INSERT INTO `$table`(`id`, `login`, `password`, `date`) VALUES (null, '$login', '$password', '$date')");
+               mysqli_query($db, "INSERT INTO `$table`(`id`, `login`, `password`, `date`) VALUES (null, '$login', '$password', NOW())");
             }
             else {
-                mysqli_query($db, "INSERT INTO `$table`(`id`, `login`, `password`, `tochka`, `date`) VALUES (null, '$login', '$password', '$tochka', '$date')");
+                mysqli_query($db, "INSERT INTO `$table`(`id`, `login`, `password`, `tochka`, `date`) VALUES (null, '$login', '$password', '$tochka', NOW())");
             }
             
 

@@ -448,28 +448,28 @@ Class Template
                     if ($numm == 0) {
                         switch ($tovar) {
                             case 'fruits':
-                            $query = "INSERT INTO $table_fruits (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            $query = "INSERT INTO $table_fruits (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', NOW())";
                             break;
                             case 'vegetables':
-                            $query = "INSERT INTO $table_vegetables (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            $query = "INSERT INTO $table_vegetables (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', NOW())";
                             break;
                             case 'sausage':
-                            $query = "INSERT INTO $table_sausage (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            $query = "INSERT INTO $table_sausage (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', NOW())";
                             break;
                             case 'cheese':
-                            $query = "INSERT INTO $table_cheese (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            $query = "INSERT INTO $table_cheese (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', NOW())";
                             break;
                             case 'fish_processing':
-                            $query = "INSERT INTO $table_fish_processing (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            $query = "INSERT INTO $table_fish_processing (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', NOW())";
                             break;
                             case 'fish_sm':
-                            $query = "INSERT INTO $table_fish_sm (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            $query = "INSERT INTO $table_fish_sm (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', NOW())";
                             break;
                             case 'ovis':
-                            $query = "INSERT INTO $table_ovis (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            $query = "INSERT INTO $table_ovis (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', NOW())";
                             break;
                             case 'radema':
-                            $query = "INSERT INTO $table_radema (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', '$date')";
+                            $query = "INSERT INTO $table_radema (id, tovar_id, number, date) VALUES ('null', '$name_tovars', '$number', NOW())";
                             break;
                         }                       
                         $result = mysqli_query($db, $query);

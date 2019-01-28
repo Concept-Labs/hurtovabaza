@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+date_default_timezone_set("Europe/Kiev");
     ini_set('display_errors', 1);
 	//error_reporting (E_ALL);
     if (version_compare(phpversion(), '5.1.0', '<') == true) { die ('PHP5.1 Only'); }
